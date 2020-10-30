@@ -77,8 +77,12 @@ WSGI_APPLICATION = 'lamancha.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'd29h21d0lqco7l',
+        'USER': 'abyxjfbhogtbsj',
+        'PASSWORD': '22cbf3da8d0c7a76dd165f9996699491402c5c881eae74f1f7a848f82ce01907',
+        'HOST': 'ec2-54-157-234-29.compute-1.amazonaws.com',
+        'PORT': '5432',
     }
 }
 
