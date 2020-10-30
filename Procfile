@@ -1,1 +1,1 @@
-web:gunicorn lamancha.wsgi
+web: gunicorn lamancha.wsgi
