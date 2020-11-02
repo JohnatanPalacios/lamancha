@@ -12,7 +12,7 @@
   <component name="ChangeListManager">
     <list default="true" id="d8b07057-b573-4e38-9492-f566354760d8" name="Default Changelist" comment="login incompleto">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/users/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/users/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/admin.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -103,7 +103,7 @@
       <workItem from="1604200021190" duration="3716000" />
       <workItem from="1604271055739" duration="16707000" />
       <workItem from="1604320621233" duration="717000" />
-      <workItem from="1604321580473" duration="3431000" />
+      <workItem from="1604321580473" duration="4112000" />
     </task>
     <task id="LOCAL-00001">
       <created>1604030439727</created>
@@ -224,7 +224,14 @@
       <option name="project" value="LOCAL" />
       <updated>1604333084363</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="login incompleto">
+      <created>1604334037577</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1604334037577</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TerminalProjectNonSharedOptionsProvider">
@@ -295,11 +302,11 @@
     </state>
     <state x="184" y="8" key="SettingsEditor/0.0.1366.728/1366.0.1920.1080@0.0.1366.728" timestamp="1604027727834" />
     <state x="1625" y="12" key="SettingsEditor/0.0.1366.728/1366.0.1920.1080@1366.0.1920.1080" timestamp="1604275968532" />
-    <state x="1753" y="144" key="Vcs.Push.Dialog.v2" timestamp="1604333150720">
+    <state x="1753" y="144" key="Vcs.Push.Dialog.v2" timestamp="1604334047111">
       <screen x="1366" y="0" width="1920" height="1080" />
     </state>
     <state x="275" y="97" key="Vcs.Push.Dialog.v2/0.0.1366.728/1366.0.1920.1080@0.0.1366.728" timestamp="1604034398509" />
-    <state x="1753" y="144" key="Vcs.Push.Dialog.v2/0.0.1366.728/1366.0.1920.1080@1366.0.1920.1080" timestamp="1604333150720" />
+    <state x="1753" y="144" key="Vcs.Push.Dialog.v2/0.0.1366.728/1366.0.1920.1080@1366.0.1920.1080" timestamp="1604334047111" />
     <state x="482" y="98" key="com.intellij.openapi.vcs.changes.SpecificFilesViewDialog" timestamp="1604031002364">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
