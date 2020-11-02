@@ -2,7 +2,7 @@
 from django.contrib import admin
 
 #Models
-from customers.models import Customer
+from users.models import Customer
 
 
 @admin.register(Customer)

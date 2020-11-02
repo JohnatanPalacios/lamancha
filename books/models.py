@@ -18,10 +18,10 @@ class Book(m.Model):
     description = m.TextField(verbose_name='Descripción', blank=False, null=False)
     sale = m.BooleanField(default=True, blank=False, null=False)
     condition = m.CharField(max_length=10, verbose_name='Condición', blank=False, null=False)
-    id_editorial = m.ForeignKey(Editorial, related_name='Editorial', on_delete=m.CASCADE, blank=False, null=False)
-    id_language = m.ForeignKey(Language, related_name='Lenguaje', on_delete=m.CASCADE, blank=False, null=False)
-    author = m.ManyToManyField(Author, related_name='Autor')
-    id_shoppingCart = m.ForeignKey(ShoppingCart, on_delete=m.CASCADE)
+    editorial = m.CharField(max_length=50, verbose_name='Editorial', blank=False, null=False)
+    language = m.CharField(max_length=50, verbose_name='Lenguaje', blank=False, null=False)
+    author = m.CharField(max_length=50, verbose_name='Autor', blank=False, null=False)
+    # id_shoppingCart = m.ForeignKey(ShoppingCart, on_delete=m.CASCADE)
 
     def __str__(self):
         return 'Título: {} / ISBN: {}'.format(self.title, self.ISBN)
