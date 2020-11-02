@@ -2,6 +2,9 @@
 from django.contrib.auth.models import User
 from django.db import models as m
 
+# Tools
+from datetime import datetime
+
 
 class Customer(m.Model):
     user = m.OneToOneField(User, on_delete=m.CASCADE)
