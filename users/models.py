@@ -18,7 +18,8 @@ class Customer(m.Model):
     birthDay = m.DateTimeField(default=datetime.now, verbose_name='Fecha de nacimiento')
     gender = m.CharField(max_length=50, verbose_name='Género')
     favoriteGenres = m.CharField(max_length=120, verbose_name='Preferencias Literarias')
-    date_creation = m.DateTimeField(auto_now=True)
+    created = m.DateTimeField(auto_now_add=True)
+    modified = m.DateTimeField(auto_now=True)
     news = m.BooleanField(default=True, blank=False, null=False)
 
     user_administrator = m.BooleanField(default=False)

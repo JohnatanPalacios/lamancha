@@ -9,9 +9,25 @@ from django.contrib.auth.models import User
 
 @admin.register(Customer)
 class UserAdmin(admin.ModelAdmin):
-    list_display = ('pk', 'user', 'photo')
-    list_display_links = ('pk', 'dni', 'username')
-    search_fields = ('user__email', 'user__first_name', 'user__last_name', 'user__username')
+    list_display = ('pk', 'user', 'photo',)
+    list_display_links = ('pk', 'user',)
+    search_fields = ('user__email', 'user__first_name', 'user__last_name', 'user__username',)
+    list_filter = ('user__is_active', 'user__is_staff', 'created', 'modified',)
+    fieldsets = (
+        ('Profile', {
+            'fields': (('user', 'picture'),),
+        }),
+        ('Extra info', {
+            'fields': (
+                ('dni', 'username'),
+                ('news')
+            )
+        }),
+        ('Metadata', {
+            'fields':  (('created', 'modified'),),
+        })
+    )
+    readonly_fields = ('created', 'modified',)
 
 
 class ProfileInline(admin.StackedInline):
