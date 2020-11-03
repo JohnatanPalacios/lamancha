@@ -13,6 +13,7 @@ urlpatterns = [
 
     path('', local_views.home, name='home'),
 
+    path('users/signup/', users_views.signup, name='signup'),
     path('users/login/', users_views.login_view, name='login'),
     path('users/logout/', users_views.logout_view, name='logout'),
 
