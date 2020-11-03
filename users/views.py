@@ -4,7 +4,7 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
-
+from django.template import loader
 
 def login_view(request):
     if request.method == 'POST':
@@ -18,8 +18,10 @@ def login_view(request):
             return render(request, 'users/login.html', {'error': 'Usuario y contraseña incorrectos'})
     return render(request, 'users/login.html')
 
-
 @login_required
 def logout_view(request):
     logout(request)
     return redirect('home')
+
+
+
