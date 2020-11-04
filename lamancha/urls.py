@@ -18,5 +18,6 @@ urlpatterns = [
     path('users/logout/', users_views.logout_view, name='logout'),
 
     path('users/profile/main/', users_views.profile_main, name='profile_main'),
+    path('users/profile/payment_methods/', users_views.profile_payment_methods, name='profile_payment_methods'),
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

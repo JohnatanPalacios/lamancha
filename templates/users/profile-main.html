@@ -39,7 +39,7 @@
 <!-- ========================= SECTION PAGETOP ========================= -->
 <section class="section-pagetop bg-gray">
 <div class="container">
-	<h2 class=" text-center title-page">Mi cuenta</h2> <!-- AQUÍ DEBERÍA ESTAR EL NOMBRE DE LA PERSONA Y DECIR BIENVENIDO -->
+	<h2 class=" text-center title-page">Configurar mi cuenta</h2> <!-- AQUÍ DEBERÍA ESTAR EL NOMBRE DE LA PERSONA Y DECIR BIENVENIDO -->
 </div> <!-- container //  -->
 </section>
 <!-- ========================= SECTION PAGETOP END// ========================= -->
@@ -53,7 +53,7 @@
 		<nav class="list-group">
 			<a class="list-group-item active" href="#"> Configuración  </a>
 			<a class="list-group-item" href="#"> Historial de compras </a>
-			<a class="list-group-item" href="#"> Métodos de pago </a>
+			<a class="list-group-item" href="{% url 'profile_payment_methods' %}"> Métodos de pago </a>
 			<a class="list-group-item" href="#"> Red de amigos </a>
 			<a class="list-group-item" href="{%  url 'logout' %}"> Cerrar sesión </a>
 		</nav>

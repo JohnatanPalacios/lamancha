@@ -69,3 +69,8 @@ def login_view(request):
 def logout_view(request):
     logout(request)
     return redirect('home')
+
+
+@login_required()
+def profile_payment_methods(request):
+    return render(request, 'users/profile-paymentMethods.html')
