@@ -13,8 +13,10 @@ urlpatterns = [
 
     path('', local_views.home, name='home'),
 
-    path('users/signup/', users_views.signup, name='signup'),
+    path('users/signup/', users_views.signup_view, name='signup'),
     path('users/login/', users_views.login_view, name='login'),
     path('users/logout/', users_views.logout_view, name='logout'),
+
+    path('users/profile/main/', users_views.profile_main, name='profile_main'),
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

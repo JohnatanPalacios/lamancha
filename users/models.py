@@ -2,25 +2,22 @@
 from django.contrib.auth.models import User
 from django.db import models as m
 
-# Tools
-from datetime import datetime
-
 
 class Customer(m.Model):
     user = m.OneToOneField(User, on_delete=m.CASCADE)
-    dni = m.CharField(max_length=50, verbose_name='DNI', unique=True, blank=False, null=False)
-    first_name = m.CharField(max_length=120, verbose_name='Nombres')
-    last_name = m.CharField(max_length=50, verbose_name='Apellidos')
-    username = m.CharField(max_length=50, verbose_name='Apodo')
-    email = m.EmailField(max_length=254, unique=True, verbose_name='Email')
+    dni = m.CharField(max_length=50, verbose_name='DNI', unique=True, null=True, blank=True)
+    first_name = m.CharField(max_length=120, verbose_name='Nombres', null=True, blank=True)
+    last_name = m.CharField(max_length=50, verbose_name='Apellidos', null=True, blank=True)
+    username = m.CharField(max_length=50, verbose_name='Apodo', null=True, blank=True)
+    email = m.EmailField(max_length=254, unique=True, verbose_name='Email', null=True, blank=True)
     photo = m.ImageField(upload_to='customer/photos', null=True, blank=True)
-    address = m.CharField(max_length=50, verbose_name='Dirección')
-    birthDay = m.DateTimeField(default=datetime.now, verbose_name='Fecha de nacimiento')
-    gender = m.CharField(max_length=50, verbose_name='Género')
-    favoriteGenres = m.CharField(max_length=120, verbose_name='Preferencias Literarias')
+    address = m.CharField(max_length=150, verbose_name='Dirección', null=True, blank=True)
+    birthday = m.CharField(max_length=12, verbose_name='Fecha de nacimiento', null=True, blank=True)
+    gender = m.CharField(max_length=10, verbose_name='Género', null=True, blank=True)
+    favoriteGenres = m.CharField(max_length=120, verbose_name='Preferencias Literarias', blank=True, null=True)
     created = m.DateTimeField(auto_now_add=True)
     modified = m.DateTimeField(auto_now=True)
-    news = m.BooleanField(default=True, blank=False, null=False)
+    news = m.BooleanField(default=True, null=True, blank=True)
 
     user_administrator = m.BooleanField(default=False)
     is_staff = m.BooleanField(default=False)

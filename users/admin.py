@@ -30,18 +30,18 @@ class UserAdmin(admin.ModelAdmin):
     readonly_fields = ('created', 'modified',)
 
 
-class ProfileInline(admin.StackedInline):
+class CustomerInline(admin.StackedInline):
     """Profile in-line admin for users."""
 
     model = Customer
     can_delete = False
-    verbose_name_plural = 'profiles'
+    verbose_name_plural = 'administradores'
 
 
 class UserAdmin(BaseUserAdmin):
     """Add profile admin to base user admin."""
 
-    inlines = (ProfileInline,)
+    inlines = (CustomerInline,)
     list_display = (
         'username',
         'email',

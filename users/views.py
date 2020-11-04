@@ -13,23 +13,31 @@ from django.contrib.auth.models import User
 from users.models import Customer
 
 
-def signup(request):
+def signup_view(request):
     if request.method == 'POST':
         username = request.POST['username']
         password = request.POST['password']
         password_confirmation = request.POST['password_confirmation']
 
         if password != password_confirmation:
-            return render(request, 'users/signup.html', {'error': 'Password confirmation does not match'})
+            return render(request, 'users/signup.html', {'error': 'Las contraseñas no son iguales'})
 
         try:
             user = User.objects.create_user(username=username, password=password)
         except IntegrityError:
-            return render(request, 'users/signup.html', {'error': 'Username is already in user'})
+            return render(request, 'users/signup.html', {'error': 'Nombre de usuario en uso'})
 
+        user.email = request.POST['email']
         user.first_name = request.POST['first_name']
         user.last_name = request.POST['last_name']
-        user.email = request.POST['email']
+        user.dni = request.POST['dni']
+        user.photo = request.POST['photo']
+        user.address = request.POST['address']
+        user.birthday = request.POST['birthday']
+        user.gender = request.POST['gender']
+        user.favoriteGenres = request.POST['favoriteGenres']
+        user.news = request.POST['news']
+
         user.save()
 
         customer = Customer(user=user)
@@ -38,6 +46,10 @@ def signup(request):
         return redirect('login')
 
     return render(request, 'users/signup.html')
+
+
+def profile_main(request):
+    return render(request, 'users/profile-main.html')
 
 
 def login_view(request):
