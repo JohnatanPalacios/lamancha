@@ -2108,24 +2108,24 @@ fieldset:disabled a.btn {
 
 .btn-primary {
   color: #fff;
-  background-color: #ff6a00;
-  border-color: #ff6a00; }
+  background-color: #77563e;
+  border-color: #77563e; }
   .btn-primary:hover {
     color: #fff;
-    background-color: #d95a00;
-    border-color: #cc5500; }
+    background-color: #77563e;
+    border-color: #77563e; }
   .btn-primary:focus, .btn-primary.focus {
     -webkit-box-shadow: 0 0 0 0.2rem rgba(255, 128, 38, 0.5);
             box-shadow: 0 0 0 0.2rem rgba(255, 128, 38, 0.5); }
   .btn-primary.disabled, .btn-primary:disabled {
     color: #fff;
-    background-color: #ff6a00;
-    border-color: #ff6a00; }
+    background-color: #77563e;
+    border-color: #77563e; }
   .btn-primary:not(:disabled):not(.disabled):active, .btn-primary:not(:disabled):not(.disabled).active,
   .show > .btn-primary.dropdown-toggle {
     color: #fff;
-    background-color: #cc5500;
-    border-color: #bf5000; }
+    background-color: #77563e;
+    border-color: #77563e; }
     .btn-primary:not(:disabled):not(.disabled):active:focus, .btn-primary:not(:disabled):not(.disabled).active:focus,
     .show > .btn-primary.dropdown-toggle:focus {
       -webkit-box-shadow: 0 0 0 0.2rem rgba(255, 128, 38, 0.5);
