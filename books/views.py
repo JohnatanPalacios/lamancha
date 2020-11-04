@@ -1,3 +1,6 @@
 from django.shortcuts import render
 
-# Create your views here.
+def book(request):
+    """Home page"""
+
+    return render(request, 'books/page-detail-product.html', {})

@@ -1,7 +1,6 @@
 # Django
 from django.shortcuts import render
 
-
 def home(request):
     """Home page"""
     books = [{'nombreLibro': 'El quijote de la mancha', 'portada': 'images/portadas/elquijote.jpg'},
@@ -10,4 +9,4 @@ def home(request):
              {'nombreLibro': 'Diccionario ingles español', 'portada': 'images/portadas/diccionario.jpg'},
              {'nombreLibro': 'Aprende a programar Python', 'portada': 'images/portadas/python.jpg'}
              ]
-    return render(request, 'index.html', {'home': home, 'book': books})
+    return render(request, 'index.html', {'book': books})

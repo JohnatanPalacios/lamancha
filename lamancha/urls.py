@@ -6,7 +6,7 @@ from django.conf.urls.static import static
 
 from lamancha import views as local_views
 from users import views as users_views
-
+from books import views as book_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -19,5 +19,6 @@ urlpatterns = [
 
     path('users/profile/main/', users_views.profile_main, name='profile_main'),
     path('users/profile/payment_methods/', users_views.profile_payment_methods, name='profile_payment_methods'),
+    path('book', book_views.book, name='book'),
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
