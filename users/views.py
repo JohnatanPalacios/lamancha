@@ -35,8 +35,16 @@ def signup_view(request):
         user.address = request.POST['address']
         user.birthday = request.POST['birthday']
         user.gender = request.POST['gender']
-        user.favoriteGenres = request.POST['favoriteGenres']
-        user.news = request.POST['news']
+        user.favoriteGenres = 'por ahora en prueba'
+
+        if request.POST['news'] == 'True':
+            user.news = True
+        else:
+            user.news = False
+
+        print(user.favoriteGenres)
+        print(user.address)
+        print(user.last_name)
 
         user.save()
 
