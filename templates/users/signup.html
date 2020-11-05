@@ -1,163 +1,130 @@
+{% extends 'simple_base.html' %}
 {% load static %}
+{% block content %}
+    <body>
+    <!-- ========================= SECTION CONTENT ========================= -->
+    <section class="section-content padding-y">
+    <!-- ============================ COMPONENT REGISTER   ================================= -->
+        <div class="card mx-auto" style="max-width:520px; margin-top:40px;">
+          <article class="card-body">
+            <header class="text-center mb-4"><h4 class="card-title">Regístrate</h4></header>
+            <form action="{% url 'signup' %}" method="POST">
+                {% csrf_token %}
 
-<!DOCTYPE HTML>
-<html lang="es">
-<head>
-<meta charset="utf-8">
-<meta http-equiv="pragma" content="no-cache" />
-<meta http-equiv="cache-control" content="max-age=604800" />
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-<title>Registro</title>
-
-<link href="images/favicon.ico" rel="shortcut icon" type="image/x-icon">
-
-<!-- jQuery -->
-<script src="{% static 'js/jquery-2.0.0.min.js' %}" type="text/javascript"></script>
-
-<!-- Bootstrap4 files-->
-<script src="{% static 'js/bootstrap.bundle.min.js' %}" type="text/javascript"></script>
-<link href="{% static 'css/bootstrap.css' %}" rel="stylesheet" type="text/css"/>
-
-<!-- Font awesome 5 -->
-<link href="{% static 'fonts/fontawesome/css/all.min.css' %}" type="text/css" rel="stylesheet">
-
-<!-- custom style -->
-<link href="{% static 'css/ui.css' %}" rel="stylesheet" type="text/css"/>
-<link href="{% static 'css/responsive.css' %}" rel="stylesheet" type="text/css" />
-
-<!-- custom javascript -->
-<script src="{% static 'js/script.js' %}" type="text/javascript"></script>
-
-</head>
-<body>
-
-<!-- ========================= SECTION CONTENT ========================= -->
-<section class="section-content padding-y">
-<!-- ============================ COMPONENT REGISTER   ================================= -->
-    <div class="card mx-auto" style="max-width:520px; margin-top:40px;">
-      <article class="card-body">
-        <header class="text-center mb-4"><h4 class="card-title">Regístrate</h4></header>
-        <form action="{% url 'signup' %}" method="POST">
-            {% csrf_token %}
-
-            <div class="form-group align-items-center">
-                <div class="col form-group">
-                    <img src="{% static 'images/default-profile.png' %}" height="150" class="d-inline-block align-top rounded-circle"/>
-                    <input type="file" class="form-control-file" name="photo" size="60">
-                </div>
-            </div>
-            <div class="form-row">
-                <div class="col form-group">
-                    <label>Nombre de usuario</label>
-                    <input type="text" class="form-control" name="username" placeholder="manchita" required>
-                </div> <!-- form-group end.// -->
-                <div class="col form-group">
-                    <label>DNI</label>
-                    <input type="text" class="form-control" name="dni" placeholder="123456789" required>
-                </div> <!-- form-group end.// -->
-            </div> <!-- form-row end.// -->
-            <div class="form-row">
-                <div class="col form-group">
-                    <label>Nombres</label>
-                    <input type="text" class="form-control" name="first_name" placeholder="La Mancha" required>
-                </div> <!-- form-group end.// -->
-                <div class="col form-group">
-                    <label>Apellidos</label>
-                    <input type="text" class="form-control" name="last_name" placeholder="Librería" required>
-                </div> <!-- form-group end.// -->
-            </div>
-            <div class="form-group">
-                <label>Correo electrónico</label>
-                <div class="input-group">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text">@</span>
+                <div class="form-group align-items-center">
+                    <div class="col form-group">
+                        <img src="{% static 'images/default-profile.png' %}" height="150" class="d-inline-block align-top rounded-circle"/>
+                        <input type="file" class="form-control-file" name="photo" size="60">
                     </div>
-                <input type="email" class="form-control" name="email" placeholder="ejemplo@lamancha.com" required>
                 </div>
-                <small class="form-text text-muted">Nunca compartiremos su correo electrónico con nadie más.</small>
-            </div> <!-- form-group end.// -->
-            <div class="form-row">
-                <div class="form-group col-md-6">
-                  <label>Fecha de nacimiento</label>
-                  <input type="date" class="form-control" name="birthday" required>
-                </div> <!-- form-group end.// -->
-                <div class="form-group col-md-6">
-                  <label>Género</label>
-                  <select class="form-control" name="gender" required>
-                      <option selected="" value="masculino">Masculino</option>
-                      <option value="femenino">Femenino</option>
-                      <option value="otro">Otro</option>
-                  </select>
-                </div> <!-- form-group end.// -->
-            </div> <!-- form-row.// -->
-            <div class="form-row">
-                <div class="form-group col-md-6">
-                    <label>Crear contraseña</label>
-                    <input class="form-control" type="password" name="password" required>
-                    <small id="passwordHelpInline" class="text-muted">Debe tener entre 8-20 caracteres.</small>
-                </div> <!-- form-group end.// -->
-                <div class="form-group col-md-6">
-                    <label>Repite la contraseña</label>
-                    <input class="form-control" type="password" name="password_confirmation" required>
-                </div> <!-- form-group end.// -->
-            </div>
-            <div class="form-group">
-                  <label>Dirección</label>
-                  <input type="text" class="form-control" name="address">
-            </div>
-            <div class="form-group">
-                <label class="text-center">Selecciona los géneros literarios de tu preferencia</label>
                 <div class="form-row">
                     <div class="col form-group">
-                        <label class="custom-control custom-checkbox">
-                        <input type="checkbox" class="custom-control-input" name="favoriteGenres1" value="dramatico">
-                        <div class="custom-control-label"> Dramático </div>
-                        </label>
-                    </div>
+                        <label>Nombre de usuario</label>
+                        <input type="text" class="form-control" name="username" placeholder="manchita" required>
+                    </div> <!-- form-group end.// -->
                     <div class="col form-group">
-                        <label class="custom-control custom-checkbox">
-                        <input type="checkbox" class="custom-control-input" name="favoriteGenres2" value="narrativo">
-                        <div class="custom-control-label"> Narrativo </div>
-                        </label>
-                    </div>
+                        <label>DNI</label>
+                        <input type="text" class="form-control" name="dni" placeholder="123456789" required>
+                    </div> <!-- form-group end.// -->
+                </div> <!-- form-row end.// -->
+                <div class="form-row">
                     <div class="col form-group">
-                        <label class="custom-control custom-checkbox">
-                        <input type="checkbox" class="custom-control-input" name="favoriteGenres3" value="lirico">
-                        <div class="custom-control-label"> Lírico </div>
-                        </label>
+                        <label>Nombres</label>
+                        <input type="text" class="form-control" name="first_name" placeholder="La Mancha" required>
+                    </div> <!-- form-group end.// -->
+                    <div class="col form-group">
+                        <label>Apellidos</label>
+                        <input type="text" class="form-control" name="last_name" placeholder="Librería" required>
+                    </div> <!-- form-group end.// -->
+                </div>
+                <div class="form-group">
+                    <label>Correo electrónico</label>
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">@</span>
+                        </div>
+                    <input type="email" class="form-control" name="email" placeholder="ejemplo@lamancha.com" required>
+                    </div>
+                    <small class="form-text text-muted">Nunca compartiremos su correo electrónico con nadie más.</small>
+                </div> <!-- form-group end.// -->
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                      <label>Fecha de nacimiento</label>
+                      <input type="date" class="form-control" name="birthday" required>
+                    </div> <!-- form-group end.// -->
+                    <div class="form-group col-md-6">
+                      <label>Género</label>
+                      <select class="form-control" name="gender" required>
+                          <option selected="" value="masculino">Masculino</option>
+                          <option value="femenino">Femenino</option>
+                          <option value="otro">Otro</option>
+                      </select>
+                    </div> <!-- form-group end.// -->
+                </div> <!-- form-row.// -->
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label>Crear contraseña</label>
+                        <input class="form-control" type="password" name="password" required>
+                        <small id="passwordHelpInline" class="text-muted">Debe tener entre 8-20 caracteres.</small>
+                    </div> <!-- form-group end.// -->
+                    <div class="form-group col-md-6">
+                        <label>Repite la contraseña</label>
+                        <input class="form-control" type="password" name="password_confirmation" required>
+                    </div> <!-- form-group end.// -->
+                </div>
+                <div class="form-group">
+                      <label>Dirección</label>
+                      <input type="text" class="form-control" name="address">
+                </div>
+                <div class="form-group">
+                    <label class="text-center">Selecciona los géneros literarios de tu preferencia</label>
+                    <div class="form-row">
+                        <div class="col form-group">
+                            <label class="custom-control custom-checkbox">
+                            <input type="checkbox" class="custom-control-input" name="favoriteGenres1" value="dramatico">
+                            <div class="custom-control-label"> Dramático </div>
+                            </label>
+                        </div>
+                        <div class="col form-group">
+                            <label class="custom-control custom-checkbox">
+                            <input type="checkbox" class="custom-control-input" name="favoriteGenres2" value="narrativo">
+                            <div class="custom-control-label"> Narrativo </div>
+                            </label>
+                        </div>
+                        <div class="col form-group">
+                            <label class="custom-control custom-checkbox">
+                            <input type="checkbox" class="custom-control-input" name="favoriteGenres3" value="lirico">
+                            <div class="custom-control-label"> Lírico </div>
+                            </label>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="form-group">
-                <label class="custom-control custom-checkbox">
-                <input type="checkbox" class="custom-control-input" checked="" name="news" value="True">
-                <div class="custom-control-label"> Activar noticias</div>
-                </label>
-            </div>
+                <div class="form-group">
+                    <label class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" checked="" name="news" value="True">
+                    <div class="custom-control-label"> Activar noticias</div>
+                    </label>
+                </div>
 
-            <div class="form-group">
-                <button type="submit" class="btn btn-primary btn-block"> Registrarse  </button>
-            </div> <!-- form-group// -->
-            <div class="form-group">
-                <label class="custom-control custom-checkbox">
-                <input type="checkbox" class="custom-control-input" checked="" required>
-                <div class="custom-control-label"> Estoy deacuerdo con los <a href="#">términos y condiciones</a>  </div>
-                </label>
-            </div> <!-- form-group end.// -->
-        </form>
-        </article><!-- card-body.// -->
-    </div> <!-- card .// -->
-    <p class="text-center mt-4"><a href="{%  url 'login' %}">¿Tienes una cuenta? Iniciar Sesión</a></p>
-    <p class="text-center mt-4"><a href="{%  url 'home' %}">Volver al inicio</a></p>
-    <br><br>
-<!-- ============================ COMPONENT REGISTER  END.// ================================= -->
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary btn-block"> Registrarse  </button>
+                </div> <!-- form-group// -->
+                <div class="form-group">
+                    <label class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" checked="" required>
+                    <div class="custom-control-label"> Estoy deacuerdo con los <a href="#">términos y condiciones</a>  </div>
+                    </label>
+                </div> <!-- form-group end.// -->
+            </form>
+            </article><!-- card-body.// -->
+        </div> <!-- card .// -->
+        <p class="text-center mt-4"><a href="{%  url 'login' %}">¿Tienes una cuenta? Iniciar Sesión</a></p>
+        <p class="text-center mt-4"><a href="{%  url 'home' %}">Volver al inicio</a></p>
+        <br><br>
+    <!-- ============================ COMPONENT REGISTER  END.// ================================= -->
 
-</section>
-<!-- ========================= SECTION CONTENT END// ========================= -->
-
-{% include 'footer.html' %}
-
-</body>
-</html>
+    </section>
+    <!-- ========================= SECTION CONTENT END// ========================= -->
+    </body>
+{% endblock %}
