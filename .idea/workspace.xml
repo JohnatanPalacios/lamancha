@@ -10,9 +10,11 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d8b07057-b573-4e38-9492-f566354760d8" name="Default Changelist" comment="recuperar contraseña">
+    <list default="true" id="d8b07057-b573-4e38-9492-f566354760d8" name="Default Changelist" comment="settings">
+      <change afterPath="$PROJECT_DIR$/templates/users/send_email.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lamancha/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/lamancha/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/registration/password_reset_email.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/registration/password_reset_email.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,17 +55,18 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/templates" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/templates/users" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PythonContentEntriesConfigurable" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\UTP\Laboratorio de Software\lamancha\templates\users" />
+      <recent name="D:\UTP\Laboratorio de Software\lamancha\templates" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\UTP\Laboratorio de Software\lamancha\templates\users" />
       <recent name="D:\UTP\Laboratorio de Software\lamancha\templates" />
       <recent name="D:\UTP\Laboratorio de Software\lamancha\lamancha\templates" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\UTP\Laboratorio de Software\lamancha\templates" />
     </key>
   </component>
   <component name="RunManager">
@@ -108,7 +111,7 @@
       <workItem from="1604336738825" duration="27235000" />
       <workItem from="1604548619172" duration="18931000" />
       <workItem from="1604598805035" duration="638000" />
-      <workItem from="1604606136317" duration="1021000" />
+      <workItem from="1604606136317" duration="12454000" />
     </task>
     <task id="LOCAL-00001">
       <created>1604030439727</created>
@@ -334,7 +337,14 @@
       <option name="project" value="LOCAL" />
       <updated>1604566776238</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="settings">
+      <created>1604607169943</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1604607169943</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="TerminalProjectNonSharedOptionsProvider">
@@ -378,7 +388,8 @@
     <MESSAGE value="actualizacion" />
     <MESSAGE value="reducir lineas con extends" />
     <MESSAGE value="recuperar contraseña" />
-    <option name="LAST_COMMIT_MESSAGE" value="recuperar contraseña" />
+    <MESSAGE value="settings" />
+    <option name="LAST_COMMIT_MESSAGE" value="settings" />
   </component>
   <component name="WindowStateProjectService">
     <state x="405" y="186" key="#Notifications" timestamp="1604030576023">
@@ -423,19 +434,19 @@
     </state>
     <state x="184" y="8" key="SettingsEditor/0.0.1366.728/1366.0.1920.1080@0.0.1366.728" timestamp="1604027727834" />
     <state x="1625" y="12" key="SettingsEditor/0.0.1366.728/1366.0.1920.1080@1366.0.1920.1080" timestamp="1604275968532" />
-    <state x="1753" y="144" key="Vcs.Push.Dialog.v2" timestamp="1604566787468">
+    <state x="1753" y="144" key="Vcs.Push.Dialog.v2" timestamp="1604607277119">
       <screen x="1366" y="0" width="1920" height="1080" />
     </state>
     <state x="275" y="97" key="Vcs.Push.Dialog.v2/0.0.1366.728/1366.0.1920.1080@0.0.1366.728" timestamp="1604034398509" />
-    <state x="1753" y="144" key="Vcs.Push.Dialog.v2/0.0.1366.728/1366.0.1920.1080@1366.0.1920.1080" timestamp="1604566787468" />
+    <state x="1753" y="144" key="Vcs.Push.Dialog.v2/0.0.1366.728/1366.0.1920.1080@1366.0.1920.1080" timestamp="1604607277119" />
     <state x="482" y="98" key="com.intellij.openapi.vcs.changes.SpecificFilesViewDialog" timestamp="1604031002364">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="482" y="98" key="com.intellij.openapi.vcs.changes.SpecificFilesViewDialog/0.0.1366.728/1366.0.1920.1080@0.0.1366.728" timestamp="1604031002364" />
-    <state x="2129" y="452" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1604606160261">
+    <state x="2129" y="452" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1604607267678">
       <screen x="1366" y="0" width="1920" height="1080" />
     </state>
-    <state x="2129" y="452" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1366.728/1366.0.1920.1080@1366.0.1920.1080" timestamp="1604606160261" />
+    <state x="2129" y="452" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1366.728/1366.0.1920.1080@1366.0.1920.1080" timestamp="1604607267678" />
     <state x="1989" y="235" width="672" height="678" key="search.everywhere.popup" timestamp="1604563037202">
       <screen x="1366" y="0" width="1920" height="1080" />
     </state>
