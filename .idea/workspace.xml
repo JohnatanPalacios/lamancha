@@ -10,9 +10,9 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d8b07057-b573-4e38-9492-f566354760d8" name="Default Changelist" comment="login, logout and signup">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="d8b07057-b573-4e38-9492-f566354760d8" name="Default Changelist" comment="recuperar contraseña">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lamancha/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/lamancha/settings.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,6 +58,7 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\UTP\Laboratorio de Software\lamancha\templates\users" />
       <recent name="D:\UTP\Laboratorio de Software\lamancha\templates" />
       <recent name="D:\UTP\Laboratorio de Software\lamancha\lamancha\templates" />
     </key>
@@ -105,6 +106,9 @@
       <workItem from="1604320621233" duration="717000" />
       <workItem from="1604321580473" duration="6261000" />
       <workItem from="1604336738825" duration="27235000" />
+      <workItem from="1604548619172" duration="18931000" />
+      <workItem from="1604598805035" duration="638000" />
+      <workItem from="1604606136317" duration="1021000" />
     </task>
     <task id="LOCAL-00001">
       <created>1604030439727</created>
@@ -260,7 +264,77 @@
       <option name="project" value="LOCAL" />
       <updated>1604433976402</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="gitignore">
+      <created>1604453827951</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1604453827951</updated>
+    </task>
+    <task id="LOCAL-00024" summary="perfil y otras cosas">
+      <created>1604463220070</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1604463220071</updated>
+    </task>
+    <task id="LOCAL-00025" summary="correciones">
+      <created>1604472038488</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1604472038488</updated>
+    </task>
+    <task id="LOCAL-00026" summary="paymentsMethods">
+      <created>1604496062247</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1604496062247</updated>
+    </task>
+    <task id="LOCAL-00027" summary="retoques">
+      <created>1604496374821</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1604496374822</updated>
+    </task>
+    <task id="LOCAL-00028" summary="actualizaciones y libros">
+      <created>1604506111425</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1604506111425</updated>
+    </task>
+    <task id="LOCAL-00029" summary="actualizacion">
+      <created>1604507625496</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1604507625496</updated>
+    </task>
+    <task id="LOCAL-00030" summary="actualizacion">
+      <created>1604509199973</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1604509199973</updated>
+    </task>
+    <task id="LOCAL-00031" summary="reducir lineas con extends">
+      <created>1604547217434</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1604547217434</updated>
+    </task>
+    <task id="LOCAL-00032" summary="recuperar contraseña">
+      <created>1604566776238</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1604566776238</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="TerminalProjectNonSharedOptionsProvider">
@@ -295,7 +369,16 @@
     <MESSAGE value="index" />
     <MESSAGE value="login incompleto" />
     <MESSAGE value="login, logout and signup" />
-    <option name="LAST_COMMIT_MESSAGE" value="login, logout and signup" />
+    <MESSAGE value="gitignore" />
+    <MESSAGE value="perfil y otras cosas" />
+    <MESSAGE value="correciones" />
+    <MESSAGE value="paymentsMethods" />
+    <MESSAGE value="retoques" />
+    <MESSAGE value="actualizaciones y libros" />
+    <MESSAGE value="actualizacion" />
+    <MESSAGE value="reducir lineas con extends" />
+    <MESSAGE value="recuperar contraseña" />
+    <option name="LAST_COMMIT_MESSAGE" value="recuperar contraseña" />
   </component>
   <component name="WindowStateProjectService">
     <state x="405" y="186" key="#Notifications" timestamp="1604030576023">
@@ -340,18 +423,22 @@
     </state>
     <state x="184" y="8" key="SettingsEditor/0.0.1366.728/1366.0.1920.1080@0.0.1366.728" timestamp="1604027727834" />
     <state x="1625" y="12" key="SettingsEditor/0.0.1366.728/1366.0.1920.1080@1366.0.1920.1080" timestamp="1604275968532" />
-    <state x="1753" y="144" key="Vcs.Push.Dialog.v2" timestamp="1604435090774">
+    <state x="1753" y="144" key="Vcs.Push.Dialog.v2" timestamp="1604566787468">
       <screen x="1366" y="0" width="1920" height="1080" />
     </state>
     <state x="275" y="97" key="Vcs.Push.Dialog.v2/0.0.1366.728/1366.0.1920.1080@0.0.1366.728" timestamp="1604034398509" />
-    <state x="1753" y="144" key="Vcs.Push.Dialog.v2/0.0.1366.728/1366.0.1920.1080@1366.0.1920.1080" timestamp="1604435090774" />
+    <state x="1753" y="144" key="Vcs.Push.Dialog.v2/0.0.1366.728/1366.0.1920.1080@1366.0.1920.1080" timestamp="1604566787468" />
     <state x="482" y="98" key="com.intellij.openapi.vcs.changes.SpecificFilesViewDialog" timestamp="1604031002364">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="482" y="98" key="com.intellij.openapi.vcs.changes.SpecificFilesViewDialog/0.0.1366.728/1366.0.1920.1080@0.0.1366.728" timestamp="1604031002364" />
-    <state x="2129" y="452" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1604442396315">
+    <state x="2129" y="452" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1604606160261">
       <screen x="1366" y="0" width="1920" height="1080" />
     </state>
-    <state x="2129" y="452" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1366.728/1366.0.1920.1080@1366.0.1920.1080" timestamp="1604442396315" />
+    <state x="2129" y="452" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1366.728/1366.0.1920.1080@1366.0.1920.1080" timestamp="1604606160261" />
+    <state x="1989" y="235" width="672" height="678" key="search.everywhere.popup" timestamp="1604563037202">
+      <screen x="1366" y="0" width="1920" height="1080" />
+    </state>
+    <state x="1989" y="235" width="672" height="678" key="search.everywhere.popup/0.0.1366.728/1366.0.1920.1080@1366.0.1920.1080" timestamp="1604563037202" />
   </component>
 </project>

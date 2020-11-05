@@ -153,3 +153,7 @@ EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_HOST_USER = 'lamanchautp@outlook.es'
 EMAIL_HOST_PASSWORD = 'teamLaMancha2020'
+'''
+EMAIL_BACKEND  =  "django.core.mail.backends.filebased.EmailBackend"
+EMAIL_FILE_PATH  =  str ( BASE_DIR . joinpath ( 'sent_emails' ))
+'''
