@@ -4,6 +4,10 @@ from django.urls import path
 from django.conf import settings
 from django.conf.urls.static import static
 
+# pruebas restaurar contraseña
+from django.contrib.auth import views as auth_views
+
+
 from lamancha import views as local_views
 from users import views as users_views
 from books import views as book_views
@@ -13,12 +17,32 @@ urlpatterns = [
 
     path('', local_views.home, name='home'),
 
+    # vistas de usuario
     path('users/signup/', users_views.signup_view, name='signup'),
     path('users/login/', users_views.login_view, name='login'),
     path('users/logout/', users_views.logout_view, name='logout'),
-
+    path('users/reset_password/', users_views.reset_password_view, name='reset_password'),
     path('users/profile/main/', users_views.profile_main, name='profile_main'),
     path('users/profile/payment_methods/', users_views.profile_payment_methods, name='profile_payment_methods'),
+
+    # vistas de libros
     path('book', book_views.book, name='book'),
+    
+    # recuperar contraseña
+    path('reset_password/', auth_views.PasswordResetView.as_view(), name='reset_password'),
+    # path('reset_password/',
+                  # auth_views.PasswordResetView.as_view(template_name='accounts/password_reset.html),
+                  # name='reset_password'),
+    path('reset_password_sent/', auth_views.PasswordResetDoneView.as_view(), name='password_reset_done'),
+    path('reset/<uidb64>/<token>/', auth_views.PasswordResetConfirmView.as_view(), name='password_reset_confirm'),
+    path('reset_password_complete/', auth_views.PasswordResetCompleteView.as_view(), name='password_reset_complete'),
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+
+'''
+1- submit email form                                PasswordResetView.as_view()
+2- email sent success massage                       PasswordResetDoneView.as_view()
+3- link to password reset from in email             PasswordConfirmView.as_view()
+4- password successfully changed messsage           PasswordResetCompleteView.as_view()
+'''

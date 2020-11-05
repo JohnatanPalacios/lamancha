@@ -13,16 +13,6 @@ admin.site.unregister(User)
 admin.site.register(User, UserAdmin)
 
 
-#@admin.register(Customer)
-'''
-class UserAdmin(admin.ModelAdmin):
-    exclude = ('news', 'favoriteGenres')
-    list_display = ('pk', 'user', 'photo',)
-    list_display_links = ('pk', 'user',)
-    search_fields = ('user__email', 'user__first_name', 'user__last_name', 'user__username',)
-    list_filter = ('user__is_active', 'user__is_staff',)
-'''
-
 class CustomerInline(admin.StackedInline):
     """Profile in-line admin for users."""
 
@@ -36,7 +26,7 @@ class UserAdmin(UserAdmin):
     """Add profile admin to base user admin."""
 
     inlines = (CustomerInline,)
-    #muestra lo que quiere ver el administrador
+    # muestra lo que quiere ver el administrador
     list_display = (
         'username',
         'email',

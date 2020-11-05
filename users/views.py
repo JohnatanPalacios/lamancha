@@ -55,6 +55,7 @@ def signup_view(request):
 
     return render(request, 'users/signup.html')
 
+
 @login_required
 def profile_main(request):
     return render(request, 'users/profile-main.html')
@@ -79,6 +80,11 @@ def logout_view(request):
     return redirect('home')
 
 
+def reset_password_view(request):
+    return render(request, 'users/reset_password.html')
+
+
 @login_required()
 def profile_payment_methods(request):
     return render(request, 'users/profile-paymentMethods.html')
+
