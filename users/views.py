@@ -4,7 +4,7 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
-
+from django.contrib.auth.decorators import permission_required
 # Exception
 from django.db.utils import IntegrityError
 
@@ -42,10 +42,6 @@ def signup_view(request):
         else:
             user.news = False
 
-        print(user.favoriteGenres)
-        print(user.address)
-        print(user.last_name)
-
         user.save()
 
         customer = Customer(user=user)
@@ -57,6 +53,7 @@ def signup_view(request):
 
 
 @login_required
+# @permission_required('view_book')
 def profile_main(request):
     return render(request, 'users/profile-main.html')
 
@@ -78,10 +75,6 @@ def login_view(request):
 def logout_view(request):
     logout(request)
     return redirect('home')
-
-
-def reset_password_view(request):
-    return render(request, 'users/reset_password.html')
 
 
 @login_required()

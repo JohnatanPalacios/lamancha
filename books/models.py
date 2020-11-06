@@ -14,7 +14,7 @@ class Book(m.Model):
                                      null=False)
     pages = m.CharField(max_length=50, verbose_name='Páginas', blank=False, null=False)
     price = m.DecimalField(default=0.00, max_digits=9, decimal_places=2, blank=False, null=False)
-    image = m.ImageField(upload_to='product/%Y/%m/%d', null=True, blank=True)
+    cover = m.ImageField(upload_to='product/%Y/%m/%d', null=True, blank=True)
     description = m.TextField(verbose_name='Descripción', blank=False, null=False)
     sale = m.BooleanField(default=True, blank=False, null=False)
     condition = m.CharField(max_length=10, verbose_name='Condición', blank=False, null=False)
@@ -24,7 +24,7 @@ class Book(m.Model):
     # id_shoppingCart = m.ForeignKey(ShoppingCart, on_delete=m.CASCADE)
 
     def __str__(self):
-        return 'Título: {} / ISBN: {}'.format(self.title, self.ISBN)
+        return self.title
 
     class Meta:
         verbose_name = 'Libro'

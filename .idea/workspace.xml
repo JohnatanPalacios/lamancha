@@ -10,11 +10,21 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d8b07057-b573-4e38-9492-f566354760d8" name="Default Changelist" comment="settings">
-      <change afterPath="$PROJECT_DIR$/templates/users/send_email.html" afterDir="false" />
+    <list default="true" id="d8b07057-b573-4e38-9492-f566354760d8" name="Default Changelist" comment="password_reset_email">
+      <change afterPath="$PROJECT_DIR$/books/ARCHIVO-PARA-PRUEBAS.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/users/migrations/0009_laurita.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/users/migrations/0010_delete_laurita.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lamancha/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/lamancha/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/registration/password_reset_email.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/registration/password_reset_email.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/books/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/books/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/books/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/books/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lamancha/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/lamancha/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/images/favicon.ico" beforeDir="false" afterPath="$PROJECT_DIR$/static/images/favicon.ico" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/books/listing.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/books/listing.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/header.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/users/profile-main.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/users/profile-main.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/users/reset_password.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/users/reset_password.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/users/send_email.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/users/send_email.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,6 +74,7 @@
       <recent name="D:\UTP\Laboratorio de Software\lamancha\templates" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\UTP\Laboratorio de Software\lamancha\templates\registration" />
       <recent name="D:\UTP\Laboratorio de Software\lamancha\templates\users" />
       <recent name="D:\UTP\Laboratorio de Software\lamancha\templates" />
       <recent name="D:\UTP\Laboratorio de Software\lamancha\lamancha\templates" />
@@ -111,7 +122,7 @@
       <workItem from="1604336738825" duration="27235000" />
       <workItem from="1604548619172" duration="18931000" />
       <workItem from="1604598805035" duration="638000" />
-      <workItem from="1604606136317" duration="12454000" />
+      <workItem from="1604606136317" duration="40219000" />
     </task>
     <task id="LOCAL-00001">
       <created>1604030439727</created>
@@ -344,7 +355,14 @@
       <option name="project" value="LOCAL" />
       <updated>1604607169943</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="password_reset_email">
+      <created>1604618850748</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1604618850748</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="TerminalProjectNonSharedOptionsProvider">
@@ -389,9 +407,14 @@
     <MESSAGE value="reducir lineas con extends" />
     <MESSAGE value="recuperar contraseña" />
     <MESSAGE value="settings" />
-    <option name="LAST_COMMIT_MESSAGE" value="settings" />
+    <MESSAGE value="password_reset_email" />
+    <option name="LAST_COMMIT_MESSAGE" value="password_reset_email" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="1918" y="198" width="816" height="734" key="#Intentions" timestamp="1604629512792">
+      <screen x="1366" y="0" width="1920" height="1080" />
+    </state>
+    <state x="1918" y="198" width="816" height="734" key="#Intentions/0.0.1366.728/1366.0.1920.1080@1366.0.1920.1080" timestamp="1604629512792" />
     <state x="405" y="186" key="#Notifications" timestamp="1604030576023">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -447,6 +470,10 @@
       <screen x="1366" y="0" width="1920" height="1080" />
     </state>
     <state x="2129" y="452" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1366.728/1366.0.1920.1080@1366.0.1920.1080" timestamp="1604607267678" />
+    <state x="2166" y="322" key="refactoring.ChangeSignatureDialog" timestamp="1604651962257">
+      <screen x="1366" y="0" width="1920" height="1080" />
+    </state>
+    <state x="2166" y="322" key="refactoring.ChangeSignatureDialog/0.0.1366.728/1366.0.1920.1080@1366.0.1920.1080" timestamp="1604651962257" />
     <state x="1989" y="235" width="672" height="678" key="search.everywhere.popup" timestamp="1604563037202">
       <screen x="1366" y="0" width="1920" height="1080" />
     </state>
