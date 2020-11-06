@@ -11,7 +11,8 @@ from django.db.utils import IntegrityError
 # Models
 from django.contrib.auth.models import User
 from users.models import Customer
-
+from books.models import Book
+from django.db.models import Q
 
 def signup_view(request):
     if request.method == 'POST':
@@ -55,10 +56,22 @@ def signup_view(request):
 @login_required
 # @permission_required('view_book')
 def profile_main(request):
+    
+    if request.GET.get('search'):
+        buscar = request.GET.get('search')
+        libros = Book.objects.filter(   Q(title = buscar) |
+                                        Q(editorial = buscar) | 
+                                        Q(author = buscar) |
+                                        Q(ISBN = buscar)
+                                    )
+        print(libros)
+        return render(request, 'books/listing.html', {'libros': libros})
+
     return render(request, 'users/profile-main.html')
 
 
 def login_view(request):
+
     if request.method == 'POST':
         username = request.POST['username']
         password = request.POST['password']

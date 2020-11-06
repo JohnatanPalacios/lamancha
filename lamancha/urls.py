@@ -25,7 +25,6 @@ urlpatterns = [
 
     # vistas de libros
     path('books/details/<pk>', books_views.BookDetailView.as_view(), name='book_details'),
-    path('search/results/', books_views.search, name='search'),
 
     # reset password group
     path('reset_password/', auth_views.PasswordResetView.as_view(template_name='users/reset_password.html', html_email_template_name='users/send_email.html',), name="reset_password"),

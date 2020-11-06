@@ -1,12 +1,17 @@
 # Django
 from django.shortcuts import render
-
+from books.models import Book
+from django.db.models import Q
 def home(request):
-    """Home page"""
-    books = [{'nombreLibro': 'El quijote de la mancha', 'portada': 'images/portadas/elquijote.jpg'},
-             {'nombreLibro': 'Juego de tronos', 'portada': 'images/portadas/juegodetronos.jpg'},
-             {'nombreLibro': 'Relatos de un asesino', 'portada': 'images/portadas/relatos.jpg'},
-             {'nombreLibro': 'Diccionario ingles español', 'portada': 'images/portadas/diccionario.jpg'},
-             {'nombreLibro': 'Aprende a programar Python', 'portada': 'images/portadas/python.jpg'}
-             ]
-    return render(request, 'index.html', {'book': books})
+	if request.GET.get('search'):
+		buscar = request.GET.get('search')
+		libros = Book.objects.filter(	Q(title = buscar) |
+										Q(editorial = buscar) | 
+										Q(author = buscar) |
+										Q(ISBN = buscar)
+									)
+		print(libros)
+		return render(request, 'books/listing.html', {'libros': libros})
+
+	books = Book.objects.all()
+	return render(request, 'index.html', {'book': books})

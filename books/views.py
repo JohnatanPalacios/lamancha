@@ -14,9 +14,6 @@ class BookDetailView(DetailView):
     slug_field = 'title'
 
 
-def search(request):
-    return render(request, 'books/listing.html')
-
 # RECOMIENDO HACERLO POR ESTE MÉTODO, ES MÁS FÁCIL Y SALE RÁPIDO
 class PostsFeedView(LoginRequiredMixin, ListView):
     template_name = 'books/listing.html'
