@@ -3,8 +3,6 @@ from django.contrib import admin
 from django.urls import path
 from django.conf import settings
 from django.conf.urls.static import static
-
-# pruebas restaurar contraseña
 from django.contrib.auth import views as auth_views
 
 
@@ -21,12 +19,12 @@ urlpatterns = [
     path('users/signup/', users_views.signup_view, name='signup'),
     path('users/login/', users_views.login_view, name='login'),
     path('users/logout/', users_views.logout_view, name='logout'),
-    #path('users/reset_password/', users_views.reset_password_view, name='reset_password'),
     path('users/profile/main/', users_views.profile_main, name='profile_main'),
     path('users/profile/payment_methods/', users_views.profile_payment_methods, name='profile_payment_methods'),
 
+
     # vistas de libros
-    path('book', books_views.book, name='book'),
+    path('books/details/<pk>', books_views.BookDetailView.as_view(), name='book_details'),
     path('search/results/', books_views.search, name='search'),
 
     # reset password group

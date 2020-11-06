@@ -13,7 +13,7 @@
 <div class="card">
 <article class="gallery-wrap"> 
 	<div class="img-big-wrap">
-	  <div> <a href="#"><img src={% static portada %}></a></div>
+	  <div> <a href="#"><img src={{ book.cover.url }}></a></div>
 	</div> <!-- slider-product.// -->
 </article> <!-- gallery-wrap .end// -->
 </div> <!-- card.// -->
@@ -21,7 +21,7 @@
 		<main class="col-md-6">
 <article class="product-info-aside">
 
-<h2 class="title mt-3">{{nombre_libro}}</h2>
+<h2 class="title mt-3">{{ book.title }}</h2>
 
 <div class="rating-wrap my-3">
 	<ul class="rating-stars">
@@ -41,22 +41,22 @@
 
 <dl class="row">
   <dt class="col-sm-3">Autor(a):</dt>
-  <dd class="col-sm-9"><a href="#">{{autor}}</a></dd>
+  <dd class="col-sm-9"><a href="#">{{ book.author }}</a></dd>
 
   <dt class="col-sm-3">Editorial:</dt>
-  <dd class="col-sm-9">{{editorial}}</dd>
+  <dd class="col-sm-9">{{ book.editorial }}</dd>
 
   <dt class="col-sm-3">Encuadernación:</dt>
-  <dd class="col-sm-9">{{encuadernacion}}</dd>
+  <dd class="col-sm-9">{{ book.binding }}</dd>
 
   <dt class="col-sm-3">Numero de paginas:</dt>
-  <dd class="col-sm-9">{{numpages}}</dd>
+  <dd class="col-sm-9">{{ book.pages }}</dd>
 
   <dt class="col-sm-3">Estado:</dt>
-  <dd class="col-sm-9">{{estado}}</dd>
+  <dd class="col-sm-9">{{ book.condition }}</dd>
 
   <dt class="col-sm-3">Precio:</dt>
-  <dd class="col-sm-9">{{precio}}</dd>
+  <dd class="col-sm-9">{{ book.price }}</dd>
 </dl>
 
 	<div class="form-row  mt-4">
@@ -73,10 +73,10 @@
 		</div> <!-- col.// -->
 		<div class="form-group col-md">
 			<a href="#"  class="btn  btn-primary"> 
-				<i class=""></i> <span class="text">¡COMPRAR AHORA!</span> 
+				<i class=""></i> <span class="text"> ¡COMPRAR AHORA! </span>
 			</a>
 			<a href="#" class="btn  btn-primary">
-        <i class=""></i> <span class="text">RESERVAR</span> 
+        <i class=""></i> <span class="text"> RESERVAR </span>
 			</a>
 		</div> <!-- col.// -->
 	</div> <!-- row.// -->
@@ -99,11 +99,11 @@
 <div class="row">
 	<div class="col-md-11">
     <div class="bg-blue text-white text-center col-md-3">
-      <h5 class="title-description">Description</h5>
+      <h5 class="title-description"> Descripción </h5>
     </div>
 		
 		<p class="text-center">
-			{{descripcion}}
+			{{ book.description }}
 		</p>
 	</div> <!-- col.// -->
 	</div> <!-- box.// -->
