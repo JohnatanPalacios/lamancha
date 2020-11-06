@@ -17,9 +17,8 @@ class BookDetailView(DetailView):
 def search(request):
     return render(request, 'books/listing.html')
 
+# RECOMIENDO HACERLO POR ESTE MÉTODO, ES MÁS FÁCIL Y SALE RÁPIDO
 class PostsFeedView(LoginRequiredMixin, ListView):
-    """retorna todos los libros ."""
-
     template_name = 'books/listing.html'
     model = Book
     ordering = ('-created',)
