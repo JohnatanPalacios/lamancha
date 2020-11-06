@@ -10,21 +10,10 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d8b07057-b573-4e38-9492-f566354760d8" name="Default Changelist" comment="password_reset_email">
-      <change afterPath="$PROJECT_DIR$/books/ARCHIVO-PARA-PRUEBAS.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/users/migrations/0009_laurita.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/users/migrations/0010_delete_laurita.py" afterDir="false" />
+    <list default="true" id="d8b07057-b573-4e38-9492-f566354760d8" name="Default Changelist" comment="upgrade">
+      <change afterPath="$PROJECT_DIR$/books/migrations/0002_auto_20201106_0428.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/books/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/books/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/books/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/books/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lamancha/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/lamancha/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/favicon.ico" beforeDir="false" afterPath="$PROJECT_DIR$/static/images/favicon.ico" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/books/listing.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/books/listing.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/header.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/users/profile-main.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/users/profile-main.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/users/reset_password.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/users/reset_password.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/users/send_email.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/users/send_email.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -122,7 +111,7 @@
       <workItem from="1604336738825" duration="27235000" />
       <workItem from="1604548619172" duration="18931000" />
       <workItem from="1604598805035" duration="638000" />
-      <workItem from="1604606136317" duration="40219000" />
+      <workItem from="1604606136317" duration="41172000" />
     </task>
     <task id="LOCAL-00001">
       <created>1604030439727</created>
@@ -362,7 +351,14 @@
       <option name="project" value="LOCAL" />
       <updated>1604618850748</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="upgrade">
+      <created>1604654674598</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1604654674598</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="TerminalProjectNonSharedOptionsProvider">
@@ -408,7 +404,8 @@
     <MESSAGE value="recuperar contraseña" />
     <MESSAGE value="settings" />
     <MESSAGE value="password_reset_email" />
-    <option name="LAST_COMMIT_MESSAGE" value="password_reset_email" />
+    <MESSAGE value="upgrade" />
+    <option name="LAST_COMMIT_MESSAGE" value="upgrade" />
   </component>
   <component name="WindowStateProjectService">
     <state x="1918" y="198" width="816" height="734" key="#Intentions" timestamp="1604629512792">
