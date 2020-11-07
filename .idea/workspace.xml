@@ -11,29 +11,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d8b07057-b573-4e38-9492-f566354760d8" name="Default Changelist" comment="upgrade">
-      <change afterPath="$PROJECT_DIR$/books/migrations/0004_book_category.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/books/migrations/0005_auto_20201107_0040.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/searches/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/searches/admin.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/searches/apps.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/searches/migrations/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/searches/models.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/searches/tests.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/searches/views.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/_header-2.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/_header-3.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/books/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/books/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lamancha/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/lamancha/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lamancha/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/lamancha/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/customer/photos/29571187_232558107290109_5809004777173651258_n.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/books/listing.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/books/listing.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/users/profile-main.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/users/profile/setting.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/users/profile-orders.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/users/profile/ordersHistory.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/users/profile-paymentMethods.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/users/profile/paymentMethods.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/users/reset_password.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/users/reset_password.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -132,7 +110,7 @@
       <workItem from="1604336738825" duration="27235000" />
       <workItem from="1604548619172" duration="18931000" />
       <workItem from="1604598805035" duration="638000" />
-      <workItem from="1604606136317" duration="70776000" />
+      <workItem from="1604606136317" duration="71376000" />
     </task>
     <task id="LOCAL-00001">
       <created>1604030439727</created>
@@ -407,7 +385,14 @@
       <option name="project" value="LOCAL" />
       <updated>1604683778872</updated>
     </task>
-    <option name="localTasksCounter" value="40" />
+    <task id="LOCAL-00040" summary="upgrade">
+      <created>1604729137341</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1604729137342</updated>
+    </task>
+    <option name="localTasksCounter" value="41" />
     <servers />
   </component>
   <component name="TerminalProjectNonSharedOptionsProvider">
@@ -504,11 +489,12 @@
     </state>
     <state x="184" y="8" key="SettingsEditor/0.0.1366.728/1366.0.1920.1080@0.0.1366.728" timestamp="1604027727834" />
     <state x="1625" y="12" key="SettingsEditor/0.0.1366.728/1366.0.1920.1080@1366.0.1920.1080" timestamp="1604275968532" />
-    <state x="1753" y="144" key="Vcs.Push.Dialog.v2" timestamp="1604683786775">
-      <screen x="1366" y="0" width="1920" height="1080" />
+    <state x="275" y="97" key="Vcs.Push.Dialog.v2" timestamp="1604729146300">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="275" y="97" key="Vcs.Push.Dialog.v2/0.0.1366.728/1366.0.1920.1080@0.0.1366.728" timestamp="1604034398509" />
     <state x="1753" y="144" key="Vcs.Push.Dialog.v2/0.0.1366.728/1366.0.1920.1080@1366.0.1920.1080" timestamp="1604683786775" />
+    <state x="275" y="97" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1604729146300" />
     <state x="482" y="98" key="com.intellij.openapi.vcs.changes.SpecificFilesViewDialog" timestamp="1604031002364">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
