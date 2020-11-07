@@ -67,7 +67,7 @@ def profile_main(request):
         print(libros)
         return render(request, 'books/listing.html', {'libros': libros})
 
-    return render(request, 'users/profile-main.html')
+    return render(request, 'users/profile/setting.html')
 
 
 def login_view(request):
@@ -92,5 +92,5 @@ def logout_view(request):
 
 @login_required()
 def profile_payment_methods(request):
-    return render(request, 'users/profile-paymentMethods.html')
+    return render(request, 'users/profile/paymentMethods.html')
 

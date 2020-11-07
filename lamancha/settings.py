@@ -157,3 +157,5 @@ EMAIL_PORT = 587
 EMAIL_BACKEND  =  "django.core.mail.backends.filebased.EmailBackend"
 EMAIL_FILE_PATH  =  str ( BASE_DIR . joinpath ( 'sent_emails' ))
 '''
+
+GOOGLE_RECAPTCHA_SECRET_KEY = '6LfPJeAZAAAAANOSFm0Aq1yHAK9IarPPQtKvWNao'
