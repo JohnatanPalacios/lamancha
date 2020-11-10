@@ -23,6 +23,11 @@ urlpatterns = [
         view=UserDetailView.as_view(),
         name='profile'
     ),
+    path(
+        route='profile/update/<pk>/',
+        view=UserUpdateView.as_view(),
+        name='update'
+    ),
     path('profile/settings/orders_histoty/', orders_history_view, name='orders_history'),
     path('profile/settings/payment_methods/', payment_methods_view, name='payment_methods'),
     ]

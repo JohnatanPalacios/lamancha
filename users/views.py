@@ -88,7 +88,7 @@ class UserCreateView(CreateView):
 class UserUpdateView(LoginRequiredMixin, UpdateView):
     model = User
     form_class = UserRegistrationForm
-    template_name = 'users/profile/profile.html'
+    template_name = 'users/profile/update.html'
     success_url = reverse_lazy('index') # si voy a hacer un modal, retornar a la vista setting
     permission_required = 'user.add_user'
     url_redirect = success_url
@@ -112,7 +112,7 @@ class UserUpdateView(LoginRequiredMixin, UpdateView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['title'] = 'Configuración'
+        context['title'] = 'Actualizar perfil'
         context['list_url'] = self.success_url
         context['action'] = 'edit'
         return context

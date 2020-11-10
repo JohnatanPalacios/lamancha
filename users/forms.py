@@ -85,7 +85,11 @@ class UserRegistrationForm(UserCreationForm):
         form = super()
         try:
             if form.is_valid():
+                user = form.save(commit=False)
                 form.save()
+                for favoriteGenre in self.cleaned_data['favoriteGenres']: # clean_data accede a los valores del formulario
+                    user.favoriteGenres.add(favoriteGenre)
+
             else:
                 data['error'] = form.errors
         except Exception as e:

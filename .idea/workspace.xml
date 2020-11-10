@@ -10,53 +10,18 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d8b07057-b573-4e38-9492-f566354760d8" name="Default Changelist" comment="estable">
-      <change afterPath="$PROJECT_DIR$/core/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/admin.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/apps.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/migrations/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/models.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/tests.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="d8b07057-b573-4e38-9492-f566354760d8" name="Default Changelist" comment="update2">
+      <change afterPath="$PROJECT_DIR$/templates/users/profile/PRUEBAS DEL MOMENTO.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/users/migrations/0014_auto_20201110_1534.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/books/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/books/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/books/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/books/migrations/0001_initial.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/books/migrations/0002_auto_20201106_0428.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/books/migrations/0003_book_binding.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/books/migrations/0004_book_category.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/books/migrations/0005_auto_20201107_0040.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/books/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/books/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/books/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/books/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lamancha/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/lamancha/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lamancha/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/lamancha/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lamancha/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/lamancha/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/logo-white.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/images/logo-white.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/logo.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/_header-2.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/_header-3.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/header.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/simple_base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/simple_base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/users/login.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/users/profile/ordersHistory.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/users/profile/ordersHistory.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/users/profile/paymentMethods.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/users/profile/paymentMethods.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/users/profile/setting.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/users/reset_password.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/users/send_email.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/users/signup.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/users/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/migrations/0001_initial.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users/migrations/0002_auto_20201103_2115.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/users/migrations/0003_auto_20201103_2145.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/users/migrations/0004_auto_20201103_2205.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/users/migrations/0005_auto_20201103_2245.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/users/migrations/0006_auto_20201104_1217.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/users/migrations/0007_customer_email.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/users/migrations/0008_remove_customer_email.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/users/migrations/0009_laurita.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/users/migrations/0010_delete_laurita.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/users/profile/profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/users/profile/profile.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/users/profile/update.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/users/profile/update.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/forms.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/users/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/static/js/list.js" beforeDir="false" afterPath="$PROJECT_DIR$/users/static/js/list.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/users/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -167,7 +132,7 @@
       <workItem from="1604895140422" duration="20820000" />
       <workItem from="1604934867818" duration="34464000" />
       <workItem from="1604970540889" duration="12299000" />
-      <workItem from="1605028851835" duration="7671000" />
+      <workItem from="1605028851835" duration="17860000" />
     </task>
     <task id="LOCAL-00001">
       <created>1604030439727</created>
@@ -456,7 +421,14 @@
       <option name="project" value="LOCAL" />
       <updated>1604729696422</updated>
     </task>
-    <option name="localTasksCounter" value="42" />
+    <task id="LOCAL-00042" summary="update2">
+      <created>1605038476637</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1605038476637</updated>
+    </task>
+    <option name="localTasksCounter" value="43" />
     <servers />
   </component>
   <component name="TerminalProjectNonSharedOptionsProvider">
@@ -479,7 +451,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="configurando" />
     <MESSAGE value="config" />
     <MESSAGE value="start" />
     <MESSAGE value="navbar" />
@@ -493,7 +464,6 @@
     <MESSAGE value="paymentsMethods" />
     <MESSAGE value="retoques" />
     <MESSAGE value="actualizaciones y libros" />
-    <MESSAGE value="actualizacion" />
     <MESSAGE value="reducir lineas con extends" />
     <MESSAGE value="recuperar contraseña" />
     <MESSAGE value="settings" />
@@ -504,7 +474,9 @@
     <MESSAGE value="trabajando con objetos" />
     <MESSAGE value="estable, con librerias nuevas" />
     <MESSAGE value="estable" />
-    <option name="LAST_COMMIT_MESSAGE" value="estable" />
+    <MESSAGE value="actualizacion" />
+    <MESSAGE value="update2" />
+    <option name="LAST_COMMIT_MESSAGE" value="update2" />
   </component>
   <component name="WindowStateProjectService">
     <state x="1918" y="198" width="816" height="734" key="#Intentions" timestamp="1604629512792">
@@ -574,11 +546,11 @@
     </state>
     <state x="184" y="8" key="SettingsEditor/0.0.1366.728/1366.0.1920.1080@0.0.1366.728" timestamp="1604826643164" />
     <state x="1625" y="12" key="SettingsEditor/0.0.1366.728/1366.0.1920.1080@1366.0.1920.1080" timestamp="1604275968532" />
-    <state x="275" y="97" key="Vcs.Push.Dialog.v2" timestamp="1604729706436">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state x="1753" y="144" key="Vcs.Push.Dialog.v2" timestamp="1605038587669">
+      <screen x="1366" y="0" width="1920" height="1080" />
     </state>
     <state x="275" y="97" key="Vcs.Push.Dialog.v2/0.0.1366.728/1366.0.1920.1080@0.0.1366.728" timestamp="1604034398509" />
-    <state x="1753" y="144" key="Vcs.Push.Dialog.v2/0.0.1366.728/1366.0.1920.1080@1366.0.1920.1080" timestamp="1604683786775" />
+    <state x="1753" y="144" key="Vcs.Push.Dialog.v2/0.0.1366.728/1366.0.1920.1080@1366.0.1920.1080" timestamp="1605038587669" />
     <state x="275" y="97" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1604729706436" />
     <state x="482" y="98" key="com.intellij.openapi.vcs.changes.SpecificFilesViewDialog" timestamp="1604031002364">
       <screen x="0" y="0" width="1366" height="728" />

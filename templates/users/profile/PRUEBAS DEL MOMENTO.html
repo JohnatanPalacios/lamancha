@@ -1,0 +1,200 @@
+<option selected="" value="masculino">Masculino</option>
+<option value="femenino">Femenino</option>
+<option value="otro">Otro</option>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<article class="card-body">
+
+
+<header class="text-center mb-4"><h4 class="card-title">{{ title }}</h4></header>
+            <form action="{% url 'signup' %}" method="POST">
+                {% csrf_token %}
+
+                <input type="hidden" name="action" value="{{ action }}">
+
+                <div class="form-group align-items-center">
+                    <div class="col form-group">
+                        <img src="{{ user.photo.url }}" height="150" class="d-inline-block align-top rounded-circle"/>
+                        {{ form.photo }}
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="col form-group">
+                        <label>Nombre de usuario</label>
+                        {{ form.username|add_class:'form-control' }}
+                    </div>
+                    <div class="col form-group">
+                        <label>DNI</label>
+                        <input type="text" class="form-control" name="dni" placeholder="123456789">
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="col form-group">
+                        <label> Nombres </label>
+                        {{ form.first_name|add_class:'form-control' }}
+                    </div> <!-- form-group end.// -->
+                    <div class="col form-group">
+                        <label> Apellidos </label>
+                        {{ form.last_name|add_class:'form-control' }}
+                    </div> <!-- form-group end.// -->
+                </div>
+
+                <div class="form-group">
+                    <label>Correo electrónico</label>
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">@</span>
+                        </div>
+                    {{ form.email|add_class:'form-control' }}
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                      <label>Fecha de nacimiento</label>
+                      {{ form.birthday|add_class:'form-control' }}
+                    </div> <!-- form-group end.// -->
+                    <div class="form-group col-md-6">
+                      <label>Género</label>
+                      <select class="form-control" name="gender">
+                          <option selected="" value="masculino">Masculino</option>
+                          <option value="femenino">Femenino</option>
+                          <option value="otro">Otro</option>
+                      </select>
+                    </div> <!-- form-group end.// -->
+                </div> <!-- form-row.// -->
+
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label>Crear contraseña</label>
+                        {{ form.password1|add_class:'form-control' }}
+                        <small id="passwordHelpInline" class="text-muted">Debe tener entre 8-20 caracteres.</small>
+                    </div> <!-- form-group end.// -->
+                    <div class="form-group col-md-6">
+                        <label>Repite la contraseña</label>
+                        {{ form.password2|add_class:'form-control' }}
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    {{ form.favoriteGenres.label }}
+                    {{ form.favoriteGenres}}
+                </div>
+
+                <div class="form-group">
+                    <label class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" checked="" name="news" value="True">
+                    {{ form.news }}  Activar noticias
+                    </label>
+                </div>
+
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary btn-block"> Actualizar  </button>
+                </div> <!-- form-group// -->
+
+            </form>
+          <script>
+            {% if form.errors %}
+                var errors = '';
+                {% for field in form %}
+                    {% for error in field.errors %}
+                        errors += '{{ error }}\n';
+                    {% endfor %}
+                {% endfor %}
+                {% for error in form.non_field_errors %}
+                    errors += '{{ error }}\n';
+                {% endfor %}
+                Swal.fire({
+                    title: 'Error!',
+                    text: errors,
+                    icon: 'error'
+                });
+            {% endif %}
+            function submit_with_ajax(url, title, content, parameters, callback) {
+                    $.confirm({
+                        theme: 'material',
+                        title: title,
+                        icon: 'fa fa-info',
+                        content: content,
+                        columnClass: 'small',
+                        typeAnimated: true,
+                        cancelButtonClass: 'btn-primary',
+                        draggable: true,
+                        dragWindowBorder: false,
+                        buttons: {
+                            info: {
+                                text: "Si",
+                                btnClass: 'btn-primary',
+                                action: function () {
+                                    $.ajax({
+                                        url: url, //window.location.pathname
+                                        type: 'POST',
+                                        data: parameters,
+                                        dataType: 'json',
+                                        processData: false,
+                                        contentType: false,
+                                    }).done(function (data) {
+                                        console.log(data);
+                                        if (!data.hasOwnProperty('error')) {
+                                            callback(data);
+                                            return false;
+                                        }
+                                        message_error(data.error);
+                                    }).fail(function (jqXHR, textStatus, errorThrown) {
+                                        alert(textStatus + ': ' + errorThrown);
+                                    }).always(function (data) {
+
+                                    });
+                                }
+                            },
+                            danger: {
+                                text: "No",
+                                btnClass: 'btn-red',
+                                action: function () {
+
+                                }
+                            },
+                        }
+                    })
+                }
+          $('form').on('submit', function (e) {
+                e.preventDefault();
+                var parameters = new FormData(this);
+                submit_with_ajax(window.location.pathname, 'Notificación', '¿Estas seguro de realizar la siguiente acción?', parameters, function () {
+                    location.href = '{{ list_url }}';
+                });
+            });
+          </script>
+          <script type="application/javascript">
+        $(document).ready( function () {
+
+
+                $('#id_favoriteGenres').select2({
+    //theme: 'classic',
+    theme: "bootstrap4",
+    language: 'es',
+    width: '100%',
+    placeholder: 'Seleccionar X..'
+
+});
+
+            });
+    </script>
+
+</article><!-- card-body.// -->

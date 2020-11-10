@@ -7,6 +7,12 @@ from django.forms import model_to_dict
 from lamancha.settings import MEDIA_URL, STATIC_URL
 
 
+GENDERS = [
+    ('femenino', 'Femenino'),
+    ('masculino', 'Masculino'),
+    ('otro', 'Otro')]
+
+
 class LiteraryGenders(models.Model):
     name = models.CharField(max_length=30)
 
@@ -19,10 +25,32 @@ class LiteraryGenders(models.Model):
         return self.name
 
 
-GENDERS = [
-    ('femenino', 'Femenino'),
-    ('masculino', 'Masculino'),
-    ('otro', 'Otro')]
+class CreditCard(models.Model):
+    number = models.CharField(max_length=20, verbose_name='Número de la Tarjeta', blank=False, null=False)
+    nameInCard = models.CharField(max_length=150, verbose_name='Nombre en Tarjeta', blank=False, null=False)
+    month_expiration = models.CharField(max_length=2, verbose_name='Mes de expiración', blank=True, null=True)
+    day_expiration = models.CharField(max_length=2, verbose_name='Día de Expiración', blank=True, null=True)
+
+    def __str__(self):
+        return 'Tarjeta Número: {}'.format(self.number)
+
+    class Meta:
+        verbose_name = 'Tarjeta de Crédito'
+        verbose_name_plural = 'Tarjetas de Crédito'
+        ordering = ['id']
+
+
+class DebitCard(models.Model):
+    number = models.CharField(max_length=20, verbose_name='Número de la Tarjeta', blank=False, null=False)
+    nameInCard = models.CharField(max_length=150, verbose_name='Nombre en Tarjeta', blank=False, null=False)
+
+    def __str__(self):
+        return 'Tarjeta Número: {}'.format(self.number)
+
+    class Meta:
+        verbose_name = 'Tarjeta Débito'
+        verbose_name_plural = 'Tarjetas Débito'
+        ordering = ['id']
 
 
 class User(AbstractUser):
@@ -31,10 +59,11 @@ class User(AbstractUser):
     address = models.CharField(max_length=150, verbose_name='Dirección', null=True, blank=True)
     birthday = models.DateField(verbose_name='Fecha de nacimiento', null=True, blank=True)
     gender = models.CharField(max_length=10, choices=GENDERS, verbose_name='Género', null=True, blank=True)
-    # gender = models.CharField(max_length=9, verbose_name='Género', null=True, blank=True)
     favoriteGenres = models.ManyToManyField(LiteraryGenders, verbose_name='Preferencias literarias')
     news = models.BooleanField(default=True, null=True, blank=True)
     email = models.EmailField(_('email address'), unique=True, null=False, blank=False)
+    debitCards = models.ManyToManyField(DebitCard, verbose_name='Tarjetas de débito')
+    creditCards = models.ManyToManyField(CreditCard, verbose_name='Tarjetas de crédito')
     USERNAME_FIELD = 'username'
     REQUIRED_FIELDS = ['email', 'first_name', 'last_name']
 
@@ -57,7 +86,7 @@ class User(AbstractUser):
 
     def save(self, *args, **kwargs):
         if self.pk is None:
-            #self.set_password(self.password)
+            # self.set_password(self.password)
             self.password = self.password
         else:
             user = User.objects.get(pk=self.pk)
@@ -66,31 +95,3 @@ class User(AbstractUser):
         super().save(*args, **kwargs)
 
 
-class CreditCard(models.Model):
-    number = models.CharField(max_length=20, verbose_name='Número de la Tarjeta', blank=False, null=False)
-    nameInCard = models.CharField(max_length=150, verbose_name='Nombre en Tarjeta', blank=False, null=False)
-    month_expiration = models.CharField(max_length=2, verbose_name='Mes de expiración', blank=True, null=True)
-    day_expiration = models.CharField(max_length=2, verbose_name='Día de Expiración', blank=True, null=True)
-    id_customer = models.ForeignKey(User, on_delete=models.CASCADE, blank=False, null=False)
-
-    def __str__(self):
-        return 'Tarjeta Número: {}'.format(self.number)
-
-    class Meta:
-        verbose_name = 'Tarjeta de Crédito'
-        verbose_name_plural = 'Tarjetas de Crédito'
-        ordering = ['id']
-
-
-class DebitCard(models.Model):
-    number = models.CharField(max_length=20, verbose_name='Número de la Tarjeta', blank=False, null=False)
-    nameInCard = models.CharField(max_length=150, verbose_name='Nombre en Tarjeta', blank=False, null=False)
-    id_customer = models.ForeignKey(User, on_delete=models.CASCADE, blank=False, null=False)
-
-    def __str__(self):
-        return 'Tarjeta Número: {}'.format(self.number)
-
-    class Meta:
-        verbose_name = 'Tarjeta Débito'
-        verbose_name_plural = 'Tarjetas Débito'
-        ordering = ['id']
