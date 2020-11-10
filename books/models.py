@@ -6,12 +6,9 @@ from datetime import datetime
 
 
 class Book(m.Model):
-    ISBN = m.CharField(max_length=150, verbose_name='ISBN', blank=False, null=False)
+    ISBN = m.CharField(max_length=13, verbose_name='ISBN', blank=False, null=False)
     title = m.CharField(max_length=150, verbose_name='Título', blank=False, null=False)
-    published_date = m.DateTimeField(default=datetime.now,
-                                     verbose_name='Fecha de publicación',
-                                     blank=True,
-                                     null=True)
+    published_date = m.DateField(verbose_name='Fecha de publicación', blank=True, null=True)
     pages = m.CharField(max_length=50, verbose_name='Páginas', blank=True, null=True)
     price = m.DecimalField(default=0.00, max_digits=9, decimal_places=2, blank=False, null=False)
     cover = m.ImageField(upload_to='product/%Y/%m/%d', null=True, blank=True)

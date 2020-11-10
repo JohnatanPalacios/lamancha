@@ -1,38 +1,96 @@
 # Django
-from django.contrib.auth.models import User
-from django.db import models as m
+from django.db import models
+from django.contrib.auth.models import AbstractUser
+from django.utils.translation import gettext_lazy as _
+from django.forms import model_to_dict
+
+from lamancha.settings import MEDIA_URL, STATIC_URL
 
 
-class Customer(m.Model):
-    user = m.OneToOneField(User, on_delete=m.CASCADE, related_name='customer')
-    dni = m.CharField(max_length=50, verbose_name='DNI', unique=True, null=True, blank=True)
-    photo = m.ImageField(upload_to='customer/photos', null=True, blank=True)
-    address = m.CharField(max_length=150, verbose_name='Dirección', null=True, blank=True)
-    birthday = m.CharField(max_length=12, verbose_name='Fecha de nacimiento', null=True, blank=True)
-    gender = m.CharField(max_length=10, verbose_name='Género', null=True, blank=True)
-    favoriteGenres = m.CharField(max_length=120, verbose_name='Preferencias Literarias', blank=True, null=True)
-    news = m.BooleanField(default=True, null=True, blank=True)
-
-    def __str__(self):
-        return 'Nombre: {} / Apellido: {}'.format(self.user.first_name, self.user.last_name)
+class LiteraryGenders(models.Model):
+    name = models.CharField(max_length=30)
 
     class Meta:
-        verbose_name = 'Usuario'
-        verbose_name_plural = 'Usuarios'
-        ordering = ['dni']
+        verbose_name = 'Género literario'
+        verbose_name_plural = 'Géneros literarios'
+        ordering = ['name']
+
+    def __str__(self):
+        return self.name
 
 
-class Card(m.Model):
-    number = m.CharField(max_length=20, verbose_name='Número de la Tarjeta', blank=False, null=False)
-    nameInCard = m.CharField(max_length=150, verbose_name='Nombre en Tarjeta', blank=False, null=False)
-    month_expiration = m.CharField(max_length=2, verbose_name='Mes de expiración', blank=True, null=True)
-    day_expiration = m.CharField(max_length=2, verbose_name='Día de Expiración', blank=True, null=True)
-    id_customer = m.ForeignKey(Customer, on_delete=m.CASCADE, blank=False, null=False)
+GENDERS = [
+    ('femenino', 'Femenino'),
+    ('masculino', 'Masculino'),
+    ('otro', 'Otro')]
+
+
+class User(AbstractUser):
+    dni = models.CharField(max_length=50, verbose_name='DNI', unique=True, null=True, blank=True)
+    photo = models.ImageField(upload_to='customer/photos', null=True, blank=True)
+    address = models.CharField(max_length=150, verbose_name='Dirección', null=True, blank=True)
+    birthday = models.DateField(verbose_name='Fecha de nacimiento', null=True, blank=True)
+    gender = models.CharField(max_length=10, choices=GENDERS, verbose_name='Género', null=True, blank=True)
+    # gender = models.CharField(max_length=9, verbose_name='Género', null=True, blank=True)
+    favoriteGenres = models.ManyToManyField(LiteraryGenders, verbose_name='Preferencias literarias')
+    news = models.BooleanField(default=True, null=True, blank=True)
+    email = models.EmailField(_('email address'), unique=True, null=False, blank=False)
+    USERNAME_FIELD = 'username'
+    REQUIRED_FIELDS = ['email', 'first_name', 'last_name']
+
+    def __str__(self):
+        return self.id
+
+    def get_photo(self):
+        if self.photo:
+            return '{}{}'.format(MEDIA_URL, self.photo)
+        return '{}{}'.format(STATIC_URL, 'images/default-profile.png')
+
+    def toJSON(self):
+        item = model_to_dict(self, exclude=['password', 'groups', 'user_permissions', 'last_login'])
+        if self.last_login:
+            item['last_login'] = self.last_login.strftime('%Y-%m-%d')
+        item['date_joined'] = self.date_joined.strftime('%Y-%m-%d')
+        item['image'] = self.get_image()
+        item['full_name'] = self.get_full_name()
+        return item
+
+    def save(self, *args, **kwargs):
+        if self.pk is None:
+            #self.set_password(self.password)
+            self.password = self.password
+        else:
+            user = User.objects.get(pk=self.pk)
+            if user.password != self.password:
+                user.password = self.password
+        super().save(*args, **kwargs)
+
+
+class CreditCard(models.Model):
+    number = models.CharField(max_length=20, verbose_name='Número de la Tarjeta', blank=False, null=False)
+    nameInCard = models.CharField(max_length=150, verbose_name='Nombre en Tarjeta', blank=False, null=False)
+    month_expiration = models.CharField(max_length=2, verbose_name='Mes de expiración', blank=True, null=True)
+    day_expiration = models.CharField(max_length=2, verbose_name='Día de Expiración', blank=True, null=True)
+    id_customer = models.ForeignKey(User, on_delete=models.CASCADE, blank=False, null=False)
 
     def __str__(self):
         return 'Tarjeta Número: {}'.format(self.number)
 
     class Meta:
-        verbose_name = 'Tarjeta'
-        verbose_name_plural = 'Tarjetas'
+        verbose_name = 'Tarjeta de Crédito'
+        verbose_name_plural = 'Tarjetas de Crédito'
+        ordering = ['id']
+
+
+class DebitCard(models.Model):
+    number = models.CharField(max_length=20, verbose_name='Número de la Tarjeta', blank=False, null=False)
+    nameInCard = models.CharField(max_length=150, verbose_name='Nombre en Tarjeta', blank=False, null=False)
+    id_customer = models.ForeignKey(User, on_delete=models.CASCADE, blank=False, null=False)
+
+    def __str__(self):
+        return 'Tarjeta Número: {}'.format(self.number)
+
+    class Meta:
+        verbose_name = 'Tarjeta Débito'
+        verbose_name_plural = 'Tarjetas Débito'
         ordering = ['id']

@@ -31,6 +31,18 @@
     <!-- custom javascript -->
     <script src="{% static 'js/script.js'%}" type="text/javascript"></script>
 
+    <!-- Sweetalert2 -->
+    <script src="{% static 'sweetalert2-9.10.0/sweetalert2.all.min.js' %}"></script>
+
+    <!-- js algoritsof register -->
+        <!-- Jquery Confirm -->
+    <link rel="stylesheet" href="{% static 'lib/jquery-confirm.min.css' %}">
+    <script src="{% static 'lib/jquery-confirm.min.js' %}"></script>
+    <script src="{% static 'js/functions.js' %}"></script>
+
+    {% block header %}
+    {% endblock %}
+
 </head>
 <body>
 {% block content %}

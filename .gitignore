@@ -4,6 +4,7 @@ db.sqlite3
 .idea/workspace.xml
 .idea
 venv
+*.lock
 
 # Created by https://www.toptal.com/developers/gitignore/api/python,django
 # Edit at https://www.toptal.com/developers/gitignore?templates=python,django

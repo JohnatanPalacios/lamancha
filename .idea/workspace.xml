@@ -10,8 +10,54 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d8b07057-b573-4e38-9492-f566354760d8" name="Default Changelist" comment="upgrade">
+    <list default="true" id="d8b07057-b573-4e38-9492-f566354760d8" name="Default Changelist" comment="estable">
+      <change afterPath="$PROJECT_DIR$/core/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/admin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/apps.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/migrations/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/tests.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/books/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/books/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/books/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/books/migrations/0001_initial.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/books/migrations/0002_auto_20201106_0428.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/books/migrations/0003_book_binding.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/books/migrations/0004_book_category.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/books/migrations/0005_auto_20201107_0040.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/books/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/books/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/books/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/books/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lamancha/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/lamancha/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lamancha/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/lamancha/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lamancha/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/lamancha/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/images/logo-white.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/images/logo-white.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/images/logo.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/_header-2.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/_header-3.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/header.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/simple_base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/simple_base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/users/login.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/users/profile/ordersHistory.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/users/profile/ordersHistory.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/users/profile/paymentMethods.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/users/profile/paymentMethods.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/users/profile/setting.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/users/reset_password.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/users/send_email.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/users/signup.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/migrations/0001_initial.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/migrations/0002_auto_20201103_2115.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/migrations/0003_auto_20201103_2145.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/migrations/0004_auto_20201103_2205.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/migrations/0005_auto_20201103_2245.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/migrations/0006_auto_20201104_1217.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/migrations/0007_customer_email.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/migrations/0008_remove_customer_email.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/migrations/0009_laurita.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/migrations/0010_delete_laurita.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,8 +75,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="HTML File" />
         <option value="Python Script" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -48,24 +94,28 @@
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="DatabaseDriversLRU" value="postgresql" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/templates/users" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PythonContentEntriesConfigurable" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/static/lib" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\UTP\Laboratorio de Software\lamancha\templates\users" />
-      <recent name="D:\UTP\Laboratorio de Software\lamancha\templates" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\UTP\Laboratorio de Software\lamancha\templates\users\auth" />
+      <recent name="D:\UTP\Laboratorio de Software\lamancha\templates\core" />
       <recent name="D:\UTP\Laboratorio de Software\lamancha\templates\users\profile" />
       <recent name="D:\UTP\Laboratorio de Software\lamancha\templates\books" />
       <recent name="D:\UTP\Laboratorio de Software\lamancha\templates\registration" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\UTP\Laboratorio de Software\lamancha\static\lib" />
+      <recent name="D:\UTP\Laboratorio de Software\lamancha\static\js" />
+      <recent name="D:\UTP\Laboratorio de Software\lamancha\users\static\js" />
+      <recent name="D:\UTP\Laboratorio de Software\lamancha\static" />
       <recent name="D:\UTP\Laboratorio de Software\lamancha\templates\users" />
-      <recent name="D:\UTP\Laboratorio de Software\lamancha\templates" />
     </key>
   </component>
   <component name="RunManager">
@@ -75,6 +125,7 @@
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
+        <env name="DJANGO_SETTINGS_MODULE" value="lamancha.settings" />
       </envs>
       <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="" />
@@ -110,7 +161,13 @@
       <workItem from="1604336738825" duration="27235000" />
       <workItem from="1604548619172" duration="18931000" />
       <workItem from="1604598805035" duration="638000" />
-      <workItem from="1604606136317" duration="71376000" />
+      <workItem from="1604606136317" duration="74632000" />
+      <workItem from="1604733866950" duration="4160000" />
+      <workItem from="1604738053371" duration="58279000" />
+      <workItem from="1604895140422" duration="20820000" />
+      <workItem from="1604934867818" duration="34464000" />
+      <workItem from="1604970540889" duration="12299000" />
+      <workItem from="1605028851835" duration="7671000" />
     </task>
     <task id="LOCAL-00001">
       <created>1604030439727</created>
@@ -392,7 +449,14 @@
       <option name="project" value="LOCAL" />
       <updated>1604729137342</updated>
     </task>
-    <option name="localTasksCounter" value="41" />
+    <task id="LOCAL-00041" summary="upgrade">
+      <created>1604729696422</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1604729696422</updated>
+    </task>
+    <option name="localTasksCounter" value="42" />
     <servers />
   </component>
   <component name="TerminalProjectNonSharedOptionsProvider">
@@ -415,9 +479,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="iniciamos" />
-    <MESSAGE value="correcion" />
-    <MESSAGE value="ok" />
     <MESSAGE value="configurando" />
     <MESSAGE value="config" />
     <MESSAGE value="start" />
@@ -440,7 +501,10 @@
     <MESSAGE value="upgrade 2" />
     <MESSAGE value="book detail" />
     <MESSAGE value="upgrade" />
-    <option name="LAST_COMMIT_MESSAGE" value="upgrade" />
+    <MESSAGE value="trabajando con objetos" />
+    <MESSAGE value="estable, con librerias nuevas" />
+    <MESSAGE value="estable" />
+    <option name="LAST_COMMIT_MESSAGE" value="estable" />
   </component>
   <component name="WindowStateProjectService">
     <state x="1918" y="198" width="816" height="734" key="#Intentions" timestamp="1604629512792">
@@ -451,10 +515,11 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="405" y="186" key="#Notifications/0.0.1366.728/1366.0.1920.1080@0.0.1366.728" timestamp="1604030576023" />
-    <state x="275" y="22" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1604033508231">
+    <state x="275" y="22" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1604731880110">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="275" y="22" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728/1366.0.1920.1080@0.0.1366.728" timestamp="1604033508231" />
+    <state x="275" y="22" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728@0.0.1366.728" timestamp="1604731880110" />
     <state x="2006" y="274" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1604320670801">
       <screen x="1366" y="0" width="1920" height="1080" />
     </state>
@@ -476,6 +541,26 @@
     </state>
     <state x="554" y="261" width="475" height="206" key="Github.ShareDialog/0.0.1366.728/1366.0.1920.1080@0.0.1366.728" timestamp="1604029127752" />
     <state x="2145" y="387" key="Github.ShareDialog/0.0.1366.728/1366.0.1920.1080@1366.0.1920.1080" timestamp="1604029533910" />
+    <state width="1877" height="293" key="GridCell.Tab.0.bottom" timestamp="1604970496360">
+      <screen x="1366" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1323" height="178" key="GridCell.Tab.0.bottom/0.0.1366.728/1366.0.1920.1080@0.0.1366.728" timestamp="1604824242618" />
+    <state width="1877" height="293" key="GridCell.Tab.0.bottom/0.0.1366.728/1366.0.1920.1080@1366.0.1920.1080" timestamp="1604970496360" />
+    <state width="1877" height="293" key="GridCell.Tab.0.center" timestamp="1604970496360">
+      <screen x="1366" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1323" height="178" key="GridCell.Tab.0.center/0.0.1366.728/1366.0.1920.1080@0.0.1366.728" timestamp="1604824242618" />
+    <state width="1877" height="293" key="GridCell.Tab.0.center/0.0.1366.728/1366.0.1920.1080@1366.0.1920.1080" timestamp="1604970496360" />
+    <state width="1877" height="293" key="GridCell.Tab.0.left" timestamp="1604970496360">
+      <screen x="1366" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1323" height="178" key="GridCell.Tab.0.left/0.0.1366.728/1366.0.1920.1080@0.0.1366.728" timestamp="1604824242617" />
+    <state width="1877" height="293" key="GridCell.Tab.0.left/0.0.1366.728/1366.0.1920.1080@1366.0.1920.1080" timestamp="1604970496360" />
+    <state width="1877" height="293" key="GridCell.Tab.0.right" timestamp="1604970496360">
+      <screen x="1366" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1323" height="178" key="GridCell.Tab.0.right/0.0.1366.728/1366.0.1920.1080@0.0.1366.728" timestamp="1604824242618" />
+    <state width="1877" height="293" key="GridCell.Tab.0.right/0.0.1366.728/1366.0.1920.1080@1366.0.1920.1080" timestamp="1604970496360" />
     <state x="1527" y="80" width="1619" height="898" key="MergeDialog" timestamp="1604434380381">
       <screen x="1366" y="0" width="1920" height="1080" />
     </state>
@@ -484,17 +569,17 @@
       <screen x="1366" y="0" width="1920" height="1080" />
     </state>
     <state x="1961" y="299" key="MultipleFileMergeDialog/0.0.1366.728/1366.0.1920.1080@1366.0.1920.1080" timestamp="1604434391183" />
-    <state x="1625" y="12" key="SettingsEditor" timestamp="1604275968532">
-      <screen x="1366" y="0" width="1920" height="1080" />
+    <state x="184" y="8" key="SettingsEditor" timestamp="1604826643164">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="184" y="8" key="SettingsEditor/0.0.1366.728/1366.0.1920.1080@0.0.1366.728" timestamp="1604027727834" />
+    <state x="184" y="8" key="SettingsEditor/0.0.1366.728/1366.0.1920.1080@0.0.1366.728" timestamp="1604826643164" />
     <state x="1625" y="12" key="SettingsEditor/0.0.1366.728/1366.0.1920.1080@1366.0.1920.1080" timestamp="1604275968532" />
-    <state x="275" y="97" key="Vcs.Push.Dialog.v2" timestamp="1604729146300">
+    <state x="275" y="97" key="Vcs.Push.Dialog.v2" timestamp="1604729706436">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="275" y="97" key="Vcs.Push.Dialog.v2/0.0.1366.728/1366.0.1920.1080@0.0.1366.728" timestamp="1604034398509" />
     <state x="1753" y="144" key="Vcs.Push.Dialog.v2/0.0.1366.728/1366.0.1920.1080@1366.0.1920.1080" timestamp="1604683786775" />
-    <state x="275" y="97" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1604729146300" />
+    <state x="275" y="97" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1604729706436" />
     <state x="482" y="98" key="com.intellij.openapi.vcs.changes.SpecificFilesViewDialog" timestamp="1604031002364">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -503,6 +588,10 @@
       <screen x="1366" y="0" width="1920" height="1080" />
     </state>
     <state x="2129" y="452" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1366.728/1366.0.1920.1080@1366.0.1920.1080" timestamp="1604706502804" />
+    <state x="388" y="0" width="590" height="728" key="find.popup" timestamp="1604917243070">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="388" y="0" width="590" height="728" key="find.popup/0.0.1366.728/1366.0.1920.1080@0.0.1366.728" timestamp="1604917243070" />
     <state x="2166" y="322" key="refactoring.ChangeSignatureDialog" timestamp="1604651962257">
       <screen x="1366" y="0" width="1920" height="1080" />
     </state>

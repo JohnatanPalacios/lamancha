@@ -1,0 +1,151 @@
+
+<div class="widget-header">
+						<a href="{%  url 'logout' %}" class="widget-view">
+							<div class="icon-area">
+								<i class="fas fa-sign-out-alt"></i>
+							</div>
+							<small class="text"> Cerrar Sesión </small>
+						</a>
+					</div>
+
+
+
+
+
+
+
+"""
+
+"""
+        """def save(self, commit=True):
+            data = {}
+            form = super()
+            try:
+                if form.is_valid():
+                    pwd = self.cleaned_data['password']
+                    u = form.save(commit=False)
+                    if u.pk is None:
+                        u.set_password(pwd)
+                    else:
+                        user = User.objects.get(pk=u.pk)
+                        if user.password != pwd:
+                            u.set_password(pwd)
+                    u.save()
+                else:
+                    data['error'] = form.errors
+            except Exception as e:
+                data['error'] = str(e)
+            return data"""
+
+
+
+
+"""widgets = {
+                'username': TextInput(
+                    attrs={
+                        'class': 'form-control',
+                        'placeholder': 'manchita',
+                        ##### PARA NO REPETIR ESTE ATRIBUTO EN CADA CASILLA,
+                        ###### SE HARÁ UN FOR AL INICIO
+                        'autocomplete': 'off'
+                    }
+                )
+            }"""
+
+
+
+
+
+
+
+
+
+
+class UserRegistrationForm(UserCreationForm):
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        # for form in self.visible_fields():
+        #    form.fields.widget.attrs['class'] = 'form-control'
+        #    form.fields.widget.attrs['autocomplete'] = 'off'
+        self.fields['username'].widget.attrs['autofocus'] = True
+
+    class Meta:
+        model = User
+        fields = [
+            'photo',
+            'username',
+            'first_name',
+            'last_name',
+            'dni',
+            'email',
+            'birthday',
+            'gender',
+            'password',
+            'address',
+            'favoriteGenres',
+            'news'
+        ]
+        labels = {
+            'username': 'Nombre de usuario',
+        }
+        widgets = {
+            'photo': FileInput(),
+            'username': TextInput(
+                attrs={
+                    'placeholder': 'manchita',
+                }
+            ),
+            'first_name': TextInput(
+                attrs={
+                    'placeholder': 'La mancha'
+                }
+            ),
+            'password': PasswordInput(
+                attrs={
+                    'placeholder': 'Contraseña',
+                    'autocomplete': 'off',
+                }
+            ),
+            'password2': PasswordInput(
+                attrs={
+                    'placeholder': 'Confirma la contraseña',
+                    'autocomplete': 'off',
+                }
+            ),
+            'email': EmailInput(
+                attrs={
+                    'placeholder': 'user@lamancha.com',
+                }
+            ),
+            'news': CheckboxInput(),
+            'birthday': DateInput(),
+            'gender': Select(),
+        }
+        exclude = ['groups', 'user_permissions', 'last_login', 'date_joined', 'is_staff', 'is_superuser', 'is_active']
+
+    def clean_username(self):
+        """Username must be unique."""
+        username = self.cleaned_data['username']
+        username_taken = User.objects.filter(username=username).exists()
+        if username_taken:
+            raise forms.ValidationError('El usuario está en uso')
+        return username
+
+    def clean(self):
+        """Verify password confirmation match."""
+        data = super().clean()
+
+        password = data['password']
+        password2 = data['password2']
+
+        if password != password2:
+            raise forms.ValidationError('Tu contraseña no es igual')
+
+        return data
+
+    def save(self):
+        """Create user and profile."""
+        data = self.cleaned_data
+        data.pop('password2')
+
+        user = User.objects.create_user(**data)

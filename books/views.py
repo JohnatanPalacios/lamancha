@@ -1,6 +1,7 @@
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic import ListView
 from django.shortcuts import render
+from django.views.generic import FormView
 
 # Models
 from django.views.generic import DetailView

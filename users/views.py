@@ -1,96 +1,126 @@
-"""Users views."""
-
 # Django
+from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth.views import LoginView
+from django.http import JsonResponse, request
 from django.shortcuts import render, redirect
-from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth import logout
 from django.contrib.auth.decorators import login_required
-from django.contrib.auth.decorators import permission_required
-# Exception
-from django.db.utils import IntegrityError
 
 # Models
-from django.contrib.auth.models import User
-from users.models import Customer
-from books.models import Book
-from django.db.models import Q
+from django.urls import reverse_lazy
+from django.views.generic import CreateView, UpdateView, RedirectView, DetailView
 
-def signup_view(request):
-    if request.method == 'POST':
-        username = request.POST['username']
-        password = request.POST['password']
-        password_confirmation = request.POST['password_confirmation']
+from .forms import UserRegistrationForm
+from .models import User
 
-        if password != password_confirmation:
-            return render(request, 'users/signup.html', {'error': 'Las contraseñas no son iguales'})
 
-        try:
-            user = User.objects.create_user(username=username, password=password)
-        except IntegrityError:
-            return render(request, 'users/signup.html', {'error': 'Nombre de usuario en uso'})
+class LoginFormView(LoginView):
+    template_name = 'users/auth/login.html'
 
-        user.email = request.POST['email']
-        user.first_name = request.POST['first_name']
-        user.last_name = request.POST['last_name']
-        user.dni = request.POST['dni']
-        user.photo = request.POST['photo']
-        user.address = request.POST['address']
-        user.birthday = request.POST['birthday']
-        user.gender = request.POST['gender']
-        user.favoriteGenres = 'por ahora en prueba'
+    def dispatch(self, request, *args, **kwargs):
+        if request.user.is_authenticated:
+            return redirect('index')
+        return super().dispatch(request, *args, **kwargs)
 
-        if request.POST['news'] == 'True':
-            user.news = True
-        else:
-            user.news = False
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['title'] = 'Iniciar sesión'
+        return context
 
-        user.save()
 
-        customer = Customer(user=user)
-        customer.save()
+class LogoutView(RedirectView):
+    pattern_name = 'index'
 
-        return redirect('login')
-
-    return render(request, 'users/signup.html')
+    def dispatch(self, request, *args, **kwargs):
+        logout(request)
+        return super().dispatch(request, *args, **kwargs)
 
 
 @login_required
 # @permission_required('view_book')
-def profile_main(request):
-    
-    if request.GET.get('search'):
-        buscar = request.GET.get('search')
-        libros = Book.objects.filter(   Q(title = buscar) |
-                                        Q(editorial = buscar) | 
-                                        Q(author = buscar) |
-                                        Q(ISBN = buscar)
-                                    )
-        print(libros)
-        return render(request, 'books/listing.html', {'libros': libros})
-
-    return render(request, 'users/profile/setting.html')
-
-
-def login_view(request):
-
-    if request.method == 'POST':
-        username = request.POST['username']
-        password = request.POST['password']
-        user = authenticate(request, username=username, password=password)
-        if user:
-            login(request, user)
-            return redirect('home')
-        else:
-            return render(request, 'users/login.html', {'error': 'Usuario y contraseña incorrectos'})
-    return render(request, 'users/login.html')
+def profile_view(request):
+    return render(request, 'users/profile/profile.html')
 
 
 @login_required
-def logout_view(request):
-    logout(request)
-    return redirect('home')
-
-
-@login_required()
-def profile_payment_methods(request):
+def payment_methods_view(request):
     return render(request, 'users/profile/paymentMethods.html')
+
+
+@login_required
+def orders_history_view(request):
+    return render(request, 'users/profile/ordersHistory.html')
+
+
+class UserCreateView(CreateView):
+    model = User
+    form_class = UserRegistrationForm
+    template_name = 'users/auth/signup.html'
+    success_url = reverse_lazy('login') # succes_url redirecciona al sitio indicado al terminar con el formulario
+                                        # reverse_lazy me retorna la direccion absoluta del redireccionamiento
+    # permission_required = 'user.add_user' #esto es cuando se está usando el mixing
+    url_redirect = success_url
+
+    def dispatch(self, request, *args, **kwargs):
+        return super().dispatch(request, *args, **kwargs)
+
+    def post(self, request, *args, **kwargs):
+        data = {}
+        try:
+            action = request.POST['action']
+            if action == 'add':
+                form = self.get_form()
+                data = form.save()
+            else:
+                data['error'] = 'No ha ingresado ninguna opción'
+        except Exception as e:
+            data['error'] = str(e)
+        return JsonResponse(data)
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['title'] = 'Regístrate'
+        context['list_url'] = self.success_url
+        context['action'] = 'add'
+        return context
+
+
+class UserUpdateView(LoginRequiredMixin, UpdateView):
+    model = User
+    form_class = UserRegistrationForm
+    template_name = 'users/profile/profile.html'
+    success_url = reverse_lazy('index') # si voy a hacer un modal, retornar a la vista setting
+    permission_required = 'user.add_user'
+    url_redirect = success_url
+
+    def dispatch(self, request, *args, **kwargs):
+        self.object = self.get_object()
+        return super().dispatch(request, *args, **kwargs)
+
+    def post(self, request, *args, **kwargs):
+        data = {}
+        try:
+            action = request.POST['action']
+            if action == 'edit':
+                form = self.get_form()
+                data = form.save()
+            else:
+                data['error'] = 'No ha ingresado ninguna opción'
+        except Exception as e:
+            data['error'] = str(e)
+        return JsonResponse(data)
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['title'] = 'Configuración'
+        context['list_url'] = self.success_url
+        context['action'] = 'edit'
+        return context
+
+
+class UserDetailView(DetailView):
+    model = User
+    template_name = 'users/profile/profile.html'
+    slug_field = 'pk'
+
 

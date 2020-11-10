@@ -35,6 +35,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    # Libs
+    'widget_tweaks',
+    'multiselectfield',
 
     # Local apps
     'users',
@@ -76,7 +79,7 @@ WSGI_APPLICATION = 'lamancha.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
-
+"""
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
@@ -94,7 +97,7 @@ DATABASES = {
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
-"""
+
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
 
@@ -116,7 +119,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/3.1/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'es-co'
 
 TIME_ZONE = 'UTC'
 
@@ -141,7 +144,10 @@ STATICFILES_FINDERS = [
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
 
-LOGIN_URL = '/users/login/'
+LOGIN_URL = '/users/auth/login/'
+LOGIN_REDIRECT_URL = 'index'
+
+LOGOUT_REDIRECT_URL = 'index'
 
 
 
@@ -159,3 +165,6 @@ EMAIL_FILE_PATH  =  str ( BASE_DIR . joinpath ( 'sent_emails' ))
 '''
 
 GOOGLE_RECAPTCHA_SECRET_KEY = '6LfPJeAZAAAAANOSFm0Aq1yHAK9IarPPQtKvWNao'
+
+AUTH_USER_MODEL = 'users.User'
+
