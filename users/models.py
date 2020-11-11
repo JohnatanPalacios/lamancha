@@ -67,8 +67,8 @@ class User(AbstractUser):
     USERNAME_FIELD = 'username'
     REQUIRED_FIELDS = ['email', 'first_name', 'last_name']
 
-    def __str__(self):
-        return self.id
+    def _str_(self):
+        return str(self.username)
 
     def get_photo(self):
         if self.photo:

@@ -10,10 +10,10 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d8b07057-b573-4e38-9492-f566354760d8" name="Default Changelist" comment="DEPLOY_FULL_YEAH">
+    <list default="true" id="d8b07057-b573-4e38-9492-f566354760d8" name="Default Changelist" comment="HEROKU">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lamancha/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/lamancha/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/models.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -124,7 +124,7 @@
       <workItem from="1604934867818" duration="34464000" />
       <workItem from="1604970540889" duration="12299000" />
       <workItem from="1605028851835" duration="24152000" />
-      <workItem from="1605057181503" duration="3476000" />
+      <workItem from="1605057181503" duration="4633000" />
     </task>
     <task id="LOCAL-00001">
       <created>1604030439727</created>
@@ -462,7 +462,14 @@
       <option name="project" value="LOCAL" />
       <updated>1605057923973</updated>
     </task>
-    <option name="localTasksCounter" value="49" />
+    <task id="LOCAL-00049" summary="HEROKU">
+      <created>1605061310771</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1605061310771</updated>
+    </task>
+    <option name="localTasksCounter" value="50" />
     <servers />
   </component>
   <component name="TerminalProjectNonSharedOptionsProvider">
@@ -485,7 +492,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="login incompleto" />
     <MESSAGE value="login, logout and signup" />
     <MESSAGE value="gitignore" />
     <MESSAGE value="perfil y otras cosas" />
@@ -510,7 +516,8 @@
     <MESSAGE value="vamos a deply" />
     <MESSAGE value="deploy" />
     <MESSAGE value="DEPLOY_FULL_YEAH" />
-    <option name="LAST_COMMIT_MESSAGE" value="DEPLOY_FULL_YEAH" />
+    <MESSAGE value="HEROKU" />
+    <option name="LAST_COMMIT_MESSAGE" value="HEROKU" />
   </component>
   <component name="WindowStateProjectService">
     <state x="1918" y="198" width="816" height="734" key="#Intentions" timestamp="1604629512792">
@@ -521,11 +528,11 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="405" y="186" key="#Notifications/0.0.1366.728/1366.0.1920.1080@0.0.1366.728" timestamp="1604030576023" />
-    <state x="1753" y="33" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1605056206317">
+    <state x="1753" y="33" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1605062171879">
       <screen x="1366" y="0" width="1920" height="1080" />
     </state>
     <state x="275" y="22" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728/1366.0.1920.1080@0.0.1366.728" timestamp="1604033508231" />
-    <state x="1753" y="33" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728/1366.0.1920.1080@1366.0.1920.1080" timestamp="1605056206317" />
+    <state x="1753" y="33" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728/1366.0.1920.1080@1366.0.1920.1080" timestamp="1605062171879" />
     <state x="275" y="22" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728@0.0.1366.728" timestamp="1604731880110" />
     <state x="2006" y="274" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1604320670801">
       <screen x="1366" y="0" width="1920" height="1080" />
@@ -585,10 +592,10 @@
     </state>
     <state x="184" y="8" key="SettingsEditor/0.0.1366.728/1366.0.1920.1080@0.0.1366.728" timestamp="1604826643164" />
     <state x="1625" y="12" key="SettingsEditor/0.0.1366.728/1366.0.1920.1080@1366.0.1920.1080" timestamp="1604275968532" />
-    <state x="1753" y="144" key="Vcs.Push.Dialog.v2" timestamp="1605057937675">
-      <screen x="1366" y="0" width="1920" height="1080" />
+    <state x="275" y="97" key="Vcs.Push.Dialog.v2" timestamp="1605061317846">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="275" y="97" key="Vcs.Push.Dialog.v2/0.0.1366.728/1366.0.1920.1080@0.0.1366.728" timestamp="1604034398509" />
+    <state x="275" y="97" key="Vcs.Push.Dialog.v2/0.0.1366.728/1366.0.1920.1080@0.0.1366.728" timestamp="1605061317846" />
     <state x="1753" y="144" key="Vcs.Push.Dialog.v2/0.0.1366.728/1366.0.1920.1080@1366.0.1920.1080" timestamp="1605057937675" />
     <state x="275" y="97" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1604729706436" />
     <state x="482" y="98" key="com.intellij.openapi.vcs.changes.SpecificFilesViewDialog" timestamp="1604031002364">
