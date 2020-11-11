@@ -13,7 +13,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path(
         route='',
-        view=home, # view=IndexView.as_view(),
+        view=home, # view=IndexView.as_view(), hay que hacer el cambio nuevamente
         name='index'
     ),
     path('users/', include('users.urls'), name='users'),
