@@ -24,7 +24,7 @@ SECRET_KEY = 'a0up!a@%+kw)$h(aizbqwqfqvc3av6pbx^74j)$12^=&7*$lad'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', 'lamancha.herokuapp.com']
+ALLOWED_HOSTS = ['127.0.0.1', 'lamanchautp.herokuapp.com']
 
 # Application definition
 
@@ -83,10 +83,10 @@ WSGI_APPLICATION = 'lamancha.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'd29h21d0lqco7l',
-        'USER': 'abyxjfbhogtbsj',
-        'PASSWORD': '22cbf3da8d0c7a76dd165f9996699491402c5c881eae74f1f7a848f82ce01907',
-        'HOST': 'ec2-54-157-234-29.compute-1.amazonaws.com',
+        'NAME': 'd4p8t876uofn1q',
+        'USER': 'hdvxcshpejsxxl',
+        'PASSWORD': '14e4a934bcb48237fa01a68631063f242cbcf1dced3a0644469de2c9fd28f32c',
+        'HOST': 'ec2-3-210-23-22.compute-1.amazonaws.com',
         'PORT': '5432',
     }
 }
