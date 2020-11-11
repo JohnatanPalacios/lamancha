@@ -10,7 +10,24 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d8b07057-b573-4e38-9492-f566354760d8" name="Default Changelist" comment="vamos a deply" />
+    <list default="true" id="d8b07057-b573-4e38-9492-f566354760d8" name="Default Changelist" comment="deploy">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/books/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/books/migrations/0001_initial.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/migrations/0001_initial.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/migrations/0002_auto_20201108_2337.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/migrations/0003_auto_20201108_2350.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/migrations/0004_remove_user_gender.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/migrations/0005_user_gender.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/migrations/0006_auto_20201109_0415.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/migrations/0007_auto_20201109_0416.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/migrations/0008_auto_20201109_0426.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/migrations/0009_auto_20201109_1358.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/migrations/0010_auto_20201109_2216.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/migrations/0011_auto_20201110_1328.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/migrations/0012_auto_20201110_1330.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/migrations/0013_auto_20201110_1332.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/migrations/0014_auto_20201110_1534.py" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -119,7 +136,7 @@
       <workItem from="1604895140422" duration="20820000" />
       <workItem from="1604934867818" duration="34464000" />
       <workItem from="1604970540889" duration="12299000" />
-      <workItem from="1605028851835" duration="21700000" />
+      <workItem from="1605028851835" duration="22613000" />
     </task>
     <task id="LOCAL-00001">
       <created>1604030439727</created>
@@ -436,7 +453,14 @@
       <option name="project" value="LOCAL" />
       <updated>1605054295261</updated>
     </task>
-    <option name="localTasksCounter" value="46" />
+    <task id="LOCAL-00046" summary="deploy">
+      <created>1605054837957</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1605054837957</updated>
+    </task>
+    <option name="localTasksCounter" value="47" />
     <servers />
   </component>
   <component name="TerminalProjectNonSharedOptionsProvider">
@@ -459,7 +483,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="home" />
     <MESSAGE value="index" />
     <MESSAGE value="login incompleto" />
     <MESSAGE value="login, logout and signup" />
@@ -484,7 +507,8 @@
     <MESSAGE value="userUpdate" />
     <MESSAGE value="listoElUser" />
     <MESSAGE value="vamos a deply" />
-    <option name="LAST_COMMIT_MESSAGE" value="vamos a deply" />
+    <MESSAGE value="deploy" />
+    <option name="LAST_COMMIT_MESSAGE" value="deploy" />
   </component>
   <component name="WindowStateProjectService">
     <state x="1918" y="198" width="816" height="734" key="#Intentions" timestamp="1604629512792">
@@ -554,11 +578,11 @@
     </state>
     <state x="184" y="8" key="SettingsEditor/0.0.1366.728/1366.0.1920.1080@0.0.1366.728" timestamp="1604826643164" />
     <state x="1625" y="12" key="SettingsEditor/0.0.1366.728/1366.0.1920.1080@1366.0.1920.1080" timestamp="1604275968532" />
-    <state x="1753" y="144" key="Vcs.Push.Dialog.v2" timestamp="1605054300127">
+    <state x="1753" y="144" key="Vcs.Push.Dialog.v2" timestamp="1605054846603">
       <screen x="1366" y="0" width="1920" height="1080" />
     </state>
     <state x="275" y="97" key="Vcs.Push.Dialog.v2/0.0.1366.728/1366.0.1920.1080@0.0.1366.728" timestamp="1604034398509" />
-    <state x="1753" y="144" key="Vcs.Push.Dialog.v2/0.0.1366.728/1366.0.1920.1080@1366.0.1920.1080" timestamp="1605054300127" />
+    <state x="1753" y="144" key="Vcs.Push.Dialog.v2/0.0.1366.728/1366.0.1920.1080@1366.0.1920.1080" timestamp="1605054846603" />
     <state x="275" y="97" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1604729706436" />
     <state x="482" y="98" key="com.intellij.openapi.vcs.changes.SpecificFilesViewDialog" timestamp="1604031002364">
       <screen x="0" y="0" width="1366" height="728" />
