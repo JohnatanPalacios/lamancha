@@ -10,19 +10,13 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d8b07057-b573-4e38-9492-f566354760d8" name="Default Changelist" comment="update2">
-      <change afterPath="$PROJECT_DIR$/templates/users/profile/PRUEBAS DEL MOMENTO.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/users/migrations/0014_auto_20201110_1534.py" afterDir="false" />
+    <list default="true" id="d8b07057-b573-4e38-9492-f566354760d8" name="Default Changelist" comment="userUpdate">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lamancha/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/lamancha/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/header.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/users/profile/profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/users/profile/profile.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/users/auth/signup.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/users/auth/signup.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/users/profile/PRUEBAS DEL MOMENTO.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/users/profile/PRUEBAS DEL MOMENTO.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/users/profile/update.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/users/profile/update.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/users/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/users/static/js/list.js" beforeDir="false" afterPath="$PROJECT_DIR$/users/static/js/list.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -132,7 +126,7 @@
       <workItem from="1604895140422" duration="20820000" />
       <workItem from="1604934867818" duration="34464000" />
       <workItem from="1604970540889" duration="12299000" />
-      <workItem from="1605028851835" duration="17860000" />
+      <workItem from="1605028851835" duration="20990000" />
     </task>
     <task id="LOCAL-00001">
       <created>1604030439727</created>
@@ -428,7 +422,14 @@
       <option name="project" value="LOCAL" />
       <updated>1605038476637</updated>
     </task>
-    <option name="localTasksCounter" value="43" />
+    <task id="LOCAL-00043" summary="userUpdate">
+      <created>1605050911075</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1605050911075</updated>
+    </task>
+    <option name="localTasksCounter" value="44" />
     <servers />
   </component>
   <component name="TerminalProjectNonSharedOptionsProvider">
@@ -451,7 +452,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="config" />
     <MESSAGE value="start" />
     <MESSAGE value="navbar" />
     <MESSAGE value="home" />
@@ -476,7 +476,8 @@
     <MESSAGE value="estable" />
     <MESSAGE value="actualizacion" />
     <MESSAGE value="update2" />
-    <option name="LAST_COMMIT_MESSAGE" value="update2" />
+    <MESSAGE value="userUpdate" />
+    <option name="LAST_COMMIT_MESSAGE" value="userUpdate" />
   </component>
   <component name="WindowStateProjectService">
     <state x="1918" y="198" width="816" height="734" key="#Intentions" timestamp="1604629512792">

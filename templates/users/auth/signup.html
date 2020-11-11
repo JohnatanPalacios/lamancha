@@ -40,28 +40,28 @@
 
                 <div class="form-row">
                     <div class="col form-group">
-                        <label>Nombre de usuario</label>
+                        {{ form.username.label }}
                         {{ form.username|add_class:'form-control' }}
                     </div>
                     <div class="col form-group">
-                        <label>DNI</label>
+                        {{ form.dni.label }}
                         <input type="text" class="form-control" name="dni" placeholder="123456789">
                     </div>
                 </div>
 
                 <div class="form-row">
                     <div class="col form-group">
-                        <label>Nombres</label>
+                        {{ form.first_name.label }}
                         {{ form.first_name|add_class:'form-control' }}
                     </div> <!-- form-group end.// -->
                     <div class="col form-group">
-                        <label>Apellidos</label>
+                        {{ form.last_name.label }}
                         {{ form.last_name|add_class:'form-control' }}
                     </div> <!-- form-group end.// -->
                 </div>
 
                 <div class="form-group">
-                    <label>Correo electrónico</label>
+                    {{ form.email.label }}
                     <div class="input-group">
                         <div class="input-group-prepend">
                             <span class="input-group-text">@</span>
@@ -73,11 +73,11 @@
 
                 <div class="form-row">
                     <div class="form-group col-md-6">
-                      <label>Fecha de nacimiento</label>
+                      {{ form.birthday.label }}
                       {{ form.birthday|add_class:'form-control' }}
                     </div> <!-- form-group end.// -->
                     <div class="form-group col-md-6">
-                      <label>Género</label>
+                      {{ form.gender.label }}
                       <select class="form-control" name="gender">
                           <option selected="" value="masculino">Masculino</option>
                           <option value="femenino">Femenino</option>
@@ -98,16 +98,20 @@
                     </div>
                 </div>
 
+                <div class="form-row">
+                    <div class="col form-group">
+                        {{ form.address.label }}
+                        {{ form.address|add_class:'form-control' }}
+                    </div> <!-- form-group end.// -->
+                </div>
+
                 <div class="form-group">
                     {{ form.favoriteGenres.label }}
                     {{ form.favoriteGenres}}
                 </div>
 
                 <div class="form-group">
-                    <label class="custom-control custom-checkbox">
-                    <input type="checkbox" class="custom-control-input" checked="" name="news" value="True">
-                    {{ form.news }}  Activar noticias
-                    </label>
+                    <label class="custom-control custom-checkbox">{{ form.news }} {{ form.news.label }}</label>
                 </div>
 
                 <div class="form-group">
@@ -235,7 +239,7 @@ function SinConfirmar(url,parameters,callback){
     theme: "bootstrap4",
     language: 'es',
     width: '100%',
-    placeholder: 'Seleccionar X..'
+    placeholder: 'Selecciona tus géneros literarios de preferencia'
 
 });
 

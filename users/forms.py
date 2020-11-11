@@ -46,6 +46,14 @@ class UserRegistrationForm(UserCreationForm):
         ]
         labels = {
             'username': 'Nombre de usuario',
+            'first_name': 'Nombres',
+            'last_name': 'Apellidos',
+            'birthday': 'Fecha de nacimiento',
+            'gender': 'Género',
+            'news': 'Recibir Noticias',
+            'email': 'Correo electrónico',
+            'address': 'Dirección de correspondencia',
+            'dni': 'Documento de identificación',
             'favoriteGenres': 'Géneros literarios de preferencia',
         }
         # los widgets son las propiedades que tendrán los campos
@@ -55,6 +63,9 @@ class UserRegistrationForm(UserCreationForm):
             'username': TextInput(attrs={
                 'placeholder': 'manchita',
                 }),
+            'dni': TextInput(attrs={
+                'placeholder': '123456789',
+            }),
             'first_name': TextInput(attrs={
                 'placeholder': 'La mancha'
                 }),
@@ -76,6 +87,9 @@ class UserRegistrationForm(UserCreationForm):
                 'class': 'form-control select2',
                 'style': 'width: 100%',
                 'multiple': 'multiple'
+            }),
+            'address': TextInput(attrs={
+                'placeholder': 'Mirador de Pinares T2 Ap1109',
             })
         }
         exclude = ['groups', 'user_permissions', 'last_login', 'date_joined', 'is_staff', 'is_superuser', 'is_active']
