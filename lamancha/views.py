@@ -10,8 +10,6 @@ class IndexView(TemplateView):
     template_name = 'index.html'
 
 
-# luego borramos esto, la vuelta es que estoy trabajando las vistas por clases
-# por eso estoy retirando las funciones
 def home(request):
     if request.GET.get('search'):
         query = request.GET.get('search')
@@ -20,6 +18,6 @@ def home(request):
                                       Q(author__icontains=query) |
                                       Q(ISBN__icontains=query)
                                      )
-        return render(request, 'books/listing.html', {'books': results})
+        return render(request, 'books/search-results.html', {'books': results})
     results = Book.objects.all()
     return render(request, "index.html", {'books': results})

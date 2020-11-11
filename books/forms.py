@@ -1,11 +1,17 @@
 from django.forms import *
-
 from .models import Book
+from django import forms
 
 
-class BookRegistrationForm(ModelForm):
+class DateInput(forms.DateInput):
+    input_type = 'date'
+
+
+class BookForm(ModelForm):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
+        # for form in self.visible_fields():
+        #   form.field.widget.attrs['class'] = 'form-control'
         self.fields['title'].widget.attrs['autofocus'] = True
 
     class Meta:
@@ -17,6 +23,7 @@ class BookRegistrationForm(ModelForm):
             'ISBN',
             'pages',
             'editorial',
+            'price',
             'description',
             'language',
             'condition',
@@ -24,25 +31,11 @@ class BookRegistrationForm(ModelForm):
             'category',
             'sale',
             'published_date',
-            'price',
-        ] # otra forma es _all_
-        # otra forma de hacer los labels es usando el verbose_name
-        # tambien es posible hacer esto con el field.label o form.name.label
-        labels = {
-            'username': 'Nombre de usuario'
-        }
-        # los widgets son las propiedades que tendrán los campos
-        # es la forma de agregar el boostrap
+        ]
         widgets = {
-            'title': TextInput(
-                attrs={
-                    'placeholder': 'manchita',
-                }
-            ),
-            'ISBN': TextInput(
-                attrs={
-                    'placeholder': 'La mancha'
-                }
-            ),
+            'cover': FileInput(),
+            'title': TextInput(attrs={'placeholder': 'Lo Que Vi'}),
+            'ISBN': TextInput(attrs={'placeholder': '9700517918'}),
             'published_date': DateInput(),
+            'description': Textarea(),
         }

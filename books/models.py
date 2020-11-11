@@ -1,8 +1,6 @@
 # Django
 from django.db import models as m
-
-# Tools
-from datetime import datetime
+from django.forms import model_to_dict
 
 
 class Book(m.Model):
@@ -23,7 +21,11 @@ class Book(m.Model):
     # id_shoppingCart = m.ForeignKey(ShoppingCart, on_delete=m.CASCADE)
 
     def __str__(self):
-        return self.title
+        return str(self.title)
+
+    def toJSON(self):
+        item = model_to_dict(self, exclude=['cover'])
+        return item
 
     class Meta:
         verbose_name = 'Libro'

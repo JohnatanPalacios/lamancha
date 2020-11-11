@@ -1,0 +1,105 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block head %}
+    <!--  aqui van esas librerías -->
+    <link rel="stylesheet" href="{% static 'lib/datatables-1.10.20/css/dataTables.bootstrap4.min.css' %}"/>
+    <link rel="stylesheet" href="{% static 'lib/datatables-1.10.20/plugins/responsive-2.2.3/css/responsive.bootstrap4.min.css' %}"/>
+    <script src="{% static 'lib/datatables-1.10.20/js/jquery.dataTables.js' %}"></script>
+    <script src="{% static 'lib/datatables-1.10.20/js/dataTables.bootstrap4.min.js' %}"></script>
+    <script src="{% static 'lib/datatables-1.10.20/plugins/responsive-2.2.3/js/dataTables.responsive.min.js' %}"></script>
+    <script src="{% static 'lib/datatables-1.10.20/plugins/responsive-2.2.3/js/responsive.bootstrap4.min.js' %}"></script>
+{% endblock %}
+{% block content %}
+    <body>
+
+    <script type="application/javascript">
+        $(function () {
+            $('#data').DataTable({
+                responsive: true,
+                autoWidth: false
+            });
+            $('.btnTest').on('click', function (){
+                $.ajax({
+                    url: '{% url 'add_book' %}',
+                    type: 'POST',
+                    data: {id: 2},
+                    dataType: 'json'
+                }).done(function (data){
+                    console.log(data)
+                }).fail(function ( jqXHR, textStatus, errorThrown){
+                    alert(textStatus+': '+errorThrown);
+                }).always(function (data){
+                    // alert("Completado"); always siempre se ejecuta
+                })
+            })
+        });
+    </script>
+
+    <b class="screen-overlay"></b>
+
+    <!-- ========================= SECTION CONTENT ========================= -->
+    <section class="section-content padding-y">
+        <div class="container">
+            <div class="row">
+                <aside class="col-md-3">
+                    <nav class="list-group">
+                        <a class="list-group-item" href="{% url 'profile' request.user.id %}">
+                            <i class="fas fa-user-cog"></i> Configuración </a>
+                        {% if user.is_staff %}
+                            <a class="list-group-item active" href="{% url 'list_books' %}">
+                                <i class="fas fa-book"></i> Administrar libros </a>
+                        {% endif %}
+                        <a class="list-group-item" href="{% url 'logout' %}">
+                            <i class="fas fa-sign-out-alt"></i> Cerrar sesión </a>
+                    </nav>
+                </aside> <!-- col.// -->
+                <main class="col-md-9">
+                    <article class="card mb-3">
+                        <div class="card-body">
+                            <div class="card card-default">
+                                <div class="card-header">
+                                    <h5 class="card-title">
+                                        <i class="fas fa-search"></i>  {{ title }}</h5>
+                                </div>
+                                <div class="card-body">
+                                    <table class="table" id="data">
+                                        <thead>
+                                        <tr>
+                                            <th scope="col" style="width: 10%;">Nro</th>
+                                            <th scope="col" style="width: 30%;">Título</th>
+                                            <th scope="col" style="width: 30%;">Autor</th>
+                                            <th scope="col" style="width: 20%;">Precio</th>
+                                            <th scope="col" style="width: 10%;">Opciones</th>
+                                        </tr>
+                                        </thead>
+                                        {% for book in object_list %}
+                                            <tr>
+                                                <td>{{ book.id }}</td>
+                                                <td>{{ book.title }}</td>
+                                                <td>{{ book.author }}</td>
+                                                <td>{{ book.price }}</td>
+                                                <td>
+                                                    <button type="button" class="btn btn-warning btn-xs"><i
+                                                            class="fas fa-edit"></i></button>
+                                                    <button type="button" class="btn btn-warning btn-xs"><i
+                                                            class="fas fa-trash-alt"></i></button>
+                                                </td>
+                                            </tr>
+                                        {% endfor %}
+                                    </table>
+                                </div>
+                                <div class="card-footer">
+                                    <button href="{{ create_url }}" class="btn btn-primary btn-flat btnTest">
+                                        <i class="fas fa-plus"></i> Agregar
+                                    </button>
+                                </div>
+                            </div>
+                        </div> <!-- card-body .// -->
+                    </article> <!-- card.// -->
+                </main> <!-- col.// -->
+            </div>
+
+        </div> <!-- container .//  -->
+    </section>
+    </body>
+{% endblock %}

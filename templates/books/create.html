@@ -1,0 +1,111 @@
+{% extends 'base.html' %}
+{% load widget_tweaks %}
+{% load static %}
+{% block head %}
+    <!--  aqui van esas librerías -->
+    <link rel="stylesheet" href="{% static 'lib/datatables-1.10.20/css/dataTables.bootstrap4.min.css' %}"/>
+    <link rel="stylesheet"
+          href="{% static 'lib/datatables-1.10.20/plugins/responsive-2.2.3/css/responsive.bootstrap4.min.css' %}"/>
+    <script src="{% static 'lib/datatables-1.10.20/js/jquery.dataTables.js' %}"></script>
+    <script src="{% static 'lib/datatables-1.10.20/js/dataTables.bootstrap4.min.js' %}"></script>
+    <script src="{% static 'lib/datatables-1.10.20/plugins/responsive-2.2.3/js/dataTables.responsive.min.js' %}"></script>
+    <script src="{% static 'lib/datatables-1.10.20/plugins/responsive-2.2.3/js/responsive.bootstrap4.min.js' %}"></script>
+{% endblock %}
+{% block content %}
+    <body>
+
+    <script type="application/javascript">
+        $(function () {
+            $('#data').DataTable({
+                responsive: true,
+                autoWidth: false
+            });
+            $('.btnTest').on('click', function () {
+                $.ajax({
+                    url: '{% url 'list_books' %}',
+                    type: 'POST',
+                    data: {id: 2},
+                    dataType: 'json'
+                }).done(function (data) {
+                    console.log(data)
+                }).fail(function (jqXHR, textStatus, errorThrown) {
+                    alert(textStatus + ': ' + errorThrown);
+                }).always(function (data) {
+                    // alert("Completado"); always siempre se ejecuta
+                })
+            })
+        });
+    </script>
+
+    <b class="screen-overlay"></b>
+
+    <!-- ========================= SECTION CONTENT ========================= -->
+    <section class="section-content padding-y">
+        <div class="container">
+            <div class="row">
+                <aside class="col-md-3">
+                    <nav class="list-group">
+                        <a class="list-group-item" href="{% url 'profile' request.user.id %}">
+                            <i class="fas fa-user-cog"></i> Configuración </a>
+                        {% if user.is_staff %}
+                            <a class="list-group-item active" href="{% url 'list_books' %}">
+                                <i class="fas fa-book"></i> Administrar libros </a>
+                        {% endif %}
+                        <a class="list-group-item" href="{% url 'logout' %}">
+                            <i class="fas fa-sign-out-alt"></i> Cerrar sesión </a>
+                    </nav>
+                </aside> <!-- col.// -->
+                <main class="col-md-9">
+                    <article class="card mb-3">
+                        <div class="card-body">
+
+
+                            <form method="POST" action=".">
+                                <div class="card card-default">
+                                    <div class="card-header">
+                                        <h5 class="card-title">
+                                            <i class="fas fa-plus"></i> {{ title }}</h5>
+                                    </div>
+                                    <div class="card-body">
+                                        {% csrf_token %}
+                                        {% for field in form.visible_fields %}
+                                            <div class="form-group">
+                                                <label>{{ field.title.label }}</label>
+                                                {{ field.title|add_class:'form-control' }}
+                                            </div>
+                                        {% endfor %}
+                                    </div>
+                                    <div class="card-footer">
+                                        <button type="submit" class="btn btn-primary btn-flat btnTest">
+                                            <i class="fas fa-save"></i> Guardar
+                                        </button>
+                                    </div>
+                                </div>
+                            </form>
+                            <script type="application/javascript">
+                                {% if form.errors %}
+                                    var errors = '';
+                                    {% for field in form %}
+                                        {% for error in field.errors %}
+                                            errors += '{{ error }}\n';
+                                        {% endfor %}
+                                    {% endfor %}
+                                    {% for error in form.non_field_errors %}
+                                        errors += '{{ error }}\n';
+                                    {% endfor %}
+                                    Swal.fire({
+                                        title: 'Error!',
+                                        text: errors,
+                                        icon: 'error'
+                                    });
+                                {% endif %}
+                            </script>
+                        </div> <!-- card-body .// -->
+                    </article> <!-- card.// -->
+                </main> <!-- col.// -->
+            </div>
+
+        </div> <!-- container .//  -->
+    </section>
+    </body>
+{% endblock %}

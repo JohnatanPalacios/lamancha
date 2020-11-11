@@ -7,21 +7,17 @@ from django.urls import path, include
 
 
 from lamancha.views import *
-from books import views as books_views
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('users/', include('users.urls'), name='users'),
     path(
         route='',
-        view=IndexView.as_view(),
+        view=home, # view=IndexView.as_view(),
         name='index'
     ),
-    # vistas de libros
-    path('books/details/<pk>', books_views.BookDetailView.as_view(), name='book_details'),
-
-
+    path('users/', include('users.urls'), name='users'),
+    path('books/', include('books.urls'), name='books'),
 
     # reset password group
     path(
@@ -29,9 +25,18 @@ urlpatterns = [
         view=auth_views.PasswordResetView.as_view(template_name='users/auth/reset_password.html',
                                                   html_email_template_name='users/auth/send_email.html'),
         name="password_reset"),
-    path('reset_password_sent/', auth_views.PasswordResetDoneView.as_view(), name="password_reset_done"),
-    path('reset/<uidb64>/<token>/', auth_views.PasswordResetConfirmView.as_view(), name="password_reset_confirm"),
-    path('reset_password_complete/', auth_views.PasswordResetCompleteView.as_view(), name="password_reset_complete"),
-
-
+    path(
+        route='reset_password_sent/',
+        view=auth_views.PasswordResetDoneView.as_view(),
+        name="password_reset_done"
+    ),
+    path(route='reset/<uidb64>/<token>/',
+         view=auth_views.PasswordResetConfirmView.as_view(),
+         name="password_reset_confirm"
+    ),
+    path(
+        route='reset_password_complete/',
+        view=auth_views.PasswordResetCompleteView.as_view(),
+        name="password_reset_complete"
+    ),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

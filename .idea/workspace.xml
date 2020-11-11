@@ -11,8 +11,30 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d8b07057-b573-4e38-9492-f566354760d8" name="Default Changelist" comment="HEROKU">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/books/create.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/books/list.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/books/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/books/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/books/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/books/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/books/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/books/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/books/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/admin.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/apps.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/forms.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/migrations/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/models.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/tests.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/views.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lamancha/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/lamancha/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lamancha/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/lamancha/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/logo.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/logo.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/books/listing.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/books/search-results.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/users/auth/signup.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/users/auth/signup.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/users/profile/PRUEBAS DEL MOMENTO.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/users/profile/PRUEBAS DEL MOMENTO.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/users/profile/profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/users/profile/profile.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/users/profile/update.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/users/profile/update.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/users/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/models.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -59,19 +81,19 @@
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\UTP\Laboratorio de Software\lamancha\templates\books" />
+      <recent name="D:\UTP\Laboratorio de Software\lamancha\templates\users\auth" />
+      <recent name="D:\UTP\Laboratorio de Software\lamancha\templates\core" />
+      <recent name="D:\UTP\Laboratorio de Software\lamancha\templates\users\profile" />
+      <recent name="D:\UTP\Laboratorio de Software\lamancha\templates\registration" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\UTP\Laboratorio de Software\lamancha\static\lib" />
       <recent name="D:\UTP\Laboratorio de Software\lamancha\static\js" />
       <recent name="D:\UTP\Laboratorio de Software\lamancha\users\static\js" />
       <recent name="D:\UTP\Laboratorio de Software\lamancha\static" />
       <recent name="D:\UTP\Laboratorio de Software\lamancha\templates\users" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\UTP\Laboratorio de Software\lamancha\templates\users\auth" />
-      <recent name="D:\UTP\Laboratorio de Software\lamancha\templates\core" />
-      <recent name="D:\UTP\Laboratorio de Software\lamancha\templates\users\profile" />
-      <recent name="D:\UTP\Laboratorio de Software\lamancha\templates\books" />
-      <recent name="D:\UTP\Laboratorio de Software\lamancha\templates\registration" />
     </key>
   </component>
   <component name="RunManager">
@@ -124,14 +146,7 @@
       <workItem from="1604934867818" duration="34464000" />
       <workItem from="1604970540889" duration="12299000" />
       <workItem from="1605028851835" duration="24152000" />
-      <workItem from="1605057181503" duration="4633000" />
-    </task>
-    <task id="LOCAL-00001">
-      <created>1604030439727</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1604030439727</updated>
+      <workItem from="1605057181503" duration="38952000" />
     </task>
     <task id="LOCAL-00002" summary="iniciamos">
       <created>1604031204509</created>
@@ -469,7 +484,14 @@
       <option name="project" value="LOCAL" />
       <updated>1605061310771</updated>
     </task>
-    <option name="localTasksCounter" value="50" />
+    <task id="LOCAL-00050" summary="HEROKU">
+      <created>1605062436360</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1605062436361</updated>
+    </task>
+    <option name="localTasksCounter" value="51" />
     <servers />
   </component>
   <component name="TerminalProjectNonSharedOptionsProvider">
@@ -534,6 +556,10 @@
     <state x="275" y="22" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728/1366.0.1920.1080@0.0.1366.728" timestamp="1604033508231" />
     <state x="1753" y="33" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728/1366.0.1920.1080@1366.0.1920.1080" timestamp="1605062171879" />
     <state x="275" y="22" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728@0.0.1366.728" timestamp="1604731880110" />
+    <state x="361" y="163" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1605087584618">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="361" y="163" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1366.728/1366.0.1920.1080@0.0.1366.728" timestamp="1605087584618" />
     <state x="2006" y="274" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1604320670801">
       <screen x="1366" y="0" width="1920" height="1080" />
     </state>
@@ -555,25 +581,25 @@
     </state>
     <state x="554" y="261" width="475" height="206" key="Github.ShareDialog/0.0.1366.728/1366.0.1920.1080@0.0.1366.728" timestamp="1604029127752" />
     <state x="2145" y="387" key="Github.ShareDialog/0.0.1366.728/1366.0.1920.1080@1366.0.1920.1080" timestamp="1604029533910" />
-    <state width="1877" height="293" key="GridCell.Tab.0.bottom" timestamp="1604970496360">
-      <screen x="1366" y="0" width="1920" height="1080" />
+    <state width="1323" height="177" key="GridCell.Tab.0.bottom" timestamp="1605093590343">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="178" key="GridCell.Tab.0.bottom/0.0.1366.728/1366.0.1920.1080@0.0.1366.728" timestamp="1604824242618" />
+    <state width="1323" height="177" key="GridCell.Tab.0.bottom/0.0.1366.728/1366.0.1920.1080@0.0.1366.728" timestamp="1605093590343" />
     <state width="1877" height="293" key="GridCell.Tab.0.bottom/0.0.1366.728/1366.0.1920.1080@1366.0.1920.1080" timestamp="1604970496360" />
-    <state width="1877" height="293" key="GridCell.Tab.0.center" timestamp="1604970496360">
-      <screen x="1366" y="0" width="1920" height="1080" />
+    <state width="1323" height="177" key="GridCell.Tab.0.center" timestamp="1605093590343">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="178" key="GridCell.Tab.0.center/0.0.1366.728/1366.0.1920.1080@0.0.1366.728" timestamp="1604824242618" />
+    <state width="1323" height="177" key="GridCell.Tab.0.center/0.0.1366.728/1366.0.1920.1080@0.0.1366.728" timestamp="1605093590343" />
     <state width="1877" height="293" key="GridCell.Tab.0.center/0.0.1366.728/1366.0.1920.1080@1366.0.1920.1080" timestamp="1604970496360" />
-    <state width="1877" height="293" key="GridCell.Tab.0.left" timestamp="1604970496360">
-      <screen x="1366" y="0" width="1920" height="1080" />
+    <state width="1323" height="177" key="GridCell.Tab.0.left" timestamp="1605093590343">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="178" key="GridCell.Tab.0.left/0.0.1366.728/1366.0.1920.1080@0.0.1366.728" timestamp="1604824242617" />
+    <state width="1323" height="177" key="GridCell.Tab.0.left/0.0.1366.728/1366.0.1920.1080@0.0.1366.728" timestamp="1605093590343" />
     <state width="1877" height="293" key="GridCell.Tab.0.left/0.0.1366.728/1366.0.1920.1080@1366.0.1920.1080" timestamp="1604970496360" />
-    <state width="1877" height="293" key="GridCell.Tab.0.right" timestamp="1604970496360">
-      <screen x="1366" y="0" width="1920" height="1080" />
+    <state width="1323" height="177" key="GridCell.Tab.0.right" timestamp="1605093590343">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="178" key="GridCell.Tab.0.right/0.0.1366.728/1366.0.1920.1080@0.0.1366.728" timestamp="1604824242618" />
+    <state width="1323" height="177" key="GridCell.Tab.0.right/0.0.1366.728/1366.0.1920.1080@0.0.1366.728" timestamp="1605093590343" />
     <state width="1877" height="293" key="GridCell.Tab.0.right/0.0.1366.728/1366.0.1920.1080@1366.0.1920.1080" timestamp="1604970496360" />
     <state width="230" height="499" key="HiddenNamespacesPopup" timestamp="1605056012692">
       <screen x="1366" y="0" width="1920" height="1080" />
@@ -592,11 +618,11 @@
     </state>
     <state x="184" y="8" key="SettingsEditor/0.0.1366.728/1366.0.1920.1080@0.0.1366.728" timestamp="1604826643164" />
     <state x="1625" y="12" key="SettingsEditor/0.0.1366.728/1366.0.1920.1080@1366.0.1920.1080" timestamp="1604275968532" />
-    <state x="275" y="97" key="Vcs.Push.Dialog.v2" timestamp="1605061317846">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state x="1753" y="144" key="Vcs.Push.Dialog.v2" timestamp="1605062447305">
+      <screen x="1366" y="0" width="1920" height="1080" />
     </state>
     <state x="275" y="97" key="Vcs.Push.Dialog.v2/0.0.1366.728/1366.0.1920.1080@0.0.1366.728" timestamp="1605061317846" />
-    <state x="1753" y="144" key="Vcs.Push.Dialog.v2/0.0.1366.728/1366.0.1920.1080@1366.0.1920.1080" timestamp="1605057937675" />
+    <state x="1753" y="144" key="Vcs.Push.Dialog.v2/0.0.1366.728/1366.0.1920.1080@1366.0.1920.1080" timestamp="1605062447305" />
     <state x="275" y="97" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1604729706436" />
     <state x="482" y="98" key="com.intellij.openapi.vcs.changes.SpecificFilesViewDialog" timestamp="1604031002364">
       <screen x="0" y="0" width="1366" height="728" />
@@ -614,9 +640,10 @@
       <screen x="1366" y="0" width="1920" height="1080" />
     </state>
     <state x="2166" y="322" key="refactoring.ChangeSignatureDialog/0.0.1366.728/1366.0.1920.1080@1366.0.1920.1080" timestamp="1604651962257" />
-    <state x="1989" y="235" width="672" height="678" key="search.everywhere.popup" timestamp="1604563037202">
-      <screen x="1366" y="0" width="1920" height="1080" />
+    <state x="443" y="158" width="672" height="458" key="search.everywhere.popup" timestamp="1605084180133">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
+    <state x="443" y="158" width="672" height="458" key="search.everywhere.popup/0.0.1366.728/1366.0.1920.1080@0.0.1366.728" timestamp="1605084180133" />
     <state x="1989" y="235" width="672" height="678" key="search.everywhere.popup/0.0.1366.728/1366.0.1920.1080@1366.0.1920.1080" timestamp="1604563037202" />
   </component>
 </project>

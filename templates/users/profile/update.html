@@ -17,239 +17,244 @@
 
     <!-- ========================= SECTION PAGETOP ========================= -->
     <section class="section-pagetop bg-gray">
-    <div class="container">
-        <h2 class=" text-center title-page">Bienvenido {{ user.get_full_name }}</h2>
-    </div> <!-- container //  -->
+        <div class="container">
+            <h2 class=" text-center title-page">Bienvenido {{ user.get_full_name }}</h2>
+        </div> <!-- container //  -->
     </section>
     <!-- ========================= SECTION PAGETOP END// ========================= -->
     <!-- ========================= SECTION CONTENT ========================= -->
     <section class="section-content padding-y">
-    <div class="container">
-        <div class="row">
-            <aside class="col-md-3">
-                <nav class="list-group">
-                <a class="list-group-item active" href="{% url 'profile' request.user.id %}">
-                    <i class="fas fa-user-cog"></i> Configuración  </a>
-                    {%  if not user.is_staff %}
-                        <a class="list-group-item" href="#">
-                            <i class="fas fa-history"></i> Historial de compras </a>
-                        <a class="list-group-item" href="#">
-                            <i class="fas fa-credit-card"></i></i> Métodos de pago </a>
-                        <a class="list-group-item" href="#">
-                            <i class='fas fa-user-friends'></i> Red de amigos </a>
-                    {%  endif  %}
-                    {% if user.is_staff %}
-                        <a class="list-group-item" href="#">
-                            <i class="fas fa-book"></i> Administrar libros </a>
-                    {% endif %}
-                    <a class="list-group-item" href="{%  url 'logout' %}">
-                        <i class="fas fa-sign-out-alt"></i> Cerrar sesión </a>
-                </nav>
-            </aside> <!-- col.// -->
+        <div class="container">
+            <div class="row">
+                <aside class="col-md-3">
+                    <nav class="list-group">
+                        <a class="list-group-item active" href="{% url 'profile' request.user.id %}">
+                            <i class="fas fa-user-cog"></i> Configuración </a>
+                        {% if not user.is_staff %}
+                            <a class="list-group-item" href="#">
+                                <i class="fas fa-history"></i> Historial de compras </a>
+                            <a class="list-group-item" href="#">
+                                <i class="fas fa-credit-card"></i></i> Métodos de pago </a>
+                            <a class="list-group-item" href="#">
+                                <i class='fas fa-user-friends'></i> Red de amigos </a>
+                        {% endif %}
+                        {% if user.is_staff %}
+                            <a class="list-group-item" href="#">
+                                <i class="fas fa-book"></i> Administrar libros </a>
+                        {% endif %}
+                        <a class="list-group-item" href="{% url 'logout' %}">
+                            <i class="fas fa-sign-out-alt"></i> Cerrar sesión </a>
+                    </nav>
+                </aside> <!-- col.// -->
 
-            <main class="card">
-                <article class="card mb-3">
-                    <header class="text-center mb-4"><h4 class="card-title">{{ title }}</h4></header>
-                    <form action="{% url 'signup' %}" method="POST">
-                        {% csrf_token %}
+                <main class="card">
+                    <article class="card mb-3">
+                        <header class="text-center mb-4"><h4 class="card-title">{{ title }}</h4></header>
+                        <form action="{% url 'signup' %}" method="POST">
+                            {% csrf_token %}
 
-                        <input type="hidden" name="action" value="{{ action }}">
+                            <input type="hidden" name="action" value="{{ action }}">
 
-                        <div class="form-group align-items-center">
-                            <div class="col form-group">
-                                <img class="rounded-circle img-md border d-inline-block " src="{{ user.photo.url }}">
-                                {{ form.photo }}
-                            </div>
-                        </div>
-
-                        <div class="form-row">
-                            <div class="col form-group">
-                                {{ form.username.label }}
-                                {{ form.username|add_class:'form-control' }}
-                            </div>
-                            <div class="col form-group">
-                                {{ form.dni.label }}
-                                {{ form.dni|add_class:'form-control' }}
-                            </div>
-                        </div>
-
-                        <div class="form-row">
-                            <div class="col form-group">
-                                {{ form.first_name.label }}
-                                {{ form.first_name|add_class:'form-control' }}
-                            </div> <!-- form-group end.// -->
-                            <div class="col form-group">
-                                {{ form.last_name.label }}
-                                {{ form.last_name|add_class:'form-control' }}
-                            </div> <!-- form-group end.// -->
-                        </div>
-
-                        <div class="form-group">
-                            {{ form.email.label }}
-                            <div class="input-group">
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text">@</span>
+                            <div class="form-group align-items-center">
+                                <div class="col form-group">
+                                    <img class="rounded-circle img-md border d-inline-block "
+                                         src="{{ user.photo.url }}">
+                                    {{ form.photo }}
                                 </div>
-                            {{ form.email|add_class:'form-control' }}
                             </div>
-                        </div>
 
-                        <div class="form-row">
-                            <div class="form-group col-md-6">
-                              {{ form.birthday.label }}
-                              {{ form.birthday|add_class:'form-control' }}
-                            </div> <!-- form-group end.// -->
-                            <div class="form-group col-md-6">
-                              {{ form.gender.label }}
-                              <select class="form-control" name="gender">
-                                  <option selected="" value="masculino">Masculino</option>
-                                  <option value="femenino">Femenino</option>
-                                  <option value="otro">Otro</option>
-                              </select>
-                            </div> <!-- form-group end.// -->
-                        </div> <!-- form-row.// -->
-
-                        <div class="form-row">
-                            <div class="form-group col-md-6">
-                                <label>Nueva contraseña</label>
-                                {{ form.password1|add_class:'form-control' }}
-                                <small id="passwordHelpInline" class="text-muted">Debe tener entre 8-20 caracteres.</small>
-                            </div> <!-- form-group end.// -->
-                            <div class="form-group col-md-6">
-                                <label>Repite la contraseña</label>
-                                {{ form.password2|add_class:'form-control' }}
+                            <div class="form-row">
+                                <div class="col form-group">
+                                    {{ form.username.label }}
+                                    {{ form.username|add_class:'form-control' }}
+                                </div>
+                                <div class="col form-group">
+                                    {{ form.dni.label }}
+                                    {{ form.dni|add_class:'form-control' }}
+                                </div>
                             </div>
-                        </div>
 
-                        <div class="form-row">
-                            <div class="col form-group">
-                                {{ form.address.label }}
-                                {{ form.address|add_class:'form-control' }}
-                            </div> <!-- form-group end.// -->
-                        </div>
+                            <div class="form-row">
+                                <div class="col form-group">
+                                    {{ form.first_name.label }}
+                                    {{ form.first_name|add_class:'form-control' }}
+                                </div> <!-- form-group end.// -->
+                                <div class="col form-group">
+                                    {{ form.last_name.label }}
+                                    {{ form.last_name|add_class:'form-control' }}
+                                </div> <!-- form-group end.// -->
+                            </div>
 
-                        <div class="form-group">
-                            {{ form.favoriteGenres.label }}
-                            {{ form.favoriteGenres}}
-                        </div>
+                            <div class="form-group">
+                                {{ form.email.label }}
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">@</span>
+                                    </div>
+                                    {{ form.email|add_class:'form-control' }}
+                                </div>
+                            </div>
 
-                        <div class="form-group">
-                            <label class="custom-control custom-checkbox">{{ form.news }} {{ form.news.label }}</label>
-                        </div>
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    {{ form.birthday.label }}
+                                    {{ form.birthday|add_class:'form-control' }}
+                                </div> <!-- form-group end.// -->
+                                <div class="form-group col-md-6">
+                                    {{ form.gender.label }}
+                                    <select class="form-control" name="gender">
+                                        <option selected="" value="masculino">Masculino</option>
+                                        <option value="femenino">Femenino</option>
+                                        <option value="otro">Otro</option>
+                                    </select>
+                                </div> <!-- form-group end.// -->
+                            </div> <!-- form-row.// -->
 
-                        <div class="form-group">
-                            <button type="submit" class="btn btn-primary btn-block"> Actualizar  </button>
-                        </div> <!-- form-group// -->
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    <label>Nueva contraseña</label>
+                                    {{ form.password1|add_class:'form-control' }}
+                                    <small id="passwordHelpInline" class="text-muted">Debe tener entre 8-20
+                                        caracteres.</small>
+                                </div> <!-- form-group end.// -->
+                                <div class="form-group col-md-6">
+                                    <label>Repite la contraseña</label>
+                                    {{ form.password2|add_class:'form-control' }}
+                                </div>
+                            </div>
 
-                    </form>
-                  <script>
-                    {% if form.errors %}
-                        var errors = '';
-                        {% for field in form %}
-                            {% for error in field.errors %}
-                                errors += '{{ error }}\n';
-                            {% endfor %}
-                        {% endfor %}
-                        {% for error in form.non_field_errors %}
-                            errors += '{{ error }}\n';
-                        {% endfor %}
-                        Swal.fire({
-                            title: 'Error!',
-                            text: errors,
-                            icon: 'error'
-                        });
-                    {% endif %}
-                    function submit_with_ajax(url, title, content, parameters, callback) {
-                            $.confirm({
-                                theme: 'material',
-                                title: title,
-                                icon: 'fa fa-info',
-                                content: content,
-                                columnClass: 'small',
-                                typeAnimated: true,
-                                cancelButtonClass: 'btn-primary',
-                                draggable: true,
-                                dragWindowBorder: false,
-                                buttons: {
-                                    info: {
-                                        text: "Si",
-                                        btnClass: 'btn-primary',
-                                        action: function () {
-                                            $.ajax({
-                                                url: url, //window.location.pathname
-                                                type: 'POST',
-                                                data: parameters,
-                                                dataType: 'json',
-                                                processData: false,
-                                                contentType: false,
-                                            }).done(function (data) {
-                                                console.log(data);
-                                                if (!data.hasOwnProperty('error')) {
-                                                    callback(data);
-                                                    return false;
-                                                }
-                                                message_error(data.error);
-                                            }).fail(function (jqXHR, textStatus, errorThrown) {
-                                                alert(textStatus + ': ' + errorThrown);
-                                            }).always(function (data) {
+                            <div class="form-row">
+                                <div class="col form-group">
+                                    {{ form.address.label }}
+                                    {{ form.address|add_class:'form-control' }}
+                                </div> <!-- form-group end.// -->
+                            </div>
 
-                                            });
-                                        }
-                                    },
-                                    danger: {
-                                        text: "No",
-                                        btnClass: 'btn-red',
-                                        action: function () {
+                            {% if not user.is_staff %}
+                                <div class="form-group">
+                                    {{ form.favoriteGenres.label }}
+                                    {{ form.favoriteGenres }}
+                                </div>
+                            {% endif %}
 
-                                        }
-                                    },
-                                }
-                            })
-                        }
-                  $('form').on('submit', function (e) {
-                        e.preventDefault();
-                        var parameters = new FormData(this);
-                        submit_with_ajax(window.location.pathname, 'Notificación', '¿Estas seguro de realizar la siguiente acción?', parameters, function () {
-                            location.href = '{{ list_url }}';
-                        });
-                    });
-                  </script>
-                  <script type="application/javascript">
-                $(document).ready( function () {
+                            <div class="form-group">
+                                <label class="custom-control custom-checkbox">{{ form.news }} {{ form.news.label }}</label>
+                            </div>
+
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-primary btn-block"> Actualizar</button>
+                            </div> <!-- form-group// -->
+
+                        </form>
+                        <script>
+                            {% if form.errors %}
+                                var errors = '';
+                                {% for field in form %}
+                                    {% for error in field.errors %}
+                                        errors += '{{ error }}\n';
+                                    {% endfor %}
+                                {% endfor %}
+                                {% for error in form.non_field_errors %}
+                                    errors += '{{ error }}\n';
+                                {% endfor %}
+                                Swal.fire({
+                                    title: 'Error!',
+                                    text: errors,
+                                    icon: 'error'
+                                });
+                            {% endif %}
+                            function submit_with_ajax(url, title, content, parameters, callback) {
+                                $.confirm({
+                                    theme: 'material',
+                                    title: title,
+                                    icon: 'fa fa-info',
+                                    content: content,
+                                    columnClass: 'small',
+                                    typeAnimated: true,
+                                    cancelButtonClass: 'btn-primary',
+                                    draggable: true,
+                                    dragWindowBorder: false,
+                                    buttons: {
+                                        info: {
+                                            text: "Si",
+                                            btnClass: 'btn-primary',
+                                            action: function () {
+                                                $.ajax({
+                                                    url: url, //window.location.pathname
+                                                    type: 'POST',
+                                                    data: parameters,
+                                                    dataType: 'json',
+                                                    processData: false,
+                                                    contentType: false,
+                                                }).done(function (data) {
+                                                    console.log(data);
+                                                    if (!data.hasOwnProperty('error')) {
+                                                        callback(data);
+                                                        return false;
+                                                    }
+                                                    message_error(data.error);
+                                                }).fail(function (jqXHR, textStatus, errorThrown) {
+                                                    alert(textStatus + ': ' + errorThrown);
+                                                }).always(function (data) {
+
+                                                });
+                                            }
+                                        },
+                                        danger: {
+                                            text: "No",
+                                            btnClass: 'btn-red',
+                                            action: function () {
+
+                                            }
+                                        },
+                                    }
+                                })
+                            }
+
+                            $('form').on('submit', function (e) {
+                                e.preventDefault();
+                                var parameters = new FormData(this);
+                                submit_with_ajax(window.location.pathname, 'Notificación', '¿Estas seguro de realizar la siguiente acción?', parameters, function () {
+                                    location.href = '{{ list_url }}';
+                                });
+                            });
+                        </script>
+                        <script type="application/javascript">
+                            $(document).ready(function () {
 
 
-                        $('#id_favoriteGenres').select2({
-            //theme: 'classic',
-            theme: "bootstrap4",
-            language: 'es',
-            width: '100%',
-            placeholder: 'Seleccionar X..'
+                                $('#id_favoriteGenres').select2({
+                                    //theme: 'classic',
+                                    theme: "bootstrap4",
+                                    language: 'es',
+                                    width: '100%',
+                                    placeholder: 'Seleccionar X..'
 
-        });
+                                });
 
-                    });
-            </script>
-                </article> <!-- card.// -->
-            </main> <!-- col.// -->
+                            });
+                        </script>
+                    </article> <!-- card.// -->
+                </main> <!-- col.// -->
 
-            <!-- ESTE ES EL BLOQUE DE MÁS VENDIDOS -->
-            <div class="col-md d-none d-lg-block flex-grow-1">
+                <!-- ESTE ES EL BLOQUE DE MÁS VENDIDOS -->
+                <div class="col-md d-none d-lg-block flex-grow-1">
                     <aside class="special-home-right">
                         <h6 class="bg-blue text-center text-white mb-0 p-2">Más vendidos</h6>
                         <!-- MAS VENDIDOS -->
                         {% for book in  books %}
                             <div class="card-banner border-bottom">
-                              <div class="py-3" style="width:80%">
-                                <h6 class="card-title">{{ book.title }}</h6>
-                                <a href='books/details/{{ book.pk }}' class="btn btn-secondary btn-sm">Ver ahora</a>
-                              </div>
-                              <img src={{ book.cover.url }} height="80" class="img-bg">
+                                <div class="py-3" style="width:80%">
+                                    <h6 class="card-title">{{ book.title }}</h6>
+                                    <a href='books/details/{{ book.pk }}' class="btn btn-secondary btn-sm">Ver ahora</a>
+                                </div>
+                                <img src={{ book.cover.url }} height="80" class="img-bg">
                             </div>
                         {% endfor %}
                     </aside>
-            </div> <!-- col.// -->
-        </div>
-    </div> <!-- container .//  -->
+                </div> <!-- col.// -->
+            </div>
+        </div> <!-- container .//  -->
     </section>
     <!-- ========================= SECTION CONTENT END// ========================= -->
     </body>
