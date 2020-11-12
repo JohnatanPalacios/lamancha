@@ -11,7 +11,7 @@ class Book(m.Model):
     price = m.DecimalField(default=0.00, max_digits=9, decimal_places=2, blank=False, null=False)
     cover = m.ImageField(upload_to='product/%Y/%m/%d', null=True, blank=True)
     description = m.TextField(verbose_name='Descripción', blank=True, null=True)
-    sale = m.BooleanField(default=True, blank=False, null=False)
+    sale = m.BooleanField(default=True, verbose_name='En venta', blank=False, null=False)
     condition = m.CharField(max_length=10, verbose_name='Condición', blank=True, null=True)
     editorial = m.CharField(max_length=50, verbose_name='Editorial', blank=True, null=True)
     language = m.CharField(max_length=50, verbose_name='Lenguaje', blank=False, null=False)

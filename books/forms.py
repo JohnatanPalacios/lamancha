@@ -24,13 +24,13 @@ class BookForm(ModelForm):
             'pages',
             'editorial',
             'price',
-            'description',
+            'category',
             'language',
             'condition',
             'binding',
-            'category',
             'sale',
             'published_date',
+            'description',
         ]
         widgets = {
             'cover': FileInput(),
