@@ -6,7 +6,6 @@ from django.forms import model_to_dict
 
 from lamancha.settings import MEDIA_URL, STATIC_URL
 
-
 GENDERS = [
     ('femenino', 'Femenino'),
     ('masculino', 'Masculino'),
@@ -55,7 +54,8 @@ class DebitCard(models.Model):
 
 class User(AbstractUser):
     dni = models.CharField(max_length=50, verbose_name='DNI', unique=True, null=True, blank=True)
-    photo = models.ImageField(upload_to='customer/photos', default='static/images/default-profile.png', null=True, blank=True)
+    photo = models.ImageField(upload_to='customer/photos', default='static/images/default-profile.png', null=True,
+                              blank=True)
     address = models.CharField(max_length=150, verbose_name='Dirección', null=True, blank=True)
     birthday = models.DateField(verbose_name='Fecha de nacimiento', null=True, blank=True)
     gender = models.CharField(max_length=10, choices=GENDERS, verbose_name='Género', null=True, blank=True)
@@ -93,5 +93,3 @@ class User(AbstractUser):
             if user.password != self.password:
                 user.password = self.password
         super().save(*args, **kwargs)
-
-

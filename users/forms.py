@@ -1,7 +1,6 @@
 from django.contrib.auth import password_validation
 from django.utils.translation import gettext_lazy as _
 
-
 from django.contrib.auth.forms import UserCreationForm
 from django.forms import *
 from users.models import User
@@ -62,24 +61,24 @@ class UserRegistrationForm(UserCreationForm):
             'photo': FileInput(),
             'username': TextInput(attrs={
                 'placeholder': 'manchita',
-                }),
+            }),
             'dni': TextInput(attrs={
                 'placeholder': '123456789',
             }),
             'first_name': TextInput(attrs={
                 'placeholder': 'La mancha'
-                }),
+            }),
             'password1': PasswordInput(attrs={
                 'placeholder': 'Contraseña',
                 'autocomplete': 'off',
-                }),
+            }),
             'password2': PasswordInput(attrs={
                 'placeholder': 'Confirma la contraseña',
                 'autocomplete': 'off',
-                }),
+            }),
             'email': EmailInput(attrs={
                 'placeholder': 'user@lamancha.com',
-                }),
+            }),
             'news': CheckboxInput(),
             'birthday': DateInput(),
             'gender': Select(),
@@ -101,7 +100,7 @@ class UserRegistrationForm(UserCreationForm):
             if form.is_valid():
                 user = form.save(commit=False)
                 form.save()
-                for favoriteGenre in self.cleaned_data['favoriteGenres']: # clean_data accede a los valores del formulario
+                for favoriteGenre in self.cleaned_data['favoriteGenres']:  # clean_data accede a los valores del formulario
                     user.favoriteGenres.add(favoriteGenre)
 
             else:
@@ -109,4 +108,3 @@ class UserRegistrationForm(UserCreationForm):
         except Exception as e:
             data['error'] = str(e)
         return data
-

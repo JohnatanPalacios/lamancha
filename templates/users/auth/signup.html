@@ -1,7 +1,7 @@
-{% extends 'simple_base.html' %}
+{% extends 'base.html' %}
 {% load widget_tweaks %}
 {% load static %}
-{% block header %}
+{% block head %}
     <script src="{% static 'lib/dataTables-1.10.20/datatables.min.js' %}"></script>
     <script src="{% static 'js/list.js' %}"></script>
     <script src="{% static 'js/form.js' %}"></script>
@@ -9,6 +9,11 @@
     <link href="{% static 'lib/select2-4.0.13/css/select2-bootstrap4.min.css' %}" rel="stylesheet"/>
     <script src="{% static 'lib/select2-4.0.13/js/select2.min.js' %}"></script>
     <script src="{% static 'lib/select2-4.0.13/js/i18n/es.js' %}"></script>
+    <!-- js algoritsof register -->
+    <!-- Jquery Confirm -->
+    <link rel="stylesheet" href="{% static 'lib/jquery-confirm.min.css' %}">
+    <script src="{% static 'lib/jquery-confirm.min.js' %}"></script>
+    <script src="{% static 'js/functions.js' %}"></script>
 {% endblock %}
 {% block content %}
     <body>
@@ -17,12 +22,6 @@
         <!-- ============================ COMPONENT REGISTER   ================================= -->
         <!-- ============== LA IDEA ES PONER EL LOGO EN LA MITAD Y QUE SESA BONITO, NO SE COMO HACERLO  ============= -->
         <div class="card mx-auto" style="max-width:520px; margin-top:40px;">
-
-            <div class="login-logo">
-                <a href="{% url 'index' %}" class="brand-wrap">
-                    <img class="logo center-x" src="{% static 'logo.png' %}">
-                </a>
-            </div>
 
             <article class="card-body">
                 <header class="text-center mb-4"><h4 class="card-title">{{ title }}</h4></header>

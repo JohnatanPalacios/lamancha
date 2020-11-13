@@ -1,72 +1,74 @@
-{% extends "simple_base.html" %}
+{% extends "base.html" %}
 {% load static %}
 {% load widget_tweaks %}
+{% block header %}
+    <!-- js algoritsof register -->
+    <!-- Jquery Confirm -->
+    <link rel="stylesheet" href="{% static 'lib/jquery-confirm.min.css' %}">
+    <script src="{% static 'lib/jquery-confirm.min.js' %}"></script>
+    <script src="{% static 'js/functions.js' %}"></script>
+{% endblock %}
 {% block content %}
     <body>
     <!-- ============================ COMPONENT LOGIN   ================================= -->
-        <div class="card mx-auto" style="max-width: 380px; margin-top:100px;">
-            <div class="login-logo">
-            <a href="{% url 'index' %}" class="brand-wrap">
-				<img class="logo center-x" src="{% static 'logo.png'%}">
-			</a>
-        </div>
+    <div class="card mx-auto" style="max-width: 380px; margin-top:100px;">
+        <div class="card-body">
+            <h4 class="text-center card-title mb-4">Iniciar Sesión</h4>
 
-          <div class="card-body">
-          <h4 class="text-center card-title mb-4">Iniciar Sesión</h4>
-
-          <form method="POST" action="{% url "login" %}">
-              <input type="hidden" name="next" value="{{ next }}">
-              {% csrf_token %}
-              <div class="input-group mb-3">
-                  {{ form.username|add_class:'form-control'|attr:'autocomplete:off'|attr:'placeholder:Usuario' }}
-                  <div class="input-group-append">
-                    <div class="input-group-text">
-                        <span class="fas fa-user"></span>
+            <form method="POST" action="{% url "login" %}">
+                <input type="hidden" name="next" value="{{ next }}">
+                {% csrf_token %}
+                <div class="input-group mb-3">
+                    {{ form.username|add_class:'form-control'|attr:'autocomplete:off'|attr:'placeholder:Usuario' }}
+                    <div class="input-group-append">
+                        <div class="input-group-text">
+                            <span class="fas fa-user"></span>
+                        </div>
                     </div>
-                  </div>
-              </div> <!-- form-group// -->
-              <div class="input-group mb-3">
-                  {{ form.password|add_class:'form-control'|attr:'autocomplete:off'|attr:'placeholder:Contraseña' }}
-                  <div class="input-group-append">
-                    <div class="input-group-text">
-                        <span class="fas fa-lock"></span>
+                </div> <!-- form-group// -->
+                <div class="input-group mb-3">
+                    {{ form.password|add_class:'form-control'|attr:'autocomplete:off'|attr:'placeholder:Contraseña' }}
+                    <div class="input-group-append">
+                        <div class="input-group-text">
+                            <span class="fas fa-lock"></span>
+                        </div>
                     </div>
-                  </div>
-              </div> <!-- form-group// -->
+                </div> <!-- form-group// -->
 
-              <div class="form-group">
-                <a href="{% url 'password_reset' %}" class="float-right">¿Olvidó su contraseña?</a>
-                <label class="float-left custom-control custom-checkbox">
-                    <input type="checkbox" class="custom-control-input" checked="">
-                    <div class="custom-control-label"> Recordar </div> </label>
-              </div> <!-- form-group form-check .// -->
-              <div class="form-group">
-                  <button type="submit" class="btn btn-primary btn-block" value="login"> Ingresar </button>
-              </div> <!-- form-group// -->
-              <p class="text-center mt-4"><a href="{%  url 'signup' %}">¿No tienes una cuenta? Registrate</a></p>
-              <p class="text-center mt-0"><a href="{%  url 'index' %}">Volver al inicio</a></p>
-          </form>
-          <script type="application/javascript">
-              {% if form.errors %}
-                var errors = '';
-                {% for field in form %}
-                    {% for error in field.errors %}
+                <div class="form-group">
+                    <a href="{% url 'password_reset' %}" class="float-right">¿Olvidó su contraseña?</a>
+                    <label class="float-left custom-control custom-checkbox">
+                        <input type="checkbox" class="custom-control-input" checked="">
+                        <div class="custom-control-label"> Recordar</div>
+                    </label>
+                </div> <!-- form-group form-check .// -->
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary btn-block" value="login"> Ingresar</button>
+                </div> <!-- form-group// -->
+                <p class="text-center mt-4"><a href="{% url 'signup' %}">¿No tienes una cuenta? Registrate</a></p>
+                <p class="text-center mt-0"><a href="{% url 'index' %}">Volver al inicio</a></p>
+            </form>
+            <script type="application/javascript">
+                {% if form.errors %}
+                    var errors = '';
+                    {% for field in form %}
+                        {% for error in field.errors %}
+                            errors += '{{ error }}\n';
+                        {% endfor %}
+                    {% endfor %}
+                    {% for error in form.non_field_errors %}
                         errors += '{{ error }}\n';
                     {% endfor %}
-                {% endfor %}
-                {% for error in form.non_field_errors %}
-                    errors += '{{ error }}\n';
-                {% endfor %}
-                Swal.fire({
-                    title: 'Error!',
-                    text: errors,
-                    icon: 'error'
-                });
-            {% endif %}
-          </script>
-          </div> <!-- card-body.// -->
-        </div> <!-- card .// -->
-        <br><br>
+                    Swal.fire({
+                        title: 'Error!',
+                        text: errors,
+                        icon: 'error'
+                    });
+                {% endif %}
+            </script>
+        </div> <!-- card-body.// -->
+    </div> <!-- card .// -->
+    <br><br>
     <!-- ============================ COMPONENT LOGIN  END.// ================================= -->
     </section>
     <!-- ========================= SECTION CONTENT END// ========================= -->

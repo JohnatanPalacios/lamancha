@@ -18,6 +18,7 @@ class Book(m.Model):
     author = m.CharField(max_length=50, verbose_name='Autor', blank=False, null=False)
     binding = m.CharField(max_length=15, verbose_name='Encuadernación', blank=True, null=True)
     category = m.CharField(max_length=50, verbose_name='Categoría', blank=True, null=True)
+
     # id_shoppingCart = m.ForeignKey(ShoppingCart, on_delete=m.CASCADE)
 
     def __str__(self):
