@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="{% static 'lib/jquery-confirm.min.css' %}">
     <script src="{% static 'lib/jquery-confirm.min.js' %}"></script>
     <script src="{% static 'js/functions.js' %}"></script>
+    <script src="{% static 'js/moment.min.js' %}"></script>
 {% endblock %}
 {% block content %}
     <body>
@@ -42,6 +43,7 @@
                         <div class="col form-group">
                             {{ form.username.label }}
                             {{ form.username|add_class:'form-control' }}
+                            <span class="invalid_feedback invalid-feedback" style="display: none"></span>
                         </div>
                         <div class="col form-group">
                             {{ form.dni.label }}
@@ -76,6 +78,7 @@
                         <div class="form-group col-md-6">
                             {{ form.birthday.label }}
                             {{ form.birthday|add_class:'form-control' }}
+                            <span class="invalid-feedback" style="display: none" id="feedback_birthday"></span>
                         </div> <!-- form-group end.// -->
                         <div class="form-group col-md-6">
                             {{ form.gender.label }}
@@ -91,11 +94,14 @@
                         <div class="form-group col-md-6">
                             <label>Crear contraseña</label>
                             {{ form.password1|add_class:'form-control' }}
-                            <small id="passwordHelpInline" class="text-muted">Debe tener entre 8-20 caracteres.</small>
+                            <small id="passwordHelpInline" class="text-muted">Debe tener entre 8-20 caracteres (%&$,
+                                aA-zZ, 0-9).</small>
+                            <span id="feedback_password1"></span>
                         </div> <!-- form-group end.// -->
                         <div class="form-group col-md-6">
                             <label>Repite la contraseña</label>
                             {{ form.password2|add_class:'form-control' }}
+                            <span id="feedback_password2"></span>
                         </div>
                     </div>
 
@@ -129,6 +135,9 @@
 
 
                 </form>
+                <script src="{% static 'js/username.js' %}"></script> <!-- validar username -->
+                <script src="{% static 'js/birthday.js' %}"></script> <!-- validar edad -->
+                <script src="{% static 'js/password.js' %}"></script> <!-- validar password -->
                 <script>
                     {% if form.errors %}
                         var errors = '';

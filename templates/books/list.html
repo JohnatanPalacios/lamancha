@@ -11,32 +11,7 @@
 {% endblock %}
 {% block content %}
     <body>
-
-    <script type="application/javascript">
-        $(function () {
-            $('#data').DataTable({
-                responsive: true,
-                autoWidth: false
-            });
-            $('.btnTest').on('click', function (){
-                $.ajax({
-                    url: '{% url 'add_book' %}',
-                    type: 'POST',
-                    data: {id: 2},
-                    dataType: 'json'
-                }).done(function (data){
-                    console.log(data)
-                }).fail(function ( jqXHR, textStatus, errorThrown){
-                    alert(textStatus+': '+errorThrown);
-                }).always(function (data){
-                    // alert("Completado"); always siempre se ejecuta
-                })
-            })
-        });
-    </script>
-
     <b class="screen-overlay"></b>
-
     <!-- ========================= SECTION CONTENT ========================= -->
     <section class="section-content padding-y">
         <div class="container">
@@ -89,7 +64,7 @@
                                     </table>
                                 </div>
                                 <div class="card-footer">
-                                    <a type="button" href="{{ create_url }}" class="btn btn-primary btn-flat btnTest">
+                                    <a href="{{ create_url }}" class="btn btn-primary btn-flat btnTest">
                                         <i class="fas fa-plus"></i> Nuevo registro
                                     </a>
                                 </div>
@@ -102,4 +77,28 @@
         </div> <!-- container .//  -->
     </section>
     </body>
+{% endblock %}
+{% block javascript %}
+    <script type="application/javascript">
+        $(function () {
+            $('#data').DataTable({
+                responsive: true,
+                autoWidth: false
+            });
+            $('.btnTest').on('click', function (){
+                $.ajax({
+                    url: '{% url 'list_books' %}',
+                    type: 'POST',
+                    data: {id: 2},
+                    dataType: 'json'
+                }).done(function (data){
+                    // console.log(data)
+                }).fail(function ( jqXHR, textStatus, errorThrown){
+                    alert(textStatus+': '+errorThrown);
+                }).always(function (data){
+                    // alert("Completado"); always siempre se ejecuta
+                })
+            })
+        });
+    </script>
 {% endblock %}

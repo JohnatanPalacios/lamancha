@@ -1,4 +1,6 @@
 from django.urls import path
+from django.views.decorators.csrf import csrf_exempt
+
 from .views import *
 
 
@@ -30,4 +32,5 @@ urlpatterns = [
     ),
     path('profile/settings/orders_histoty/', orders_history_view, name='orders_history'),
     path('profile/settings/payment_methods/', payment_methods_view, name='payment_methods'),
+    path('validate_username', csrf_exempt(UsernameValidationView.as_view()), name='validate_username')
     ]

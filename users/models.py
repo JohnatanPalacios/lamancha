@@ -6,6 +6,7 @@ from django.forms import model_to_dict
 
 from lamancha.settings import MEDIA_URL, STATIC_URL
 
+
 GENDERS = [
     ('femenino', 'Femenino'),
     ('masculino', 'Masculino'),

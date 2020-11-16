@@ -48,8 +48,23 @@ class BookCreateView(CreateView):
     template_name = 'books/create.html'
     success_url = reverse_lazy('list_books')
 
-    # def post(self, request, *args, **kwargs):
-    #    form = BookForm(request.POST)
+    def post(self, request, *args, **kwargs):
+        data = {}
+        try:
+            action = request.POST['action']
+            if action == 'add':
+                form = self.get_form() # posiblemente se haga cambios a request.files
+                if form.is_valid():
+                    form.save()
+                else:
+                    data['error'] = form.errors
+            else:
+                data['error'] = 'no ha ingresado a ninguna opción'
+        except Exception as e:
+            data['error'] = str(e)
+        return JsonResponse(data)
+
+    #    form = BookForm(request.POST) # LAS IMAGENES SON SON request.files
     #    if form.is_valid():
     #        form.save()
     #        return HttpResponseRedirect(self.success_url)
@@ -61,4 +76,6 @@ class BookCreateView(CreateView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['title'] = 'Agregar un nuevo libro'
+        context['list_url'] = reverse_lazy('list_books')
+        context['action'] = 'add'
         return context

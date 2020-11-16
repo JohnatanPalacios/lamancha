@@ -1,4 +1,6 @@
 # Django
+import json
+
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.views import LoginView
 from django.http import JsonResponse, request
@@ -8,7 +10,7 @@ from django.contrib.auth.decorators import login_required
 
 # Models
 from django.urls import reverse_lazy
-from django.views.generic import CreateView, UpdateView, RedirectView, DetailView
+from django.views.generic import CreateView, UpdateView, RedirectView, DetailView, View
 
 from .forms import UserRegistrationForm
 from .models import User
@@ -124,3 +126,12 @@ class UserDetailView(DetailView):
     slug_field = 'pk'
 
 
+class UsernameValidationView(View):
+    def post(self, request):
+        data = json.loads(request.body)
+        username = data['username']
+        if not str(username).isalnum():
+            return JsonResponse({'username_error': 'Solo se aceptan valores alfanuméricos'}, status=400)
+        if User.objects.filter(username=username).exists():
+            return JsonResponse({'username_error': 'El usuario ya existe'}, status=409)
+        return JsonResponse({'username_valid': True})

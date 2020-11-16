@@ -29,6 +29,10 @@
 
     <!-- Sweetalert2 -->
     <script src="{% static 'sweetalert2-9.10.0/sweetalert2.all.min.js' %}"></script>
+
+    <!-- Js Algorisoft -->
+    <script src="{% static 'js/functions.js' %}"></script>
+
     {% block head %}
 
     {% endblock %}
@@ -37,7 +41,8 @@
 <body>
 {% include 'header.html' %}
 {% block content %}
-
+{% endblock %}
+{% block javascript %}
 {% endblock %}
 {% include 'footer.html' %}
 </body>

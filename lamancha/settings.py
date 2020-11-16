@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     # Libs
     'widget_tweaks',
     'multiselectfield',
+    "parsley",
 
     # Local apps
     'users',

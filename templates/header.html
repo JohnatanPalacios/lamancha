@@ -1,52 +1,63 @@
 {% load static %}
 
 <header class="section-header">
-<section class="header-main border-bottom">
-	<div class="container">
-		<div class="row align-items-center">
-			<div class="col-xl-2 col-lg-3 col-md-12">
-				<a href="{% url 'index' %}" class="brand-wrap">
-					<img class="logo" src="{% static 'logo.png'%}">
-				</a> <!-- brand-wrap.// -->
-			</div>
-			<div class="col-xl-6 col-lg-5 col-md-6">
-				<form method="GET" class="search-header">
-					<div class="input-group w-100">
-					    <input type="text" class="form-control" name="search" placeholder="Autor, nombre del libro, editorial, etc">
-					    <div class="input-group-append">
-					      <button class="btn btn-primary" type="submit">
-					        <i class="fa fa-search"></i> Buscar
-					      </button>
-					    </div>
-				    </div>
-				</form> <!-- search-wrap .end// -->
-			</div><!-- col.// -->
+    <section class="header-main border-bottom">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-xl-2 col-lg-3 col-md-12">
+                    <a href="{% url 'index' %}" class="brand-wrap">
+                        <img class="logo" src="{% static 'logo.png' %}">
+                    </a> <!-- brand-wrap.// -->
+                </div>
+                <div class="col-xl-6 col-lg-5 col-md-6">
+                    <form method="GET" class="search-header">
+                        <div class="input-group w-100">
+                            <input type="text" class="form-control" name="search"
+                                   placeholder="Autor, nombre del libro, editorial, etc">
+                            <div class="input-group-append">
+                                <button class="btn btn-primary" type="submit">
+                                    <i class="fa fa-search"></i> Buscar
+                                </button>
+                            </div>
+                        </div>
+                    </form> <!-- search-wrap .end// -->
+                </div><!-- col.// -->
 
-        <!--  SECCIÓN DE ICONOS   -->
-            {% if not user.username %}
-                <!--- ICONOS PARA USUARIOS NO REGISTRADOS -->
-                <div class="col-md-5 col-lg-4 col-sm-12 col-12 text-md-right">
-                <div class="mt-3 mt-md-0">
-                  <a href="{% url 'login' %}" class="btn btn-outline-primary"><i class="fas fa-sign-in-alt"></i> Ingresar </a>
-                  <a href="{% url 'signup' %}" class="btn btn-primary"> Registrarse </a>
-                    <a href="#" class="widget-header mr-2"><i class="text-primary icon icon-sm rounded-circle border fa fa-shopping-cart"></i>
-                        <span class="notify">2</span></a>
-                </div>
-                </div>
-            {% endif %}
-            {% if user.username %} <!-- request.user.is_authenticated -->
-                <!---- ICONOS PARA USUARIOS REGISTRADOS -->
-                <div class="col-md-5 col-lg-4 col-sm-12 col-12 text-md-right">
-                <div class="mt-3 mt-md-0">
-                    <a href="{% url 'profile' request.user.id %}" class="widget-header mr-2"><i class="text-primary icon icon-sm rounded-circle border fa fa-user"></i></a> <!-- aquí se deben ir al la configuración -->
-                    <a href="#" class="widget-header mr-2"><i class="text-primary icon icon-sm rounded-circle border fa fa-inbox"></i>
-                        <span class="notify">2</span></a> <!-- aquí se deben mostar los mensajes que tenga el usuario -->
-                    <a href="#" class="widget-header mr-2"><i class="text-primary icon icon-sm rounded-circle border fa fa-shopping-cart"></i>
-                        <span class="notify">2</span></a> <!-- aquí se deben mostrar los elementos en el carrito -->
-                    <a href="{% url 'logout' %}" class="widget-header mr-2"><i class="text-primary icon icon-sm rounded-circle border fa fa-sign-out-alt"></i></a> <!-- cerrar sesión -->
-                </div>
-                </div>
-            {% endif %} 
-	</div> <!-- container.// -->
-</section> <!-- header-main .// -->
+                <!--  SECCIÓN DE ICONOS   -->
+                {% if not request.user.is_authenticated %}
+                    <!--- ICONOS PARA USUARIOS NO REGISTRADOS -->
+                    <div class="col-md-5 col-lg-4 col-sm-12 col-12 text-md-right">
+                        <div class="mt-3 mt-md-0">
+                            <a href="{% url 'login' %}" class="btn btn-outline-primary"><i
+                                    class="fas fa-sign-in-alt"></i> Ingresar </a>
+                            <a href="{% url 'signup' %}" class="btn btn-primary"> Registrarse </a>
+                            <a href="#" class="widget-header mr-2"><i
+                                    class="text-primary icon icon-sm rounded-circle border fa fa-shopping-cart"></i>
+                                <span class="notify">2</span></a>
+                        </div>
+                    </div>
+                {% else %} <!---- ICONOS PARA USUARIOS REGISTRADOS -->
+                    <div class="col-md-5 col-lg-4 col-sm-12 col-12 text-md-right">
+                        <div class="mt-3 mt-md-0">
+                            <a href="{% url 'profile' request.user.id %}" class="widget-header mr-2"><i
+                                    class="text-primary icon icon-sm rounded-circle border fa fa-user"></i></a>
+                            <!-- aquí se deben ir al la configuración -->
+                            <a href="#" class="widget-header mr-2"><i
+                                    class="text-primary icon icon-sm rounded-circle border fa fa-inbox"></i>
+                                <span class="notify">2</span></a>
+                            <!-- aquí se deben mostar los mensajes que tenga el usuario -->
+                            {% if not user.is_staff %}
+                                <a href="#" class="widget-header mr-2"><i
+                                        class="text-primary icon icon-sm rounded-circle border fa fa-shopping-cart"></i>
+                                    <span class="notify">2</span></a>
+                            {% endif %}
+                            <!-- aquí se deben mostrar los elementos en el carrito -->
+                            <a href="{% url 'logout' %}" class="widget-header mr-2"><i
+                                    class="text-primary icon icon-sm rounded-circle border fa fa-sign-out-alt"></i></a>
+                            <!-- cerrar sesión -->
+                        </div>
+                    </div>
+                {% endif %}
+            </div> <!-- container.// -->
+    </section> <!-- header-main .// -->
 </header> <!-- section-header.// -->

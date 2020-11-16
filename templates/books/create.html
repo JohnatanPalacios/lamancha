@@ -13,7 +13,6 @@
 {% endblock %}
 {% block content %}
     <body>
-
     <script type="application/javascript">
         $(function () {
             $('#data').DataTable({
@@ -58,8 +57,6 @@
                 <main class="col-md-9">
                     <article class="card mb-3">
                         <div class="card-body">
-
-
                             <form method="POST" action=".">
                                 <div class="card card-default">
                                     <div class="card-header">
@@ -68,6 +65,7 @@
                                     </div>
                                     <div class="card-body">
                                         {% csrf_token %}
+                                    <input type="hidden" name="action" value="{{ action }}">
                                         {% for field in form.visible_fields %}
                                             <div class="form-group">
                                                 <label>{{ field.label }}</label>
@@ -82,7 +80,7 @@
                                     </div>
                                 </div>
                             </form>
-                            <script type="application/javascript">
+                            <script>
                                 {% if form.errors %}
                                     var errors = '';
                                     {% for field in form %}
@@ -90,21 +88,39 @@
                                             errors += '{{ error }}\n';
                                         {% endfor %}
                                     {% endfor %}
-                                    {% for error in form.non_field_errors %}
-                                        errors += '{{ error }}\n';
-                                    {% endfor %}
                                     Swal.fire({
                                         title: 'Error!',
                                         text: errors,
                                         icon: 'error'
                                     });
                                 {% endif %}
+
+                                $('form').on('submit', function (e) {
+                                    e.preventDefault();
+                                    var parameters = $(this).serializeArray();
+                                    $.ajax({
+                                        url: '{% url 'list_books' %}',
+                                        type: 'POST',
+                                        data: parameters,
+                                        dataType: 'json'
+                                    }).done(function (data) {
+                                        if(!data.hasOwnProperty('error')){
+                                            location.href = '{{ list_url }}';
+                                            return false;
+                                        }
+                                        message_error(data.error);
+                                    }).fail(function (jqXHR, textStatus, errorThrown) {
+                                        alert(textStatus + ': ' + errorThrown);
+                                    }).always(function (data) {
+                                        // alert("Completado"); always siempre se ejecuta
+                                    })
+                                })
+
                             </script>
                         </div> <!-- card-body .// -->
                     </article> <!-- card.// -->
                 </main> <!-- col.// -->
             </div>
-
         </div> <!-- container .//  -->
     </section>
     </body>
