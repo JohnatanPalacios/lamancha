@@ -38,4 +38,6 @@ urlpatterns = [
         view=auth_views.PasswordResetCompleteView.as_view(),
         name="password_reset_complete"
     ),
-] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+]
+
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -81,7 +81,7 @@
                                             <a href='books/book/details/{{ book.pk }}' class="btn btn-secondary btn-sm">Ver
                                                 ahora</a>
                                         </div>
-                                        <img src="{% static 'images/logo.png' %}" height="80" class="img-bg">
+                                        <img src="{{ book.get_image }}" height="80" class="img-bg">
                                     </div>
                                 {% endfor %}
 
@@ -111,7 +111,7 @@
                     <div class="col-xl-2 col-lg-3 col-md-4 col-6">
                         <div class="card card-sx card-product-grid">
                             <figcaption class="info-wrap">
-                                <a href='books/book/details/{{ book.pk }}' class="img-wrap"> <img src={% static 'images/logo.png' %}>
+                                <a href='books/book/details/{{ book.pk }}' class="img-wrap"> <img src="{{ book.get_image }}">
                                 </a>
                                 <a href='books/book/details/{{ book.pk }}' class="text-center title">{{ book.title }}</a>
                                 <div class="text-center price mt-1">{{ book.price }}</div>

@@ -10,21 +10,23 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d8b07057-b573-4e38-9492-f566354760d8" name="Default Changelist" comment="validaciones">
-      <change afterPath="$PROJECT_DIR$/books/migrations/0003_auto_20201116_2344.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/books/migrations/0004_auto_20201116_2345.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/books/migrations/0005_auto_20201116_2352.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/images/default-book.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/books/delete.html" afterDir="false" />
+    <list default="true" id="d8b07057-b573-4e38-9492-f566354760d8" name="Default Changelist" comment="crud books completo">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/books/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/books/forms.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/books/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/books/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/books/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/books/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/books/static/js/list.js" beforeDir="false" afterPath="$PROJECT_DIR$/books/static/js/list.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/books/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/books/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lamancha/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/lamancha/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/functions.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/functions.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/books/create.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/books/create.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/books/delete.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/books/delete.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/books/detail-product.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/books/detail-product.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/books/list.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/books/list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users/static/js/list.js" beforeDir="false" afterPath="$PROJECT_DIR$/books/static/js/list.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/users/auth/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/users/auth/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/users/profile/profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/users/profile/profile.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/users/profile/update.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/users/profile/update.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,6 +53,12 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="JsFlowSettings">
+    <service-enabled>true</service-enabled>
+    <exe-path />
+    <other-services-enabled>true</other-services-enabled>
+    <auto-save>true</auto-save>
+  </component>
   <component name="JupyterTrust" id="336cd35f-bae8-4080-ba86-038b3e2b910a" />
   <component name="ProjectId" id="1ja0zXDo74MzsqEmibBZdFNwdeM" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -68,7 +76,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/books/static/js" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -138,14 +146,7 @@
       <workItem from="1605028851835" duration="24152000" />
       <workItem from="1605057181503" duration="110231000" />
       <workItem from="1605480558069" duration="2606000" />
-      <workItem from="1605547958411" duration="26284000" />
-    </task>
-    <task id="LOCAL-00011" summary="home">
-      <created>1604276777126</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1604276777126</updated>
+      <workItem from="1605547958411" duration="45406000" />
     </task>
     <task id="LOCAL-00012" summary="home">
       <created>1604277057966</created>
@@ -483,7 +484,14 @@
       <option name="project" value="LOCAL" />
       <updated>1605552503999</updated>
     </task>
-    <option name="localTasksCounter" value="60" />
+    <task id="LOCAL-00060" summary="crud books completo">
+      <created>1605660875821</created>
+      <option name="number" value="00060" />
+      <option name="presentableId" value="LOCAL-00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1605660875821</updated>
+    </task>
+    <option name="localTasksCounter" value="61" />
     <servers />
   </component>
   <component name="TerminalProjectNonSharedOptionsProvider">
@@ -509,7 +517,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="actualizaciones y libros" />
     <MESSAGE value="reducir lineas con extends" />
     <MESSAGE value="recuperar contraseña" />
     <MESSAGE value="settings" />
@@ -534,7 +541,8 @@
     <MESSAGE value="friends network" />
     <MESSAGE value="retoques" />
     <MESSAGE value="validaciones" />
-    <option name="LAST_COMMIT_MESSAGE" value="validaciones" />
+    <MESSAGE value="crud books completo" />
+    <option name="LAST_COMMIT_MESSAGE" value="crud books completo" />
   </component>
   <component name="WindowStateProjectService">
     <state x="1918" y="198" width="816" height="734" key="#Intentions" timestamp="1604629512792">
@@ -567,10 +575,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="283" y="0" key="CommitChangelistDialog2/0.0.1366.728/1366.0.1920.1080@0.0.1366.728" timestamp="1604030439747" />
-    <state x="718" y="71" key="FileChooserDialogImpl" timestamp="1604029728133">
+    <state x="718" y="71" key="FileChooserDialogImpl" timestamp="1605684332481">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="718" y="71" key="FileChooserDialogImpl/0.0.1366.728/1366.0.1920.1080@0.0.1366.728" timestamp="1604029728133" />
+    <state x="718" y="71" key="FileChooserDialogImpl/0.0.1366.728/1366.0.1920.1080@0.0.1366.728" timestamp="1605684332481" />
     <state x="2145" y="387" width="475" height="206" key="Github.ShareDialog" timestamp="1604029533910">
       <screen x="1366" y="0" width="1920" height="1080" />
     </state>
@@ -608,10 +616,10 @@
       <screen x="1366" y="0" width="1920" height="1080" />
     </state>
     <state x="1961" y="299" key="MultipleFileMergeDialog/0.0.1366.728/1366.0.1920.1080@1366.0.1920.1080" timestamp="1604434391183" />
-    <state x="184" y="8" key="SettingsEditor" timestamp="1605422391529">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state x="1624" y="154" width="998" height="709" key="SettingsEditor" timestamp="1605685577518">
+      <screen x="1366" y="0" width="1920" height="1080" />
     </state>
-    <state x="184" y="8" key="SettingsEditor/0.0.1366.728/1366.0.1920.1080@0.0.1366.728" timestamp="1605422391529" />
+    <state x="1624" y="154" width="998" height="709" key="SettingsEditor/0.0.1366.728/1366.0.1920.1080@0.0.1366.728" timestamp="1605685577518" />
     <state x="1625" y="12" key="SettingsEditor/0.0.1366.728/1366.0.1920.1080@1366.0.1920.1080" timestamp="1604275968532" />
     <state x="1753" y="144" key="Vcs.Push.Dialog.v2" timestamp="1605285729186">
       <screen x="1366" y="0" width="1920" height="1080" />

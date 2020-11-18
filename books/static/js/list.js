@@ -1,4 +1,4 @@
-$(function () {
+function initDatatables(csrftoken) {
     $('#data').DataTable({
         responsive: true,
         autoWidth: false,
@@ -7,9 +7,8 @@ $(function () {
         ajax: {
             url: window.location.pathname,
             type: 'POST',
-            data: {
-                'action': 'searchdata'
-            },
+            headers: { 'X-CSRFToken': csrftoken },
+            data: { 'action': 'searchdata' },
             dataSrc: "" // esto es para cuando se envía una variable en la colección
         },
         columns: [
@@ -35,4 +34,4 @@ $(function () {
 
         }
     });
-});
+};

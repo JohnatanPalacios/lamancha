@@ -20,7 +20,7 @@ class BookListView(ListView):
     model = Book
     template_name = 'books/list.html'
 
-    @method_decorator(csrf_exempt)
+    @method_decorator(login_required)
     def dispatch(self, request, *args, **kwargs):
         return super().dispatch(request, *args, **kwargs)
 
@@ -52,6 +52,10 @@ class BookCreateView(CreateView):
     template_name = 'books/create.html'
     success_url = reverse_lazy('list_books')
 
+    @method_decorator(login_required)
+    def dispatch(self, request, *args, **kwargs):
+        return super().dispatch(request, *args, **kwargs)
+
     def post(self, request, *args, **kwargs):
         data = {}
         try:
@@ -79,6 +83,7 @@ class BookUpdateView(UpdateView):
     template_name = 'books/create.html'
     success_url = reverse_lazy('list_books')
 
+    @method_decorator(login_required)
     def dispatch(self, request, *args, **kwargs):
         self.object = self.get_object()
         return super().dispatch(request, *args, **kwargs)
@@ -109,7 +114,7 @@ class BookDeleteView(DeleteView):
     template_name = 'books/delete.html'
     success_url = reverse_lazy('list_books')
 
-    @method_decorator(csrf_exempt)
+    @method_decorator(login_required)
     def dispatch(self, request, *args, **kwargs):
         self.object = self.get_object()
         return super().dispatch(request, *args, **kwargs)

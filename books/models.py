@@ -2,6 +2,8 @@
 from django.db import models as m
 from django.forms import model_to_dict
 
+from lamancha.settings import MEDIA_URL, STATIC_URL
+
 
 class Book(m.Model):
     ISBN = m.CharField(max_length=13, verbose_name='ISBN', blank=False, null=False)
@@ -28,6 +30,11 @@ class Book(m.Model):
     def toJSON(self):
         item = model_to_dict(self, exclude=['cover'])
         return item
+
+    def get_image(self):
+        if self.cover:
+            return '{}{}'.format(MEDIA_URL, self.cover)
+        return '{}{}'.format(STATIC_URL, 'images/default-book.png')
 
     class Meta:
         verbose_name = 'Libro'

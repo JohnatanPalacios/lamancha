@@ -60,8 +60,8 @@ class BookForm(ModelForm):
             # raise forms.ValidationError('Error de algún tipo')
             # para presentar estos errores en el template se usa
             # {% for error in form.non_field_errors }
-        elif not cleaned['author'].isalpha():
-            self.add_error('Autor', 'EL campo solo debe contener letras')
+        # elif not cleaned['author'].isalpha():
+        #    self.add_error('Autor', 'EL campo solo debe contener letras')
         elif not cleaned['language'].isalpha():
             self.add_error('Lenguaje', 'EL campo solo debe contener letras')
         return cleaned

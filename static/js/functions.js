@@ -16,7 +16,7 @@ function message_error(obj) {
     });
 }
 
-function submit_with_ajax(url, title, content, parameters, callback) {
+function submit_with_ajax(url, title, content, parameters, callback, csrftoken) {
     $.confirm({
         theme: 'material',
         title: title,
@@ -33,23 +33,20 @@ function submit_with_ajax(url, title, content, parameters, callback) {
                 btnClass: 'btn-primary',
                 action: function () {
                     $.ajax({
-                        url: url, //window.location.pathname
+                        url: url, //window.location.pathname,
                         type: 'POST',
+                        headers: {'X-CSRFToken': csrftoken},
                         data: parameters,
-                        dataType: 'json',
-                        processData: false,
-                        contentType: false,
+                        dataType: 'json'
                     }).done(function (data) {
-                        console.log(data);
                         if (!data.hasOwnProperty('error')) {
-                            callback(data);
+                            callback();
                             return false;
                         }
                         message_error(data.error);
                     }).fail(function (jqXHR, textStatus, errorThrown) {
                         alert(textStatus + ': ' + errorThrown);
                     }).always(function (data) {
-
                     });
                 }
             },

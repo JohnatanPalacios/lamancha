@@ -12,6 +12,7 @@ from django.contrib.auth.decorators import login_required
 from django.urls import reverse_lazy
 from django.views.generic import CreateView, UpdateView, RedirectView, DetailView, View
 
+from lamancha import settings
 from .forms import UserRegistrationForm
 from .models import User
 
@@ -21,7 +22,7 @@ class LoginFormView(LoginView): # LoginView es una palabra reservada por eso el 
 
     def dispatch(self, request, *args, **kwargs):
         if request.user.is_authenticated:
-            return redirect('index')
+            return redirect(settings.LOGIN_REDIRECT_URL)
         return super().dispatch(request, *args, **kwargs)
 
     def get_context_data(self, **kwargs):

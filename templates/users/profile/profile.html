@@ -42,7 +42,7 @@
                         <div class="card-body">
                             <figure class="icontext">
                                 <div class="icon">
-                                    <img class="rounded-circle img-md border" src="{{ user.photo.url }}">
+                                    <img class="rounded-circle img-md border" src="{{ user.get_photo }}">
                                 </div>
                                 <div class="text">
                                     <strong style="font-size: large"> {{ user.username }} </strong> <br>
@@ -62,7 +62,6 @@
                         </div> <!-- card-body .// -->
                     </article> <!-- card.// -->
                 </main> <!-- col.// -->
-
                 <!-- ESTE ES EL BLOQUE DE MÁS VENDIDOS -->
                 <div class="col-md d-none d-lg-block flex-grow-1">
                     <aside class="special-home-right">
@@ -79,13 +78,9 @@
                         {% endfor %}
                     </aside>
                 </div> <!-- col.// -->
-
-
             </div>
-
         </div> <!-- container .//  -->
     </section>
     <!-- ========================= SECTION CONTENT END// ========================= -->
-
     </body>
 {% endblock %}

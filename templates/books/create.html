@@ -1,41 +1,8 @@
 {% extends 'base.html' %}
 {% load widget_tweaks %}
 {% load static %}
-{% block head %}
-    <!--  aqui van esas librerías -->
-    <link rel="stylesheet" href="{% static 'lib/datatables-1.10.20/css/dataTables.bootstrap4.min.css' %}"/>
-    <link rel="stylesheet"
-          href="{% static 'lib/datatables-1.10.20/plugins/responsive-2.2.3/css/responsive.bootstrap4.min.css' %}"/>
-    <script src="{% static 'lib/datatables-1.10.20/js/jquery.dataTables.js' %}"></script>
-    <script src="{% static 'lib/datatables-1.10.20/js/dataTables.bootstrap4.min.js' %}"></script>
-    <script src="{% static 'lib/datatables-1.10.20/plugins/responsive-2.2.3/js/dataTables.responsive.min.js' %}"></script>
-    <script src="{% static 'lib/datatables-1.10.20/plugins/responsive-2.2.3/js/responsive.bootstrap4.min.js' %}"></script>
-{% endblock %}
 {% block content %}
     <body>
-    <script type="application/javascript">
-        $(function () {
-            $('#data').DataTable({
-                responsive: true,
-                autoWidth: false
-            });
-            $('.btnTest').on('click', function () {
-                $.ajax({
-                    url: '{% url 'list_books' %}',
-                    type: 'POST',
-                    data: {id: 2},
-                    dataType: 'json'
-                }).done(function (data) {
-                    console.log(data)
-                }).fail(function (jqXHR, textStatus, errorThrown) {
-                    alert(textStatus + ': ' + errorThrown);
-                }).always(function (data) {
-                    // alert("Completado"); always siempre se ejecuta
-                })
-            })
-        });
-    </script>
-
     <b class="screen-overlay"></b>
 
     <!-- ========================= SECTION CONTENT ========================= -->
@@ -57,7 +24,7 @@
                 <main class="col-md-9">
                     <article class="card mb-3">
                         <div class="card-body">
-                            <form method="POST" action=".">
+                            <form method="POST" action="." enctype="multipart/form-data">
                                 <div class="card card-default">
                                     <div class="card-header">
                                         <h5 class="card-title">
@@ -83,6 +50,9 @@
                                         <button type="submit" class="btn btn-primary btn-flat btnTest">
                                             <i class="fas fa-save"></i> Guardar
                                         </button>
+                                        <a href="{% url 'list_books' %}" class="btn btn-info btn-flat btnTest">
+                                            <i class="fas fa-times"></i> Cancelar
+                                        </a>
                                     </div>
                                 </div>
                             </form>
@@ -103,12 +73,17 @@
 
                                 $('form').on('submit', function (e) {
                                     e.preventDefault();
-                                    var parameters = $(this).serializeArray();
+                                    // var parameters = $(this).serializeArray();
+                                    var parameters = new FormData(this);
+                                    const csrftoken = document.querySelector('[name=csrfmiddlewaretoken]').value;
                                     $.ajax({
                                         url: window.location.pathname,
                                         type: 'POST',
+                                        headers: { 'X-CSRFToken': csrftoken },
                                         data: parameters,
-                                        dataType: 'json'
+                                        dataType: 'json',
+                                        processData: false,
+                                        contentType: false,
                                     }).done(function (data) {
                                         if (!data.hasOwnProperty('error')) {
                                             location.href = '{{ list_url }}';
@@ -118,8 +93,7 @@
                                     }).fail(function (jqXHR, textStatus, errorThrown) {
                                         alert(textStatus + ': ' + errorThrown);
                                     }).always(function (data) {
-                                        // alert("Completado"); always siempre se ejecuta
-                                    })
+                                    });
                                 })
 
                             </script>
