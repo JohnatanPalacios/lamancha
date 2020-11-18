@@ -61,53 +61,34 @@
                                 <div class="card card-default">
                                     <div class="card-header">
                                         <h5 class="card-title">
-                                            {% if action == 'add' %}
-                                                <i class="fas fa-plus"></i>
-                                            {% else %}
-                                                <i class="fas fa-edit"></i>
-                                            {% endif %}
-                                            {{ title }}
-                                        </h5>
+                                            <i class="fas fa-trash"></i> {{ title }}</h5>
                                     </div>
                                     <div class="card-body">
                                         {% csrf_token %}
                                         <input type="hidden" name="action" value="{{ action }}">
-                                        {% for field in form.visible_fields %}
-                                            <div class="form-group">
-                                                <label>{{ field.label }}</label>
-                                                {{ field|add_class:'form-control' }}
-                                            </div>
-                                        {% endfor %}
+                                        <div class="alert alert-warning alert-dismissible">
+                                            <h5><i class="fas fa-exclamation-triangle"></i> Notificación!</h5>
+                                            ¿Estás seguro de eliminar el registro del libro N° {{ object.id }}?
+                                        </div>
                                     </div>
                                     <div class="card-footer">
                                         <button type="submit" class="btn btn-primary btn-flat btnTest">
-                                            <i class="fas fa-save"></i> Guardar
+                                            <i class="fas fa-trash-alt"></i> Si, aceptar
                                         </button>
+                                        <a href="{% url 'list_books' %}" class="btn btn-info btn-flat btnTest">
+                                            <i class="fas fa-times"></i> Cancelar
+                                        </a>
                                     </div>
                                 </div>
                             </form>
                             <script>
-                                {% if form.errors %}
-                                    var errors = '';
-                                    {% for field in form %}
-                                        {% for error in field.errors %}
-                                            errors += '{{ error }}\n';
-                                        {% endfor %}
-                                    {% endfor %}
-                                    Swal.fire({
-                                        title: 'Error!',
-                                        text: errors,
-                                        icon: 'error'
-                                    });
-                                {% endif %}
-
                                 $('form').on('submit', function (e) {
                                     e.preventDefault();
-                                    var parameters = $(this).serializeArray();
+                                    //var parameters = $(this).serializeArray();
                                     $.ajax({
                                         url: window.location.pathname,
                                         type: 'POST',
-                                        data: parameters,
+                                        data: {}, //parameters,
                                         dataType: 'json'
                                     }).done(function (data) {
                                         if (!data.hasOwnProperty('error')) {
@@ -121,13 +102,12 @@
                                         // alert("Completado"); always siempre se ejecuta
                                     })
                                 })
-
                             </script>
-                        </div> <!-- card-body .// -->
-                    </article> <!-- card.// -->
-                </main> <!-- col.// -->
+                        </div>
+                    </article>
+                </main>
             </div>
-        </div> <!-- container .//  -->
+        </div>
     </section>
     </body>
 {% endblock %}

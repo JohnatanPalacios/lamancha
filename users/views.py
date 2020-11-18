@@ -16,7 +16,7 @@ from .forms import UserRegistrationForm
 from .models import User
 
 
-class LoginFormView(LoginView):
+class LoginFormView(LoginView): # LoginView es una palabra reservada por eso el form
     template_name = 'users/auth/login.html'
 
     def dispatch(self, request, *args, **kwargs):

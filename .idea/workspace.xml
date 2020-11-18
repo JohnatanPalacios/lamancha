@@ -10,20 +10,21 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d8b07057-b573-4e38-9492-f566354760d8" name="Default Changelist" comment="retoques">
+    <list default="true" id="d8b07057-b573-4e38-9492-f566354760d8" name="Default Changelist" comment="validaciones">
+      <change afterPath="$PROJECT_DIR$/books/migrations/0003_auto_20201116_2344.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/books/migrations/0004_auto_20201116_2345.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/books/migrations/0005_auto_20201116_2352.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/images/default-book.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/books/delete.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/books/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/books/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/books/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/books/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/books/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/books/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/books/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/books/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lamancha/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/lamancha/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lamancha/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/lamancha/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/books/create.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/books/create.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/books/detail-product.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/books/detail-product.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/books/list.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/books/list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/header.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/users/auth/signup.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/users/auth/signup.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/static/js/list.js" beforeDir="false" afterPath="$PROJECT_DIR$/books/static/js/list.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,8 +43,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Python Script" />
-        <option value="HTML File" />
         <option value="JavaScript File" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -66,23 +67,23 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/static/lib" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/books/static/js" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\UTP\Laboratorio de Software\lamancha\books\static\js" />
+      <recent name="D:\UTP\Laboratorio de Software\lamancha\static\lib" />
+      <recent name="D:\UTP\Laboratorio de Software\lamancha\static\js" />
+      <recent name="D:\UTP\Laboratorio de Software\lamancha\users\static\js" />
+      <recent name="D:\UTP\Laboratorio de Software\lamancha\static" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\UTP\Laboratorio de Software\lamancha\templates\books" />
       <recent name="D:\UTP\Laboratorio de Software\lamancha\templates\users\auth" />
       <recent name="D:\UTP\Laboratorio de Software\lamancha\templates\core" />
       <recent name="D:\UTP\Laboratorio de Software\lamancha\templates\users\profile" />
       <recent name="D:\UTP\Laboratorio de Software\lamancha\templates\registration" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\UTP\Laboratorio de Software\lamancha\static\lib" />
-      <recent name="D:\UTP\Laboratorio de Software\lamancha\static\js" />
-      <recent name="D:\UTP\Laboratorio de Software\lamancha\users\static\js" />
-      <recent name="D:\UTP\Laboratorio de Software\lamancha\static" />
-      <recent name="D:\UTP\Laboratorio de Software\lamancha\templates\users" />
     </key>
   </component>
   <component name="RunManager">
@@ -137,21 +138,7 @@
       <workItem from="1605028851835" duration="24152000" />
       <workItem from="1605057181503" duration="110231000" />
       <workItem from="1605480558069" duration="2606000" />
-      <workItem from="1605547958411" duration="647000" />
-    </task>
-    <task id="LOCAL-00009" summary="navbar">
-      <created>1604275048092</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1604275048092</updated>
-    </task>
-    <task id="LOCAL-00010" summary="home">
-      <created>1604276099842</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1604276099842</updated>
+      <workItem from="1605547958411" duration="26284000" />
     </task>
     <task id="LOCAL-00011" summary="home">
       <created>1604276777126</created>
@@ -482,7 +469,21 @@
       <option name="project" value="LOCAL" />
       <updated>1605285715770</updated>
     </task>
-    <option name="localTasksCounter" value="58" />
+    <task id="LOCAL-00058" summary="validaciones">
+      <created>1605552493750</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1605552493750</updated>
+    </task>
+    <task id="LOCAL-00059" summary="validaciones">
+      <created>1605552503999</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1605552503999</updated>
+    </task>
+    <option name="localTasksCounter" value="60" />
     <servers />
   </component>
   <component name="TerminalProjectNonSharedOptionsProvider">
@@ -508,7 +509,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="paymentsMethods" />
     <MESSAGE value="actualizaciones y libros" />
     <MESSAGE value="reducir lineas con extends" />
     <MESSAGE value="recuperar contraseña" />
@@ -533,7 +533,8 @@
     <MESSAGE value="ok" />
     <MESSAGE value="friends network" />
     <MESSAGE value="retoques" />
-    <option name="LAST_COMMIT_MESSAGE" value="retoques" />
+    <MESSAGE value="validaciones" />
+    <option name="LAST_COMMIT_MESSAGE" value="validaciones" />
   </component>
   <component name="WindowStateProjectService">
     <state x="1918" y="198" width="816" height="734" key="#Intentions" timestamp="1604629512792">

@@ -1,117 +1,118 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
-<body>
+    <body>
 
-<!-- ========================= SECTION CONTENT ========================= -->
-<section class="section-content bg-white padding-y">
-<div class="container">
+    <!-- ========================= SECTION CONTENT ========================= -->
+    <section class="section-content bg-white padding-y">
+        <div class="container">
 
-<!-- ============================ ITEM DETAIL ======================== -->
-	<div class="row">
-		<aside class="col-md-6">
-<div class="card">
-<article class="gallery-wrap"> 
-	<div class="img-big-wrap">
-	  <div> <a href="#"><img src={% static 'image/logo.png' %}></a></div>
-	</div> <!-- slider-product.// -->
-</article> <!-- gallery-wrap .end// -->
-</div> <!-- card.// -->
-		</aside>
-		<main class="col-md-6">
-<article class="product-info-aside">
+            <!-- ============================ ITEM DETAIL ======================== -->
+            <div class="row">
+                <aside class="col-md-6">
+                    <div class="card">
+                        <article class="gallery-wrap">
+                            <div class="img-big-wrap">
+                                <div><a href="#"><img src={% static 'image/logo.png' %}></a></div>
+                            </div> <!-- slider-product.// -->
+                        </article> <!-- gallery-wrap .end// -->
+                    </div> <!-- card.// -->
+                </aside>
+                <main class="col-md-6">
+                    <article class="product-info-aside">
 
-<h2 class="title mt-3">{{ book.title }}</h2>
+                        <h2 class="title mt-3">{{ book.title }}</h2>
 
-<div class="rating-wrap my-3">
-	<ul class="rating-stars">
-		<li style="width:80%" class="stars-active"> 
-			<i class="fa fa-star"></i> <i class="fa fa-star"></i> 
-			<i class="fa fa-star"></i> <i class="fa fa-star"></i> 
-			<i class="fa fa-star"></i> 
-		</li>
-		<li>
-			<i class="fa fa-star"></i> <i class="fa fa-star"></i> 
-			<i class="fa fa-star"></i> <i class="fa fa-star"></i> 
-			<i class="fa fa-star"></i> 
-		</li>
-	</ul>
-</div> <!-- rating-wrap.// -->
-
-
-<dl class="row">
-  <dt class="col-sm-3">Autor(a):</dt>
-  <dd class="col-sm-9"><a href="#">{{ book.author }}</a></dd>
-
-  <dt class="col-sm-3">Editorial:</dt>
-  <dd class="col-sm-9">{{ book.editorial }}</dd>
-
-  <dt class="col-sm-3">Encuadernación:</dt>
-  <dd class="col-sm-9">{{ book.binding }}</dd>
-
-  <dt class="col-sm-3">Numero de paginas:</dt>
-  <dd class="col-sm-9">{{ book.pages }}</dd>
-
-  <dt class="col-sm-3">Estado:</dt>
-  <dd class="col-sm-9">{{ book.condition }}</dd>
-
-  <dt class="col-sm-3">Precio:</dt>
-  <dd class="col-sm-9">{{ book.price }}</dd>
-</dl>
-
-	<div class="form-row  mt-4">
-		<div class="form-group col-md flex-grow-0">
-			<div class="input-group mb-3 input-spinner">
-			  <div class="input-group-prepend">
-			    <button class="btn btn-light bg-blue" type="button" id="button-plus"> + </button>
-			  </div>
-			  <input type="text" class="form-control" value="1">
-			  <div class="input-group-append">
-			    <button class="btn btn-light bg-blue" type="button" id="button-minus"> &minus; </button>
-			  </div>
-			</div>
-		</div> <!-- col.// -->
-		<div class="form-group col-md">
-			<a href="#"  class="btn  btn-primary"> 
-				<i class=""></i> <span class="text"> ¡COMPRAR AHORA! </span>
-			</a>
-			<a href="#" class="btn  btn-primary">
-        <i class=""></i> <span class="text"> RESERVAR </span>
-			</a>
-		</div> <!-- col.// -->
-	</div> <!-- row.// -->
-
-</article> <!-- product-info-aside .// -->
-		</main> <!-- col.// -->
-	</div> <!-- row.// -->
-
-<!-- ================ ITEM DETAIL END .// ================= -->
+                        <div class="rating-wrap my-3">
+                            <ul class="rating-stars">
+                                <li style="width:80%" class="stars-active">
+                                    <i class="fa fa-star"></i> <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i> <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                </li>
+                                <li>
+                                    <i class="fa fa-star"></i> <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i> <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                </li>
+                            </ul>
+                        </div> <!-- rating-wrap.// -->
 
 
-</div> <!-- container .//  -->
-</section>
-<!-- ========================= SECTION CONTENT END// ========================= -->
+                        <dl class="row">
+                            <dt class="col-sm-3">Autor(a):</dt>
+                            <dd class="col-sm-9"><a href="#">{{ book.author }}</a></dd>
 
-<!-- ========================= SECTION  ========================= -->
-<section class="section-name padding-y bg">
-<div class="container">
+                            <dt class="col-sm-3">Editorial:</dt>
+                            <dd class="col-sm-9">{{ book.editorial }}</dd>
 
-<div class="row">
-	<div class="col-md-11">
-    <div class="bg-blue text-white text-center col-md-3">
-      <h5 class="title-description"> Descripción </h5>
-    </div>
-		
-		<p class="text-center">
-			{{ book.description }}
-		</p>
-	</div> <!-- col.// -->
-	</div> <!-- box.// -->
-	</aside> <!-- col.// -->
-</div> <!-- row.// -->
+                            <dt class="col-sm-3">Encuadernación:</dt>
+                            <dd class="col-sm-9">{{ book.binding }}</dd>
 
-</div> <!-- container .//  -->
-</section>
-<!-- ========================= SECTION CONTENT END// ========================= -->
-</body>
+                            <dt class="col-sm-3">Numero de paginas:</dt>
+                            <dd class="col-sm-9">{{ book.pages }}</dd>
+
+                            <dt class="col-sm-3">Estado:</dt>
+                            <dd class="col-sm-9">{{ book.condition }}</dd>
+
+                            <dt class="col-sm-3">Precio:</dt>
+                            <dd class="col-sm-9">{{ book.price }}</dd>
+                        </dl>
+                        {% if not user.is_staff %}
+                            <div class="form-row  mt-4">
+                                <div class="form-group col-md flex-grow-0">
+                                    <div class="input-group mb-3 input-spinner">
+                                        <div class="input-group-prepend">
+                                            <button class="btn btn-light bg-blue" type="button" id="button-plus"> +
+                                            </button>
+                                        </div>
+                                        <input type="text" class="form-control" value="1">
+                                        <div class="input-group-append">
+                                            <button class="btn btn-light bg-blue" type="button" id="button-minus">
+                                                &minus;
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div> <!-- col.// -->
+                                <div class="form-group col-md">
+                                    <a href="#" class="btn  btn-primary">
+                                        <i class=""></i> <span class="text"> ¡COMPRAR AHORA! </span>
+                                    </a>
+                                    <a href="#" class="btn  btn-primary">
+                                        <i class=""></i> <span class="text"> RESERVAR </span>
+                                    </a>
+                                </div> <!-- col.// -->
+
+                            </div> <!-- row.// -->
+                        {% endif %}
+                    </article> <!-- product-info-aside .// -->
+                </main> <!-- col.// -->
+            </div> <!-- row.// -->
+            <!-- ================ ITEM DETAIL END .// ================= -->
+        </div> <!-- container .//  -->
+    </section>
+    <!-- ========================= SECTION CONTENT END// ========================= -->
+
+    <!-- ========================= SECTION  ========================= -->
+    <section class="section-name padding-y bg">
+        <div class="container">
+
+            <div class="row">
+                <div class="col-md-11">
+                    <div class="bg-blue text-white text-center col-md-3">
+                        <h5 class="title-description"> Descripción </h5>
+                    </div>
+
+                    <p class="text-center">
+                        {{ book.description }}
+                    </p>
+                </div> <!-- col.// -->
+            </div> <!-- box.// -->
+            </aside> <!-- col.// -->
+        </div> <!-- row.// -->
+
+        </div> <!-- container .//  -->
+    </section>
+    <!-- ========================= SECTION CONTENT END// ========================= -->
+    </body>
 {% endblock %}
