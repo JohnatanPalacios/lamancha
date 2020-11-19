@@ -35,11 +35,21 @@ class BookForm(ModelForm):
         ]
         widgets = {
             'cover': FileInput(),
-            'title': TextInput(attrs={'placeholder': 'Lo Que Vi'}),
-            'ISBN': TextInput(attrs={'placeholder': '9700517918'}),
-            'published_date': DateInput(),
+            'title': TextInput(attrs={
+                'placeholder': 'Lo Que Vi',
+                'style': 'width: 50%'}),
+            'ISBN': TextInput(attrs={
+                'placeholder': '9700517918',
+                'style': 'width: 35%'}),
+            'published_date': DateInput(attrs={'style': 'width: 20%'}),
             'description': Textarea(),
-            'language': Select(attrs={'class': 'select2'})
+            'binding': TextInput(attrs={'style': 'width: 35%'}),
+            'price': NumberInput(attrs={'style': 'width: 35%'}),
+            'stock': NumberInput(attrs={'style': 'width: 35%'}),
+            'condition': Select(attrs={'style': 'width: 20%'}),
+            'language': Select(attrs={
+                'class': 'select2 js-example-responsive',
+                'style': 'width: 30%'})
         }
 
     def save(self, commit=True):
