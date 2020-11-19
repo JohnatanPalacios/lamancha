@@ -7,8 +7,8 @@ function initDatatables(csrftoken) {
         ajax: {
             url: window.location.pathname,
             type: 'POST',
-            headers: { 'X-CSRFToken': csrftoken },
-            data: { 'action': 'searchdata' },
+            headers: {'X-CSRFToken': csrftoken},
+            data: {'action': 'searchdata'},
             dataSrc: "" // esto es para cuando se envía una variable en la colección
         },
         columns: [
@@ -27,6 +27,15 @@ function initDatatables(csrftoken) {
                     var buttons = '<a href="/books/book/update/' + row.id + '/" class="btn btn-warning btn-xs"><i class="fas fa-edit"></i></a> ';
                     buttons += '<a href="/books/book/delete/' + row.id + '/" class="btn btn-warning btn-xs"><i class="fas fa-trash-alt"></i></a>';
                     return buttons;
+                }
+            },
+            {
+                targets: [1],
+                class: 'text-center',
+                orderable: false,
+                render: function (data, type, row) {
+                    var enlace = '<a href="/books/book/details/' + row.id + '">' + row.title + '</a> ';
+                    return enlace;
                 }
             },
         ],

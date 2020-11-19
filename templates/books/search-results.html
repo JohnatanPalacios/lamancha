@@ -43,28 +43,6 @@
         </article> <!-- filter-group .// -->
         <article class="filter-group">
             <h6 class="title">
-                <a href="#" class="dropdown-toggle" data-toggle="collapse" data-target="#collapse_3"> Price range </a>
-            </h6>
-            <div class="filter-content collapse show" id="collapse_3">
-                <div class="inner">
-                    <input type="range" class="custom-range" min="0" max="100" name="">
-                    <div class="form-row">
-                    <div class="form-group col-md-6">
-                      <label>Min</label>
-                      <input class="form-control" placeholder="$0" type="number">
-                    </div>
-                    <div class="form-group text-right col-md-6">
-                      <label>Max</label>
-                      <input class="form-control" placeholder="$1,0000" type="number">
-                    </div>
-                    </div> <!-- form-row.// -->
-                    <button class="btn btn-block btn-primary">Apply</button>
-                </div> <!-- inner.// -->
-            </div>
-        </article> <!-- filter-group .// -->
-
-        <article class="filter-group">
-            <h6 class="title">
                 <a href="#" class="dropdown-toggle" data-toggle="collapse" data-target="#collapse_5"> Condición </a>
             </h6>
             <div class="filter-content collapse show" id="collapse_5">
@@ -83,39 +61,18 @@
 
         </aside> <!-- col.// -->
         <main class="col-md-10">
-
-
-    <header class="mb-3">
-            <div class="form-inline">
-                <strong class="mr-md-auto">32 Items found </strong>
-                <select class="mr-2 form-control">
-                    <option>Latest items</option>
-                    <option>Trending</option>
-                    <option>Most Popular</option>
-                    <option>Cheapest</option>
-                </select>
-                <div class="btn-group">
-                    <a href="page-listing-grid.html" class="btn btn-light" data-toggle="tooltip" title="List view">
-                        <i class="fa fa-bars"></i></a>
-                    <a href="page-listing-large.html" class="btn btn-light active" data-toggle="tooltip" title="Grid view">
-                        <i class="fa fa-th"></i></a>
-                </div>
-            </div>
-    </header><!-- sect-heading -->
-
-
         {% if books %}   <!-- CON ESTE IF SE VAN A LISTAR LOS LIBROS -->
         {% for book in books %}
             <article class="card card-product-list">
                 <div class="row no-gutters">
                     <aside class="col-md-3">
                         <a href='#' class="img-wrap">
-                            <img src="{% static 'images/logo.png' %}">
+                            <img src="{{ book.get_image }}">
                         </a>
                     </aside> <!-- col.// -->
                     <div class="col-md-6">
                         <div class="info-main">
-                            <a href="#" class="h5 title"> {{ book.title }}  </a>
+                            <a href="books/book/details/{{ book.pk }}" class="h5 title"> {{ book.title }}  </a>
                             <h6 class="h7 title-text"> {{ book.editorial }} </h6>
                             <div class="rating-wrap mb-2">
                                 <ul class="rating-stars">
@@ -169,8 +126,8 @@
 
 
     <div class="box text-center">
-        <p>Did you find what you were looking for？</p>
-        <a href="" class="btn btn-light">Yes</a>
+        <p>¿Econtraste lo que buscabas？</p>
+        <a href="" class="btn btn-light">Si</a>
         <a href="" class="btn btn-light">No</a>
     </div>
 

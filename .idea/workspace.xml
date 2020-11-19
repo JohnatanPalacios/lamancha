@@ -10,8 +10,15 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d8b07057-b573-4e38-9492-f566354760d8" name="Default Changelist" comment="CRUD libros completo + imagenes funcionando con ajax">
+    <list default="true" id="d8b07057-b573-4e38-9492-f566354760d8" name="Default Changelist" comment="migrations and requirements">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/books/static/js/list.js" beforeDir="false" afterPath="$PROJECT_DIR$/books/static/js/list.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lamancha/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/lamancha/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lamancha/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/lamancha/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/books/search-results.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/books/search-results.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/header.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/users/profile/update.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/users/profile/update.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -131,21 +138,7 @@
       <workItem from="1605028851835" duration="24152000" />
       <workItem from="1605057181503" duration="110231000" />
       <workItem from="1605480558069" duration="2606000" />
-      <workItem from="1605547958411" duration="46140000" />
-    </task>
-    <task id="LOCAL-00013" summary="index">
-      <created>1604279981222</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1604279981222</updated>
-    </task>
-    <task id="LOCAL-00014" summary="index">
-      <created>1604280624776</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1604280624776</updated>
+      <workItem from="1605547958411" duration="68088000" />
     </task>
     <task id="LOCAL-00015" summary="index">
       <created>1604280807741</created>
@@ -476,7 +469,21 @@
       <option name="project" value="LOCAL" />
       <updated>1605689250738</updated>
     </task>
-    <option name="localTasksCounter" value="62" />
+    <task id="LOCAL-00062" summary="migrations and requirements">
+      <created>1605689716376</created>
+      <option name="number" value="00062" />
+      <option name="presentableId" value="LOCAL-00062" />
+      <option name="project" value="LOCAL" />
+      <updated>1605689716376</updated>
+    </task>
+    <task id="LOCAL-00063" summary="migrations and requirements">
+      <created>1605689724234</created>
+      <option name="number" value="00063" />
+      <option name="presentableId" value="LOCAL-00063" />
+      <option name="project" value="LOCAL" />
+      <updated>1605689724234</updated>
+    </task>
+    <option name="localTasksCounter" value="64" />
     <servers />
   </component>
   <component name="TerminalProjectNonSharedOptionsProvider">
@@ -502,7 +509,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="recuperar contraseña" />
     <MESSAGE value="settings" />
     <MESSAGE value="password_reset_email" />
     <MESSAGE value="upgrade 2" />
@@ -527,7 +533,8 @@
     <MESSAGE value="validaciones" />
     <MESSAGE value="crud books completo" />
     <MESSAGE value="CRUD libros completo + imagenes funcionando con ajax" />
-    <option name="LAST_COMMIT_MESSAGE" value="CRUD libros completo + imagenes funcionando con ajax" />
+    <MESSAGE value="migrations and requirements" />
+    <option name="LAST_COMMIT_MESSAGE" value="migrations and requirements" />
   </component>
   <component name="WindowStateProjectService">
     <state x="1918" y="198" width="816" height="734" key="#Intentions" timestamp="1604629512792">
@@ -606,11 +613,11 @@
     </state>
     <state x="1624" y="154" width="998" height="709" key="SettingsEditor/0.0.1366.728/1366.0.1920.1080@0.0.1366.728" timestamp="1605685577518" />
     <state x="1625" y="12" key="SettingsEditor/0.0.1366.728/1366.0.1920.1080@1366.0.1920.1080" timestamp="1604275968532" />
-    <state x="1753" y="144" key="Vcs.Push.Dialog.v2" timestamp="1605689451897">
+    <state x="1753" y="144" key="Vcs.Push.Dialog.v2" timestamp="1605689734457">
       <screen x="1366" y="0" width="1920" height="1080" />
     </state>
     <state x="275" y="97" key="Vcs.Push.Dialog.v2/0.0.1366.728/1366.0.1920.1080@0.0.1366.728" timestamp="1605109076663" />
-    <state x="1753" y="144" key="Vcs.Push.Dialog.v2/0.0.1366.728/1366.0.1920.1080@1366.0.1920.1080" timestamp="1605689451897" />
+    <state x="1753" y="144" key="Vcs.Push.Dialog.v2/0.0.1366.728/1366.0.1920.1080@1366.0.1920.1080" timestamp="1605689734457" />
     <state x="275" y="97" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1604729706436" />
     <state x="482" y="98" key="com.intellij.openapi.vcs.changes.SpecificFilesViewDialog" timestamp="1604031002364">
       <screen x="0" y="0" width="1366" height="728" />
