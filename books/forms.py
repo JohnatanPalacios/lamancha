@@ -63,6 +63,6 @@ class BookForm(ModelForm):
             # {% for error in form.non_field_errors }
         # elif not cleaned['author'].isalpha():
         #    self.add_error('Autor', 'EL campo solo debe contener letras')
-        elif not cleaned['language'].isalpha():
-            self.add_error('Lenguaje', 'EL campo solo debe contener letras')
+        #elif not cleaned['language'].isalpha():
+        #    self.add_error('Lenguaje', 'EL campo solo debe contener letras')
         return cleaned

@@ -10,24 +10,10 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d8b07057-b573-4e38-9492-f566354760d8" name="Default Changelist" comment="ok">
+    <list default="true" id="d8b07057-b573-4e38-9492-f566354760d8" name="Default Changelist" comment="fallas">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/books/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/books/admin.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/books/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/books/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/books/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/books/migrations/0001_initial.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/books/migrations/0002_auto_20201111_1857.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/books/migrations/0003_auto_20201116_2344.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/books/migrations/0004_auto_20201116_2345.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/books/migrations/0005_auto_20201116_2352.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/books/migrations/0006_auto_20201118_0353.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/books/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/books/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/books/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/books/tests.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lamancha/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/lamancha/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lamancha/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/lamancha/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/books/create.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/books/create.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/users/profile/update.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/users/profile/update.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/migrations/0001_initial.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users/migrations/0002_auto_20201111_1857.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/users/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/models.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -175,14 +161,7 @@
       <workItem from="1605057181503" duration="110231000" />
       <workItem from="1605480558069" duration="2606000" />
       <workItem from="1605547958411" duration="79937000" />
-      <workItem from="1605781386169" duration="1969000" />
-    </task>
-    <task id="LOCAL-00016" summary="login incompleto">
-      <created>1604289414145</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1604289414145</updated>
+      <workItem from="1605781386169" duration="3388000" />
     </task>
     <task id="LOCAL-00017" summary="login incompleto">
       <created>1604333084363</created>
@@ -520,7 +499,14 @@
       <option name="project" value="LOCAL" />
       <updated>1605766564032</updated>
     </task>
-    <option name="localTasksCounter" value="65" />
+    <task id="LOCAL-00065" summary="fallas">
+      <created>1605806120292</created>
+      <option name="number" value="00065" />
+      <option name="presentableId" value="LOCAL-00065" />
+      <option name="project" value="LOCAL" />
+      <updated>1605806120293</updated>
+    </task>
+    <option name="localTasksCounter" value="66" />
     <servers />
   </component>
   <component name="TerminalProjectNonSharedOptionsProvider">
@@ -546,7 +532,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="settings" />
     <MESSAGE value="password_reset_email" />
     <MESSAGE value="upgrade 2" />
     <MESSAGE value="book detail" />
@@ -571,7 +556,8 @@
     <MESSAGE value="CRUD libros completo + imagenes funcionando con ajax" />
     <MESSAGE value="migrations and requirements" />
     <MESSAGE value="ok" />
-    <option name="LAST_COMMIT_MESSAGE" value="ok" />
+    <MESSAGE value="fallas" />
+    <option name="LAST_COMMIT_MESSAGE" value="fallas" />
   </component>
   <component name="WindowStateProjectService">
     <state x="1918" y="198" width="816" height="734" key="#Intentions" timestamp="1604629512792">

@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from books.models import Book
+from books.models import Book, Language
 
 
 @admin.register(Book)
@@ -14,6 +14,8 @@ class BookAdmin(admin.ModelAdmin):
     class Meta:
         verbose_name = 'Administrar libro'
         verbose_name_plural = 'Administrar libros'
+
+admin.site.register(Language)
 
 
 
