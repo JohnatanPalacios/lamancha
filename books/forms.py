@@ -39,6 +39,7 @@ class BookForm(ModelForm):
             'ISBN': TextInput(attrs={'placeholder': '9700517918'}),
             'published_date': DateInput(),
             'description': Textarea(),
+            'language': Select(attrs={'class': 'select2'})
         }
 
     def save(self, commit=True):

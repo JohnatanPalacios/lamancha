@@ -60,7 +60,7 @@ class User(AbstractUser):
     address = models.CharField(max_length=150, verbose_name='Dirección', null=True, blank=True)
     birthday = models.DateField(verbose_name='Fecha de nacimiento', null=True, blank=True)
     gender = models.CharField(max_length=10, choices=GENDERS, verbose_name='Género', null=True, blank=True)
-    favoriteGenres = models.ManyToManyField(LiteraryGenders, verbose_name='Preferencias literarias')
+    favoriteGenres = models.ManyToManyField(LiteraryGenders, verbose_name='Preferencias literarias', blank=True)
     news = models.BooleanField(default=True, null=True, blank=True)
     email = models.EmailField(_('email address'), unique=True, null=False, blank=False)
     debitCards = models.ManyToManyField(DebitCard, verbose_name='Tarjetas de débito')

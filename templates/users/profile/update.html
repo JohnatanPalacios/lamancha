@@ -136,11 +136,11 @@
                                     {{ form.favoriteGenres }}
                                 </div>
                             {% endif %}
-
+                            {% if not user.is_staff %}
                             <div class="form-group">
                                 <label class="custom-control custom-checkbox">{{ form.news }} {{ form.news.label }}</label>
                             </div>
-
+                            {% endif %}
                             <div class="form-group">
                                 <button type="submit" class="btn btn-primary btn-block"> Actualizar</button>
                             </div> <!-- form-group// -->
