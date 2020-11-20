@@ -1,12 +1,6 @@
 {% extends 'base.html' %}
 {% load widget_tweaks %}
 {% load static %}
-{% block head %}
-    <link href="{% static 'lib/select2-4.0.13/css/select2.min.css' %}" rel="stylesheet"/>
-    <link href="{% static 'lib/select2-4.0.13/css/select2-bootstrap4.min.css' %}" rel="stylesheet"/>
-    <script src="{% static 'lib/select2-4.0.13/js/select2.min.js' %}"></script>
-    <script src="{% static 'lib/select2-4.0.13/js/i18n/es.js' %}"></script>
-{% endblock %}
 {% block content %}
     <body>
     <b class="screen-overlay"></b>
@@ -89,7 +83,6 @@
 
                                 $('form').on('submit', function (e) {
                                     e.preventDefault();
-                                    // var parameters = $(this).serializeArray();
                                     var parameters = new FormData(this);
                                     const csrftoken = document.querySelector('[name=csrfmiddlewaretoken]').value;
                                     $.ajax({

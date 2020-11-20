@@ -17,7 +17,7 @@ from .forms import UserRegistrationForm
 from .models import User
 
 
-class LoginFormView(LoginView): # LoginView es una palabra reservada por eso el form
+class LoginFormView(LoginView):
     template_name = 'users/auth/login.html'
 
     def dispatch(self, request, *args, **kwargs):
@@ -39,29 +39,11 @@ class LogoutView(RedirectView):
         return super().dispatch(request, *args, **kwargs)
 
 
-@login_required
-# @permission_required('view_book')
-def profile_view(request):
-    return render(request, 'users/profile/profile.html')
-
-
-@login_required
-def payment_methods_view(request):
-    return render(request, 'users/profile/paymentMethods.html')
-
-
-@login_required
-def orders_history_view(request):
-    return render(request, 'users/profile/ordersHistory.html')
-
-
 class UserCreateView(CreateView):
     model = User
     form_class = UserRegistrationForm
     template_name = 'users/auth/signup.html'
-    success_url = reverse_lazy('login') # succes_url redirecciona al sitio indicado al terminar con el formulario
-                                        # reverse_lazy me retorna la direccion absoluta del redireccionamiento
-    # permission_required = 'user.add_user' #esto es cuando se está usando el mixing
+    success_url = reverse_lazy('login')
     url_redirect = success_url
 
     def dispatch(self, request, *args, **kwargs):
@@ -136,3 +118,4 @@ class UsernameValidationView(View):
         if User.objects.filter(username=username).exists():
             return JsonResponse({'username_error': 'El usuario ya existe'}, status=409)
         return JsonResponse({'username_valid': True})
+

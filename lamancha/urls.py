@@ -7,13 +7,17 @@ from django.urls import path, include
 
 from lamancha.views import *
 
-
 urlpatterns = [
     path('admin/', admin.site.urls),
     path(
         route='',
         view=IndexView.as_view(),
         name='index'
+    ),
+    path(
+        route='search_book',
+        view=SearchView.as_view(),
+        name='search_book'
     ),
     path('users/', include('users.urls'), name='users'),
     path('books/', include('books.urls'), name='books'),
@@ -32,7 +36,7 @@ urlpatterns = [
     path(route='reset/<uidb64>/<token>/',
          view=auth_views.PasswordResetConfirmView.as_view(),
          name="password_reset_confirm"
-    ),
+         ),
     path(
         route='reset_password_complete/',
         view=auth_views.PasswordResetCompleteView.as_view(),
@@ -41,4 +45,4 @@ urlpatterns = [
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
-urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) # linea nueva para statics
+urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)  # linea nueva para statics

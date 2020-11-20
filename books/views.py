@@ -1,7 +1,7 @@
 from django.contrib.auth.decorators import login_required
+from django.db.models import Q
 from django.http import JsonResponse
 from django.urls import reverse_lazy
-from django.views.decorators.csrf import csrf_exempt
 from django.views.generic import ListView, CreateView, UpdateView, DeleteView, DetailView
 from django.utils.decorators import method_decorator
 
@@ -132,30 +132,3 @@ class BookDeleteView(DeleteView):
         context['title'] = 'Eliminar un libro'
         context['list_url'] = reverse_lazy('list_books')
         return context
-
-
-# LO SIGUIENTE ES UNA IDEA PARA LOS MENSAJES ENTRE USUARIOS
-# errors presenta errores de cada componente del formulario
-# non_field_errors muestra los errores generales del formulario
-"""
-class BookFormView(FormView):
-    form_class = BookForm
-    template_name = 'books/create.html'
-    success_url = reverse_lazy('list_books')
-    
-    def form_valid(self, form):
-        print(form.is_valid())
-        return super().form_valid(form)
-    
-    def form_invalid(self, form):
-        print(form.is_valid())
-        print(form.errors)
-        return super().form_invalid(form)
-
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        context['title'] = 'Agregar un nuevo libro con form'
-        context['list_url'] = reverse_lazy('list_books')
-        context['action'] = 'add'
-        return context
-"""

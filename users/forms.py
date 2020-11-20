@@ -55,8 +55,6 @@ class UserRegistrationForm(UserCreationForm):
             'dni': 'Documento de identificación',
             'favoriteGenres': 'Géneros literarios de preferencia',
         }
-        # los widgets son las propiedades que tendrán los campos
-        # es la forma de agregar el boostrap
         widgets = {
             'photo': FileInput(),
             'username': TextInput(attrs={
@@ -81,11 +79,20 @@ class UserRegistrationForm(UserCreationForm):
             }),
             'news': CheckboxInput(),
             'birthday': DateInput(),
-            'gender': Select(),
+            'gender': Select(attrs={
+                'class': 'select2 js-example-responsive',
+                'style': 'width: 65%',
+                'language': 'es',
+                'theme': 'bootstrap4',
+            }),
             'favoriteGenres': SelectMultiple(attrs={
-                'class': 'form-control select2',
+                'class': 'select2 js-example-responsive',
                 'style': 'width: 100%',
-                'multiple': 'multiple'
+                # 'multiple': 'multiple',
+                'multiple': True,
+                'language': 'es',
+                'theme': 'bootstrap4',
+                'placeholder': 'Seleccione sus preferencias literarias..'
             }),
             'address': TextInput(attrs={
                 'placeholder': 'Mirador de Pinares T2 Ap1109',
@@ -100,9 +107,8 @@ class UserRegistrationForm(UserCreationForm):
             if form.is_valid():
                 user = form.save(commit=False)
                 form.save()
-                for favoriteGenre in self.cleaned_data['favoriteGenres']:  # clean_data accede a los valores del formulario
+                for favoriteGenre in self.cleaned_data['favoriteGenres']:
                     user.favoriteGenres.add(favoriteGenre)
-
             else:
                 data['error'] = form.errors
         except Exception as e:

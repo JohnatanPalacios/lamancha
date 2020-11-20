@@ -47,6 +47,10 @@ class Book(m.Model):
 
     def toJSON(self):
         item = model_to_dict(self, exclude=['cover'])
+        item['title'] = self.title
+        item['author'] = self.author
+        item['cover'] = self.get_image()
+        item['price'] = format(self.price, '.2f')
         return item
 
     def get_image(self):

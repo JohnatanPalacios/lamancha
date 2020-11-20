@@ -9,15 +9,11 @@
                     </a> <!-- brand-wrap.// -->
                 </div>
                 <div class="col-xl-6 col-lg-5 col-md-6">
-                    <form method="GET" class="search-header">
+                    <form method="GET">
                         <div class="input-group w-100">
-                            <input type="text" class="form-control" name="search"
-                                   placeholder="Autor, nombre del libro, editorial, etc" id="user_search">
-                            <div class="input-group-append">
-                                <button class="btn btn-primary" type="submit">
-                                    <i class="fa fa-search"></i> Buscar
-                                </button>
-                            </div>
+                            <select class="select2 form-control" name="search"></select>
+                            <div class="input-group-append"><a class="widget-header btn btn-outline-primary">
+                                <i class="icon fas fa-search"></i></a></div>
                         </div>
                     </form> <!-- search-wrap .end// -->
                 </div><!-- col.// -->
@@ -30,8 +26,8 @@
                             <a href="{% url 'login' %}" class="btn btn-outline-primary"><i
                                     class="fas fa-sign-in-alt"></i> Ingresar </a>
                             <a href="{% url 'signup' %}" class="btn btn-primary"> Registrarse </a>
-                            <a href="#" class="widget-header mr-2"><i
-                                    class="text-primary icon icon-sm rounded-circle border fa fa-shopping-cart"></i>
+                            <a href="#" class="widget-header mr-2">
+                                <i class="text-primary icon icon-sm rounded-circle border fa fa-shopping-cart"></i>
                                 <span class="notify">2</span></a>
                         </div>
                     </div>

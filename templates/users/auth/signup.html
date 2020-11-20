@@ -5,10 +5,6 @@
     <script src="{% static 'lib/dataTables-1.10.20/datatables.min.js' %}"></script>
     <script src="{% static 'js/list.js' %}"></script>
     <script src="{% static 'js/form.js' %}"></script>
-    <link href="{% static 'lib/select2-4.0.13/css/select2.min.css' %}" rel="stylesheet"/>
-    <link href="{% static 'lib/select2-4.0.13/css/select2-bootstrap4.min.css' %}" rel="stylesheet"/>
-    <script src="{% static 'lib/select2-4.0.13/js/select2.min.js' %}"></script>
-    <script src="{% static 'lib/select2-4.0.13/js/i18n/es.js' %}"></script>
     <!-- js algoritsof register -->
     <!-- Jquery Confirm -->
     <link rel="stylesheet" href="{% static 'lib/jquery-confirm.min.css' %}">
@@ -82,11 +78,7 @@
                         </div> <!-- form-group end.// -->
                         <div class="form-group col-md-6">
                             {{ form.gender.label }}
-                            <select class="form-control" name="gender">
-                                <option selected="" value="masculino">Masculino</option>
-                                <option value="femenino">Femenino</option>
-                                <option value="otro">Otro</option>
-                            </select>
+                            {{ form.gender }}
                         </div> <!-- form-group end.// -->
                     </div> <!-- form-row.// -->
 

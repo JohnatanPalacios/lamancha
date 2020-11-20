@@ -7,7 +7,13 @@
     <!-- ========================= SECTION PAGETOP ========================= -->
     <section class="section-pagetop bg-gray">
         <div class="container">
-            <h2 class=" text-center title-page">Bienvenido {{ user.get_full_name }}</h2>
+            {% if user.gender == 'Masculino' %}
+                <h2 class=" text-center title-page">Bienvenido {{ user.get_full_name }}</h2>
+            {% elif user.gender == 'Femenino' %}
+                <h2 class=" text-center title-page">Bienvenida {{ user.get_full_name }}</h2>
+            {% else %}
+                <h2 class=" text-center title-page">Bienvenid@ {{ user.get_full_name }}</h2>
+            {% endif %}
         </div> <!-- container //  -->
     </section>
     <!-- ========================= SECTION PAGETOP END// ========================= -->
@@ -18,7 +24,7 @@
             <div class="row">
                 <aside class="col-md-3">
                     <nav class="list-group">
-                        <a class="list-group-item active" href="{% url 'profile' request.user.id %}">
+                        <a class="list-group-item active" href="{% url 'profile' user.id %}"> <!--request.user.id -->
                             <i class="fas fa-user-cog"></i> Configuración </a>
                         {% if not user.is_staff %}
                             <a class="list-group-item" href="#">
@@ -48,7 +54,7 @@
                                     <strong style="font-size: large"> {{ user.username }} </strong> <br>
                                     <strong> {{ user.first_name }} {{ user.last_name }} </strong>
                                     <p class="mb-2"> {{ user.email }}  </p>
-                                    <a href="{% url 'update' request.user.id %}" class="btn btn-light btn-sm">
+                                    <a href="{% url 'update' user.id %}" class="btn btn-light btn-sm">
                                         Editar </a>
                                 </div>
                             </figure>
@@ -57,7 +63,6 @@
                                 <i class="fa fa-map-marker text-muted"></i> &nbsp; Mi dirección:
                                 <br>
                             <p class="mb-1"> {{ user.address }} </p>
-                            <a href="#" class="btn btn-light btn-sm"> Editar </a>
                             </p>
                         </div> <!-- card-body .// -->
                     </article> <!-- card.// -->
@@ -66,7 +71,6 @@
                 <div class="col-md d-none d-lg-block flex-grow-1">
                     <aside class="special-home-right">
                         <h6 class="bg-blue text-center text-white mb-0 p-2">Más vendidos</h6>
-                        <!-- MAS VENDIDOS -->
                         {% for book in  books %}
                             <div class="card-banner border-bottom">
                                 <div class="py-3" style="width:80%">
