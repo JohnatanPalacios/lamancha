@@ -12,7 +12,6 @@ urlpatterns = [
     ),
     path(
         route='auth/login/',
-        # view=auth_views.LoginView.as_view(template_name='users/auth/login.html'),
         view=LoginFormView.as_view(),
         name='login'),
     path(
@@ -30,7 +29,11 @@ urlpatterns = [
         view=UserUpdateView.as_view(),
         name='update'
     ),
+    path(
+        route='profile/payment_methods/<pk>/',
+        view=UserPaymentMethodsView.as_view(),
+        name='payment_methods'
+    ),
     #path('profile/settings/orders_histoty/', orders_history_view, name='orders_history'),
-    #path('profile/settings/payment_methods/', payment_methods_view, name='payment_methods'),
     path('validate_username', csrf_exempt(UsernameValidationView.as_view()), name='validate_username')
     ]

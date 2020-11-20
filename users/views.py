@@ -109,6 +109,12 @@ class UserDetailView(DetailView):
     slug_field = 'pk'
 
 
+class UserPaymentMethodsView(DetailView):
+    model = User
+    template_name = 'users/profile/paymentMethods.html'
+    slug_field = 'pk'
+
+
 class UsernameValidationView(View):
     def post(self, request):
         data = json.loads(request.body)

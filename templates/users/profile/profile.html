@@ -29,10 +29,10 @@
                         {% if not user.is_staff %}
                             <a class="list-group-item" href="#">
                                 <i class="fas fa-history"></i> Historial de compras </a>
+                            <a class="list-group-item" href="{% url 'payment_methods' user.id %}">
+                                <i class="fas fa-credit-card"></i> Métodos de pago </a>
                             <a class="list-group-item" href="#">
-                                <i class="fas fa-credit-card"></i></i> Métodos de pago </a>
-                            <a class="list-group-item" href="#">
-                                <i class='fas fa-user-friends'></i> Red de amigos </a>
+                                <i class='fas fa-user-friends' href="#"></i> Red de amigos </a>
                         {% endif %}
                         {% if user.is_staff %}
                             <a class="list-group-item" href="{% url 'list_books' %}">

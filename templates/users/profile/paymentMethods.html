@@ -6,7 +6,8 @@
     <!-- ========================= SECTION PAGETOP ========================= -->
     <section class="section-pagetop bg-gray">
     <div class="container">
-        <h2 class="title-page">Mis métodos de pago</h2>
+        <h2 class="text-center title-page">Métodos de pago</h2>
+        <h6 class="text-center title-page">{{ user.get_full_name }}</h6>
     </div> <!-- container //  -->
     </section>
     <!-- ========================= SECTION PAGETOP END// ========================= -->
@@ -19,12 +20,12 @@
     <div class="row">
         <aside class="col-md-3">
             <nav class="list-group">
-                <a class="list-group-item" href="{% url 'profile' %}">
+                <a class="list-group-item" href="{% url 'profile' user.id %}">
                     <i class="fas fa-user-cog"></i> Configuración  </a>
                 {%  if not user.is_staff %}
-                    <a class="list-group-item" href="{% url 'orders_history' %}">
+                    <a class="list-group-item" href="#">
                         <i class="fas fa-history"></i> Historial de compras </a>
-                    <a class="list-group-item active" href="{% url 'payment_methods' %}">
+                    <a class="list-group-item active" href="{% url 'payment_methods' user.id %}">
                         <i class="fas fa-credit-card"></i></i> Métodos de pago </a>
                     <a class="list-group-item" href="#">
                         <i class='fas fa-user-friends'></i> Red de amigos </a>
