@@ -5,7 +5,6 @@ from django.utils.translation import gettext_lazy as _
 from django.forms import model_to_dict
 
 from lamancha.settings import MEDIA_URL, STATIC_URL
-from cards.models import *
 
 GENDERS = [
     ('Femenino', 'Femenino'),
@@ -24,6 +23,49 @@ class LiteraryGenders(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class CreditCard(models.Model):
+    number = models.CharField(max_length=20, unique=True, verbose_name='Número de la Tarjeta', blank=False, null=False)
+    nameInCard = models.CharField(max_length=150, verbose_name='Nombre en Tarjeta', blank=False, null=False)
+    month_expiration = models.CharField(max_length=2, verbose_name='Mes de expiración', blank=True, null=True)
+    day_expiration = models.CharField(max_length=2, verbose_name='Día de Expiración', blank=True, null=True)
+
+    def __str__(self):
+        return 'Tarjeta Número: {}'.format(self.number)
+
+    class Meta:
+        verbose_name = 'Tarjeta de Crédito'
+        verbose_name_plural = 'Tarjetas de Crédito'
+        ordering = ['id']
+
+
+class DebitCard(models.Model):
+    number = models.CharField(max_length=20, unique=True, verbose_name='Número de la Tarjeta', blank=False, null=False)
+    nameInCard = models.CharField(max_length=150, verbose_name='Nombre en Tarjeta', blank=False, null=False)
+
+    def __str__(self):
+        return 'Tarjeta Número: {}'.format(self.number)
+
+    def toJSON(self):
+        item = model_to_dict(self)
+        item['icon'] = self.get_icon()
+        item['number'] = self.last_digits()
+        return item
+
+    def get_icon(self):
+        return '{}{}'.format(STATIC_URL, 'images/icons/pay-visa.png')
+
+    def last_digits(self):
+        digits = ''
+        for i in range((len(self.number) - 4), len(self.number)):
+            digits += self.number[i]
+        return digits
+
+    class Meta:
+        verbose_name = 'Tarjeta Débito'
+        verbose_name_plural = 'Tarjetas Débito'
+        ordering = ['id']
 
 
 class User(AbstractUser):
@@ -54,7 +96,7 @@ class User(AbstractUser):
         if self.last_login:
             item['last_login'] = self.last_login.strftime('%Y-%m-%d')
         item['date_joined'] = self.date_joined.strftime('%Y-%m-%d')
-        item['image'] = self.get_image()
+        item['photo'] = self.get_photo()
         item['full_name'] = self.get_full_name()
         return item
 

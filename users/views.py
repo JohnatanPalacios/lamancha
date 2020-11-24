@@ -10,11 +10,11 @@ from django.contrib.auth.decorators import login_required
 
 # Models
 from django.urls import reverse_lazy
-from django.views.generic import CreateView, UpdateView, RedirectView, DetailView, View
+from django.views.generic import CreateView, UpdateView, RedirectView, DetailView, View, TemplateView
 
 from lamancha import settings
-from .forms import UserRegistrationForm
-from .models import User
+from .forms import UserRegistrationForm, DebitCardForm
+from .models import User, DebitCard
 
 
 class LoginFormView(LoginView):
@@ -109,12 +109,6 @@ class UserDetailView(DetailView):
     slug_field = 'pk'
 
 
-class UserPaymentMethodsView(DetailView):
-    model = User
-    template_name = 'users/profile/paymentMethods.html'
-    slug_field = 'pk'
-
-
 class UsernameValidationView(View):
     def post(self, request):
         data = json.loads(request.body)
@@ -125,3 +119,51 @@ class UsernameValidationView(View):
             return JsonResponse({'username_error': 'El usuario ya existe'}, status=409)
         return JsonResponse({'username_valid': True})
 
+
+class UserCardsView(TemplateView):
+    template_name = 'users/profile/paymentMethods.html'
+
+    def dispatch(self, request, *args, **kwargs):
+        return super().dispatch(request, *args, **kwargs)
+
+    def post(self, request, *args, **kwargs):
+        data = {}
+        try:
+            action = request.POST['action']
+            if action == 'searchdata':
+                data = []
+                for dc in request.user.debitCards.all():
+                    data.append(dc.toJSON())
+            elif action == 'add':
+                card = DebitCard()
+                card.number = request.POST['number']
+                card.nameInCard = request.POST['nameInCard']
+                card.save()
+                request.user.debitCards.add(card)
+                request.user.save()
+            elif action == 'delete':
+                card = DebitCard.objects.get(pk=request.POST['id'])
+                card.delete()
+            else:
+                data['error'] = 'Ha ocurrido un error'
+
+            # elif action == 'edit':
+            #     cli = Client.objects.get(pk=request.POST['id'])
+            #     cli.names = request.POST['names']
+            #     cli.surnames = request.POST['surnames']
+            #     cli.dni = request.POST['dni']
+            #     cli.date_birthday = request.POST['date_birthday']
+            #     cli.address = request.POST['address']
+            #     cli.gender = request.POST['gender']
+            #     cli.save()
+        except Exception as e:
+            data['error'] = str(e)
+        return JsonResponse(data, safe=False)
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['title'] = 'Métodos de pago'
+        # context['list_url'] = reverse_lazy('erp:client')
+        context['entity'] = 'User'
+        context['form'] = DebitCardForm()
+        return context

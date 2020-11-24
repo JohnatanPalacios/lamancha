@@ -71,8 +71,7 @@
 {% endblock %}
 {% block javascript %}
     <script>
-const csrftoken = document.querySelector('[name=csrfmiddlewaretoken]').value;
-
-initDatatables(csrftoken);
-</script>
+        const csrftoken = document.querySelector('[name=csrfmiddlewaretoken]').value;
+        initDatatables(csrftoken);
+    </script>
 {% endblock %}

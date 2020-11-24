@@ -30,8 +30,8 @@ urlpatterns = [
         name='update'
     ),
     path(
-        route='profile/payment_methods/<pk>/',
-        view=UserPaymentMethodsView.as_view(),
+        route='profile/payment_methods/',
+        view=UserCardsView.as_view(),
         name='payment_methods'
     ),
     #path('profile/settings/orders_histoty/', orders_history_view, name='orders_history'),

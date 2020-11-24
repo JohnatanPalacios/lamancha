@@ -1,73 +1,125 @@
 {% extends 'base.html' %}
+{% load widget_tweaks %}
 {% load static %}
+{% block head %}
+    <link rel="stylesheet" href="{% static 'lib/datatables-1.10.20/css/dataTables.bootstrap4.min.css' %}"/>
+    <link rel="stylesheet"
+          href="{% static 'lib/datatables-1.10.20/plugins/responsive-2.2.3/css/responsive.bootstrap4.min.css' %}"/>
+    <script src="{% static 'lib/datatables-1.10.20/js/jquery.dataTables.js' %}"></script>
+    <script src="{% static 'lib/datatables-1.10.20/js/dataTables.bootstrap4.min.js' %}"></script>
+    <script src="{% static 'lib/datatables-1.10.20/plugins/responsive-2.2.3/js/dataTables.responsive.min.js' %}"></script>
+    <script src="{% static 'lib/datatables-1.10.20/plugins/responsive-2.2.3/js/responsive.bootstrap4.min.js' %}"></script>
+    <script src="{% static 'js/modals.js' %}"></script>
+    <link rel="stylesheet" href="{% static 'lib/jquery-confirm.min.css' %}">
+    <script src="{% static 'lib/jquery-confirm.min.js' %}"></script>
+{% endblock %}
 {% block content %}
     <body>
     <b class="screen-overlay"></b>
     <!-- ========================= SECTION PAGETOP ========================= -->
     <section class="section-pagetop bg-gray">
-    <div class="container">
-        <h2 class="text-center title-page">Métodos de pago</h2>
-        <h6 class="text-center title-page">{{ user.get_full_name }}</h6>
-    </div> <!-- container //  -->
+        <div class="container">
+            <h2 class="text-center title-page">Métodos de pago</h2>
+            <h6 class="text-center title-page">{{ user.get_full_name }}</h6>
+        </div> <!-- container //  -->
     </section>
     <!-- ========================= SECTION PAGETOP END// ========================= -->
 
 
     <!-- ========================= SECTION CONTENT ========================= -->
     <section class="section-content padding-y">
-    <div class="container">
-
-    <div class="row">
-        <aside class="col-md-3">
-            <nav class="list-group">
-                <a class="list-group-item" href="{% url 'profile' user.id %}">
-                    <i class="fas fa-user-cog"></i> Configuración  </a>
-                {%  if not user.is_staff %}
-                    <a class="list-group-item" href="#">
-                        <i class="fas fa-history"></i> Historial de compras </a>
-                    <a class="list-group-item active" href="{% url 'payment_methods' user.id %}">
-                        <i class="fas fa-credit-card"></i></i> Métodos de pago </a>
-                    <a class="list-group-item" href="#">
-                        <i class='fas fa-user-friends'></i> Red de amigos </a>
-                {%  endif  %}
-                <a class="list-group-item" href="{%  url 'logout' %}">
-                    <i class="fas fa-sign-out-alt"></i> Cerrar sesión </a>
-           </nav>
-        </aside> <!-- col.// -->
-        <main class="col-md-9">
-
-        <a href="#" class="btn btn-light mb-3"> <i class="fa fa-plus"></i> Agregar tarjeta de crédito </a>
-        <a href="#" class="btn btn-light mb-3"> <i class="fa fa-plus"></i> Agregar tarjeta débito </a>
-
-        <div class="row">
-            <div class="col-md-6">
-                <article class="box mb-4">
-                    <h6>London, United Kingdom</h6>
-                    <p>Building: Nestone <br> Floor: 22, Aprt: 12  </p>
-                    <a href="#" class="btn btn-light disabled"> <i class="fa fa-check"></i> Default</a> <a href="#" class="btn btn-light"> <i class="fa fa-pen"></i> </a>   <a href="#" class="btn btn-light"> <i class="text-danger fa fa-trash"></i>  </a>
-                </article>
-            </div>  <!-- col.// -->
-            <div class="col-md-6">
-                <article class="box mb-4">
-                    <h6>Tashkent, Uzbekistan</h6>
-                    <p>Building one <br> Floor: 2, Aprt: 32  </p>
-                    <a href="#" class="btn btn-light">Make default</a> <a href="#" class="btn btn-light"> <i class="fa fa-pen"></i> </a>   <a href="#" class="btn btn-light"> <i class="text-danger fa fa-trash"></i>  </a>
-                </article>
-            </div>  <!-- col.// -->
-            <div class="col-md-6">
-                <article class="box mb-4">
-                    <h6>Moscow, Russia</h6>
-                    <p>Lenin street <br> Building A, Floor: 3, Aprt: 32  </p>
-                    <a href="#" class="btn btn-light">Make default</a> <a href="#" class="btn btn-light"> <i class="fa fa-pen"></i> </a>   <a href="#" class="btn btn-light"> <i class="text-danger fa fa-trash"></i>  </a>
-                </article>
-            </div>  <!-- col.// -->
-        </div> <!-- row.// -->
-
-    </main> <!-- col.// -->
-    </div>
-
-    </div> <!-- container .//  -->
+        <div class="container">
+            <div class="row">
+                <aside class="col-md-3">
+                    <nav class="list-group">
+                        <a class="list-group-item" href="{% url 'profile' user.id %}">
+                            <i class="fas fa-user-cog"></i> Configuración </a>
+                        {% if not user.is_staff %}
+                            <a class="list-group-item" href="#">
+                                <i class="fas fa-history"></i> Historial de compras </a>
+                            <a class="list-group-item active" href="{% url 'payment_methods' %}">
+                                <i class="fas fa-credit-card"></i> Métodos de pago </a>
+                            <a class="list-group-item" href="#">
+                                <i class='fas fa-user-friends'></i> Red de amigos </a>
+                        {% endif %}
+                        <a class="list-group-item" href="{% url 'logout' %}">
+                            <i class="fas fa-sign-out-alt"></i> Cerrar sesión </a>
+                    </nav>
+                </aside> <!-- col.// -->
+                <main class="col-md-6">
+                    <div class="card-body">
+                        <table class="table" id="data">
+                            <!-- <thead>
+                            <tr>
+                                <th scope="col" style="width: 20%;">Icono</th>
+                                <th scope="col" style="width: 60%;">Infomación</th>
+                                <th scope="col" style="width: 20%;">Opciones</th>
+                            </tr>
+                            </thead> -->
+                        </table>
+                    </div>
+                    <div class="card-footer">
+                        <a class="btn btn-primary btn-flat btnDebitAdd">
+                            <i class="fas fa-plus"></i> Tarjeta Débito
+                        </a>
+                    </div>
+                </main> <!-- col.// -->
+                <!-- ESTE ES EL BLOQUE DE MÁS VENDIDOS -->
+                <div class="col-md d-none d-lg-block flex-grow-1">
+                    <aside class="special-home-right">
+                        <h6 class="bg-blue text-center text-white mb-0 p-2">Más vendidos</h6>
+                        {% for book in  books %}
+                            <div class="card-banner border-bottom">
+                                <div class="py-3" style="width:80%">
+                                    <h6 class="card-title">{{ book.title }}</h6>
+                                    <a href='books/details/{{ book.pk }}' class="btn btn-secondary btn-sm">Ver ahora</a>
+                                </div>
+                                <img src={{ book.cover.url }} height="80" class="img-bg">
+                            </div>
+                        {% endfor %}
+                    </aside>
+                </div> <!-- col.// -->
+            </div>
+        </div> <!-- container .//  -->
     </section>
     <!-- ========================= SECTION CONTENT END// ========================= -->
     </body>
+{% endblock %}
+{% block javascript %}
+    <!-- Modal -->
+    <div class="modal fade" id="myModalCard" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+         aria-hidden="true">
+        <form method="post" action="." enctype="multipart/form-data">{% csrf_token %}
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">
+                            <i class="fas fa-plus-circle"></i> <span></span><b></h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="container-fluid">
+                            <input name="action" type="hidden" value="add">
+                            {% for field in form.visible_fields %}
+                                <div class="form-group">
+                                    <label for="email">{{ field.label }}</label>
+                                    {{ field|attr:'autocomplete:off' }}
+                                </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-primary"><i class="fas fa-save"></i> Guardar</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+    <!-- DataTable -->
+    <script>
+        const csrftoken = document.querySelector('[name=csrfmiddlewaretoken]').value;
+        initDatatables(csrftoken);
+    </script>
 {% endblock %}

@@ -16,7 +16,7 @@ function message_error(obj) {
     });
 }
 
-function submit_with_ajax(url, title, content, parameters, callback, csrftoken) {
+function submit_with_ajax(csrftoken, url, title, content, parameters, callback) {
     $.confirm({
         theme: 'material',
         title: title,
@@ -33,7 +33,7 @@ function submit_with_ajax(url, title, content, parameters, callback, csrftoken) 
                 btnClass: 'btn-primary',
                 action: function () {
                     $.ajax({
-                        url: url, //window.location.pathname,
+                        url: url,
                         type: 'POST',
                         headers: {'X-CSRFToken': csrftoken},
                         data: parameters,
