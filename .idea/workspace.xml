@@ -11,33 +11,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d8b07057-b573-4e38-9492-f566354760d8" name="Default Changelist" comment="PymentMethods">
-      <change afterPath="$PROJECT_DIR$/users/migrations/0002_debitcard_icon.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/users/migrations/0003_remove_debitcard_icon.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/books/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/books/migrations/0001_initial.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cards/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/static/js/modals.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cards/admin.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cards/apps.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cards/forms.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cards/migrations/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cards/models.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cards/templates/debit_card.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cards/tests.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cards/urls.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cards/views.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lamancha/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/lamancha/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lamancha/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/lamancha/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/functions.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/functions.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/books/list.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/books/list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/users/auth/signup.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/users/auth/signup.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/users/profile/PRUEBAS DEL MOMENTO.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/users/profile/paymentMethods.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/users/profile/paymentMethods.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/users/profile/profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/users/profile/profile.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/migrations/0001_initial.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/static/js/modals.js" beforeDir="false" afterPath="$PROJECT_DIR$/users/static/js/modals.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -185,14 +161,7 @@
       <workItem from="1605057181503" duration="110231000" />
       <workItem from="1605480558069" duration="2606000" />
       <workItem from="1605547958411" duration="79937000" />
-      <workItem from="1605781386169" duration="121956000" />
-    </task>
-    <task id="LOCAL-00021" summary="login, logout and signup">
-      <created>1604429247557</created>
-      <option name="number" value="00021" />
-      <option name="presentableId" value="LOCAL-00021" />
-      <option name="project" value="LOCAL" />
-      <updated>1604429247557</updated>
+      <workItem from="1605781386169" duration="125356000" />
     </task>
     <task id="LOCAL-00022" summary="login, logout and signup">
       <created>1604433976402</created>
@@ -530,7 +499,14 @@
       <option name="project" value="LOCAL" />
       <updated>1605903468460</updated>
     </task>
-    <option name="localTasksCounter" value="70" />
+    <task id="LOCAL-00070" summary="PymentMethods">
+      <created>1606176010242</created>
+      <option name="number" value="00070" />
+      <option name="presentableId" value="LOCAL-00070" />
+      <option name="project" value="LOCAL" />
+      <updated>1606176010242</updated>
+    </task>
+    <option name="localTasksCounter" value="71" />
     <servers />
   </component>
   <component name="TerminalProjectNonSharedOptionsProvider">
@@ -660,10 +636,10 @@
     </state>
     <state x="1624" y="154" width="998" height="709" key="SettingsEditor/0.0.1366.728/1366.0.1920.1080@0.0.1366.728" timestamp="1605685577518" />
     <state x="1625" y="12" key="SettingsEditor/0.0.1366.728/1366.0.1920.1080@1366.0.1920.1080" timestamp="1604275968532" />
-    <state x="1753" y="144" key="Vcs.Push.Dialog.v2" timestamp="1605903474915">
-      <screen x="1366" y="0" width="1920" height="1080" />
+    <state x="275" y="97" key="Vcs.Push.Dialog.v2" timestamp="1606176013233">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="275" y="97" key="Vcs.Push.Dialog.v2/0.0.1366.728/1366.0.1920.1080@0.0.1366.728" timestamp="1605813124549" />
+    <state x="275" y="97" key="Vcs.Push.Dialog.v2/0.0.1366.728/1366.0.1920.1080@0.0.1366.728" timestamp="1606176013233" />
     <state x="1753" y="144" key="Vcs.Push.Dialog.v2/0.0.1366.728/1366.0.1920.1080@1366.0.1920.1080" timestamp="1605903474915" />
     <state x="275" y="97" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1604729706436" />
     <state x="482" y="98" key="com.intellij.openapi.vcs.changes.SpecificFilesViewDialog" timestamp="1604031002364">

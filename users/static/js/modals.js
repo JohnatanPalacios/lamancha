@@ -101,10 +101,6 @@ $(function () {
                     alert(textStatus + ': ' + errorThrown);
                 }).always(function (data) {
                 });
-                /*Swal.fire(
-                    '¡Eliminado!',
-                    'Tarjeta eliminada con éxito.',
-                )*/
             }
         })
     })
