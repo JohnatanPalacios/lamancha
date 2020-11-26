@@ -21,6 +21,7 @@ urlpatterns = [
     ),
     path('users/', include('users.urls'), name='users'),
     path('books/', include('books.urls'), name='books'),
+    path('order/', include('orders.urls'), name='order'),
 
     # reset password group
     path(

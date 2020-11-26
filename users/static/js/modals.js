@@ -78,7 +78,7 @@ $(function () {
             cancelButtonColor: '#d33',
             confirmButtonText: '¡Si, bórralo!'
         }).then((result) => {
-            if (result) {
+            if (result==true) {
                 $.ajax({
                     url: window.location.pathname,
                     type: 'POST',
