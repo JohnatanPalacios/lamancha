@@ -31,7 +31,7 @@ class LoginFormView(LoginView):
         return context
 
 
-class LogoutView(RedirectView):
+class LogoutView(LoginRequiredMixin, RedirectView):
     pattern_name = 'index'
 
     def dispatch(self, request, *args, **kwargs):
@@ -103,7 +103,7 @@ class UserUpdateView(LoginRequiredMixin, UpdateView):
         return context
 
 
-class UserDetailView(DetailView):
+class UserDetailView(LoginRequiredMixin, DetailView):
     model = User
     template_name = 'users/profile/profile.html'
     slug_field = 'pk'
@@ -120,7 +120,7 @@ class UsernameValidationView(View):
         return JsonResponse({'username_valid': True})
 
 
-class UserCardsView(TemplateView):
+class UserCardsView(LoginRequiredMixin, TemplateView):
     template_name = 'users/profile/paymentMethods.html'
 
     def dispatch(self, request, *args, **kwargs):

@@ -11,6 +11,14 @@ class IndexView(TemplateView):
     template_name = 'index.html'
 
     def get(self, request, *args, **kwargs):
+        # esto se debe implementar en todas las vistas
+        self.request = request
+        self.session = request.session
+        cart = self.session.get("cart")
+        if not cart:
+            cart = self.session["cart"] = {}
+        self.cart = cart
+
         if request.GET.get('search'):
             action = request.GET.get('search')
             results = Book.objects.filter(Q(title__icontains=action) |

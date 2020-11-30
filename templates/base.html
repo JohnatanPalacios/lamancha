@@ -37,8 +37,6 @@
     <script src="{% static 'lib/select2-4.0.13/js/select2.min.js' %}"></script>
     <script src="{% static 'lib/select2-4.0.13/js/i18n/es.js' %}"></script>
 
-
-
     {% block head %}
 
     {% endblock %}
@@ -48,35 +46,7 @@
 {% include 'header.html' %}
 {% block content %}
 {% endblock %}
-<!-- <script>
-        $(function () {
-            $('input[name="search"]').autocomplete({
-                source: function (request, response) {
-                    $.ajax({
-                        url: '/search_book',
-                        type: 'GET',
-                        data: {
-                            'action': 'autocomplete',
-                            'term': request.term
-                        },
-                        dataType: 'json',
-                    }).done(function (data) {
-                        response(data);
-                    }).fail(function (jqXHR, textStatus, errorThrown) {
-                    }).always(function (data) {
-                    });
-                },
-                delay: 500,
-                minLength: 1,
-                select: function (event, ui) {
-                    console.log(ui.item);
-                }
-            });
-        });
-    </script> -->
-
 <script>
-
     function formatRepo(repo) {
         if (repo.loading) {
             return repo.text;

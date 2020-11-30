@@ -12,30 +12,30 @@ class BookForm(ModelForm):
         super().__init__(*args, **kwargs)
         # for form in self.visible_fields():
         #   form.field.widget.attrs['class'] = 'form-control'
-        self.fields['title'].widget.attrs['autofocus'] = True
+        self.fields['name'].widget.attrs['autofocus'] = True
 
     class Meta:
         model = Book
         fields = [
-            'cover',
-            'title',
+            'image',
+            'name',
             'author',
             'ISBN',
             'pages',
             'editorial',
             'price',
-            'stock',
+            'quantity',
             'category',
             'language',
             'condition',
             'binding',
-            'sale',
+            'available',
             'published_date',
             'description',
         ]
         widgets = {
-            'cover': FileInput(),
-            'title': TextInput(attrs={
+            'image': FileInput(),
+            'name': TextInput(attrs={
                 'placeholder': 'Lo Que Vi',
                 'style': 'width: 50%'}),
             'ISBN': TextInput(attrs={
@@ -45,7 +45,7 @@ class BookForm(ModelForm):
             'description': Textarea(),
             'binding': TextInput(attrs={'style': 'width: 35%'}),
             'price': NumberInput(attrs={'style': 'width: 35%'}),
-            'stock': NumberInput(attrs={'style': 'width: 35%'}),
+            'quantity': NumberInput(attrs={'style': 'width: 35%'}),
             'condition': Select(attrs={'style': 'width: 20%'}),
             'language': Select(attrs={
                 'class': 'select2 js-example-responsive',

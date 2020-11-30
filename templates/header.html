@@ -42,7 +42,7 @@
                                 <span class="notify">2</span></a>
                             <!-- aquí se deben mostar los mensajes que tenga el usuario -->
                             {% if not user.is_staff %}
-                                <a href="{% url 'order_details' %}" class="widget-header mr-2">
+                                <a href="{% url 'cart:shopping-cart' %}" class="widget-header mr-2">
                                     <i class="text-primary icon icon-sm rounded-circle border fa fa-shopping-cart"></i>
                                     <span class="notify">2</span></a>
                             {% endif %}

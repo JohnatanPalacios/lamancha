@@ -11,17 +11,48 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d8b07057-b573-4e38-9492-f566354760d8" name="Default Changelist" comment="Orders">
-      <change afterPath="$PROJECT_DIR$/orders/forms.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/orders/migrations/0001_initial.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/orders/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/books/migrations/0002_auto_20201127_2154.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/books/migrations/0003_auto_20201127_2201.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cart/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cart/admin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cart/apps.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cart/cart.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cart/context_processor.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cart/forms.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cart/migrations/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cart/mixins.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cart/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cart/templatetags/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cart/templatetags/cart_tags.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cart/tests.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cart/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cart/views.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orders/migrations/0002_order_user.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/books/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/books/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/books/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/books/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/books/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/books/migrations/0001_initial.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/books/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/books/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/books/static/js/list.js" beforeDir="false" afterPath="$PROJECT_DIR$/books/static/js/list.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/books/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/books/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lamancha/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/lamancha/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lamancha/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/lamancha/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lamancha/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/lamancha/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orders/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/books/mixins.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orders/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/orders/migrations/0001_initial.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/orders/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/orders/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orders/templates/order.html" beforeDir="false" afterPath="$PROJECT_DIR$/cart/templates/shopping-cart.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orders/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/orders/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/orders/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/orders/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/bootstrap.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/bootstrap.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/books/detail-product.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/books/detail-product.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/books/list.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/books/list.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/header.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/users/shopping-cart.html" beforeDir="false" afterPath="$PROJECT_DIR$/orders/templates/order.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users/static/js/modals.js" beforeDir="false" afterPath="$PROJECT_DIR$/users/static/js/modals.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/migrations/0001_initial.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/migrations/0002_debitcard_icon.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/migrations/0003_remove_debitcard_icon.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,22 +102,22 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/books/static/js" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="configurable.group.tools" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\UTP\Laboratorio de Software\lamancha\orders\migrations" />
+      <recent name="D:\UTP\Laboratorio de Software\lamancha\orders\templatetags" />
+      <recent name="D:\UTP\Laboratorio de Software\lamancha\templates\books" />
+      <recent name="D:\UTP\Laboratorio de Software\lamancha\templates\users\auth" />
+      <recent name="D:\UTP\Laboratorio de Software\lamancha\templates\core" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\UTP\Laboratorio de Software\lamancha\books\static\js" />
       <recent name="D:\UTP\Laboratorio de Software\lamancha\static\lib" />
       <recent name="D:\UTP\Laboratorio de Software\lamancha\static\js" />
       <recent name="D:\UTP\Laboratorio de Software\lamancha\users\static\js" />
       <recent name="D:\UTP\Laboratorio de Software\lamancha\static" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\UTP\Laboratorio de Software\lamancha\templates\books" />
-      <recent name="D:\UTP\Laboratorio de Software\lamancha\templates\users\auth" />
-      <recent name="D:\UTP\Laboratorio de Software\lamancha\templates\core" />
-      <recent name="D:\UTP\Laboratorio de Software\lamancha\templates\users\profile" />
-      <recent name="D:\UTP\Laboratorio de Software\lamancha\templates\registration" />
     </key>
   </component>
   <component name="RunManager" selected="Python.tests">
@@ -169,14 +200,9 @@
       <workItem from="1605057181503" duration="110231000" />
       <workItem from="1605480558069" duration="2606000" />
       <workItem from="1605547958411" duration="79937000" />
-      <workItem from="1605781386169" duration="140823000" />
-    </task>
-    <task id="LOCAL-00023" summary="gitignore">
-      <created>1604453827951</created>
-      <option name="number" value="00023" />
-      <option name="presentableId" value="LOCAL-00023" />
-      <option name="project" value="LOCAL" />
-      <updated>1604453827951</updated>
+      <workItem from="1605781386169" duration="142618000" />
+      <workItem from="1606432951709" duration="489000" />
+      <workItem from="1606433466433" duration="53666000" />
     </task>
     <task id="LOCAL-00024" summary="perfil y otras cosas">
       <created>1604463220070</created>
@@ -514,7 +540,14 @@
       <option name="project" value="LOCAL" />
       <updated>1606230168384</updated>
     </task>
-    <option name="localTasksCounter" value="72" />
+    <task id="LOCAL-00072" summary="Orders">
+      <created>1606403980543</created>
+      <option name="number" value="00072" />
+      <option name="presentableId" value="LOCAL-00072" />
+      <option name="project" value="LOCAL" />
+      <updated>1606403980546</updated>
+    </task>
+    <option name="localTasksCounter" value="73" />
     <servers />
   </component>
   <component name="TerminalProjectNonSharedOptionsProvider">
@@ -576,19 +609,20 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="405" y="186" key="#Notifications/0.0.1366.728/1366.0.1920.1080@0.0.1366.728" timestamp="1604030576023" />
-    <state x="1753" y="33" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1605948016415">
-      <screen x="1366" y="0" width="1920" height="1080" />
+    <state x="275" y="22" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1606433429256">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="275" y="22" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728/1366.0.1920.1080@0.0.1366.728" timestamp="1604033508231" />
+    <state x="275" y="22" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728/1366.0.1920.1080@0.0.1366.728" timestamp="1606433429256" />
     <state x="1753" y="33" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728/1366.0.1920.1080@1366.0.1920.1080" timestamp="1605948016415" />
     <state x="275" y="22" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728@0.0.1366.728" timestamp="1604731880110" />
     <state x="361" y="163" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1605087584618">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="361" y="163" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1366.728/1366.0.1920.1080@0.0.1366.728" timestamp="1605087584618" />
-    <state x="2006" y="274" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1604320670801">
-      <screen x="1366" y="0" width="1920" height="1080" />
+    <state x="455" y="185" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1606432729756">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
+    <state x="455" y="185" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1366.728/1366.0.1920.1080@0.0.1366.728" timestamp="1606432729756" />
     <state x="2006" y="274" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1366.728/1366.0.1920.1080@1366.0.1920.1080" timestamp="1604320670801" />
     <state x="2056" y="286" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1604332037688">
       <screen x="1366" y="0" width="1920" height="1080" />
@@ -639,16 +673,16 @@
       <screen x="1366" y="0" width="1920" height="1080" />
     </state>
     <state x="1961" y="299" key="MultipleFileMergeDialog/0.0.1366.728/1366.0.1920.1080@1366.0.1920.1080" timestamp="1604434391183" />
-    <state x="1624" y="154" width="998" height="709" key="SettingsEditor" timestamp="1605685577518">
+    <state x="1624" y="154" width="998" height="709" key="SettingsEditor" timestamp="1606497062662">
       <screen x="1366" y="0" width="1920" height="1080" />
     </state>
-    <state x="1624" y="154" width="998" height="709" key="SettingsEditor/0.0.1366.728/1366.0.1920.1080@0.0.1366.728" timestamp="1605685577518" />
+    <state x="1624" y="154" width="998" height="709" key="SettingsEditor/0.0.1366.728/1366.0.1920.1080@0.0.1366.728" timestamp="1606497062662" />
     <state x="1625" y="12" key="SettingsEditor/0.0.1366.728/1366.0.1920.1080@1366.0.1920.1080" timestamp="1604275968532" />
-    <state x="1753" y="144" key="Vcs.Push.Dialog.v2" timestamp="1606230173853">
+    <state x="1753" y="144" key="Vcs.Push.Dialog.v2" timestamp="1606403995544">
       <screen x="1366" y="0" width="1920" height="1080" />
     </state>
     <state x="275" y="97" key="Vcs.Push.Dialog.v2/0.0.1366.728/1366.0.1920.1080@0.0.1366.728" timestamp="1606176013233" />
-    <state x="1753" y="144" key="Vcs.Push.Dialog.v2/0.0.1366.728/1366.0.1920.1080@1366.0.1920.1080" timestamp="1606230173853" />
+    <state x="1753" y="144" key="Vcs.Push.Dialog.v2/0.0.1366.728/1366.0.1920.1080@1366.0.1920.1080" timestamp="1606403995544" />
     <state x="275" y="97" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1604729706436" />
     <state x="482" y="98" key="com.intellij.openapi.vcs.changes.SpecificFilesViewDialog" timestamp="1604031002364">
       <screen x="0" y="0" width="1366" height="728" />

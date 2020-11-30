@@ -1,0 +1,146 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load cart_tags %}
+{% block content %}
+    <body>
+    <!-- ========================= SECTION CONTENT ========================= -->
+    <section class="section-content padding-y">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-9">
+                    <div class="card">
+                        <div class="card-header">
+                            <h5 class="card-title">
+                                <i class="fas fa-shopping-cart"></i>
+                                Carrito de compras</h5>
+                        </div>
+                        <table class="table table-borderless table-shopping-cart">
+                            <thead class="text-muted">
+                            <tr class="small text-uppercase">
+                                <th scope="col">Producto</th>
+                                <th scope="col" width="120">Cantidad</th>
+                                <th scope="col" width="120">Precio</th>
+                                <th scope="col" class="text-right" width="200"></th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {% if request.session.cart.items %}
+                                {% for key, value in request.session.cart.items %}
+                                    <tr>
+                                        <td>
+                                            <figure class="itemside">
+                                                <div class="aside"><img src="{{ value.image }}" class="img-sm">
+                                                </div>
+                                                <figcaption class="info">
+                                                    <a href='/books/book/details/{{ value.product_id }}' class="title text-dark">{{ value.name }}</a>
+                                                    <p class="text-muted small">
+                                                        Autor: {{ value.author }}<br>Editorial: {{ value.editorial }}<br>Condición: {{ value.condition }}
+                                                    </p>
+                                                </figcaption>
+                                            </figure>
+                                        </td>
+                                        <td>
+                                            <div class="form-group col-md flex-grow-0">
+                                                <div class="input-group mb-3 input-spinner">
+                                                    <div class="input-group-prepend">
+                                                        <a href="{% url 'cart:decrement_product' value.product_id %}"
+                                                           class="btn btn-outline-secondary" type="button"
+                                                           id="button-minus"> -
+                                                        </a>
+                                                    </div>
+                                                    <input type="text" class="form-control" readonly="readonly"
+                                                           value="{{ value.quantity }}">
+                                                    <div class="input-group-append">
+                                                        <a href="{% url 'cart:add_product' value.product_id %}"
+                                                           class="btn btn-outline-secondary" type="button"
+                                                           id="button-plus">
+                                                            +
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="price-wrap">
+                                                <var class="price">{{ value.price|multiply:value.quantity|money_format:"$" }}</var>
+                                                <small class="text-muted"> {{ value.price }} c/u </small>
+                                            </div>
+                                        </td>
+                                        <td class="text-right">
+                                            <a href="" class="btn btn-light"> Eliminar </a>
+                                        </td>
+                                    </tr>
+                                {% endfor %}
+                            {% else %}
+                                <tr>
+                                    <td colspan="4">
+                                        <div class="alert alert-danger text-center">
+                                            No tienes productos en el carrito
+                                        </div>
+                                    </td>
+                                </tr>
+                            {% endif %}
+                            </tbody>
+                        </table>
+
+                        <div class="card-body border-top">
+                            <a href="#" class="btn btn-primary float-md-right"> Pagar </a>
+                            <a href="{% url 'index' %}" class="btn btn-outline-secondary">
+                                <i class="fa fa-chevron-left"></i> Seguir comprando </a>
+                        </div>
+                    </div> <!-- card.// -->
+
+                </main> <!-- col.// -->
+                <aside class="col-md-3">
+                    <div class="card">
+                        <div class="card-body">
+                            <dl class="dlist-align">
+                                <dt>Sub total:</dt>
+                                <dd class="text-right">{{ cart_total_amount|money_format:"$" }}</dd>
+                            </dl>
+                            <dl class="dlist-align">
+                                <dt>Descuento:</dt>
+                                <dd class="text-right">0 $</dd>
+                            </dl>
+                            <dl class="dlist-align">
+                                <dt>Total:</dt>
+                                <dd class="text-right  h5"><strong>{{ cart_total_amount|money_format:"$" }}</strong>
+                                </dd>
+                            </dl>
+                            <hr>
+                            <p class="text-center mb-3">
+                                <img src="{% static 'images/misc/payments.png' %}" height="26">
+                            </p>
+
+                        </div> <!-- card-body.// -->
+                    </div>  <!-- card .// -->
+                </aside> <!-- col.// -->
+            </div>
+
+        </div> <!-- container .//  -->
+    </section>
+    <!-- ========================= SECTION CONTENT END// ========================= -->
+
+    <!-- ========================= SECTION  ========================= -->
+    <section class="section-name border-top padding-y">
+        <div class="container">
+            <h6>Políticas de pago y reembolso</h6>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+        </div><!-- container // -->
+    </section>
+    <!-- ========================= SECTION  END// ========================= -->
+    </body>
+{% endblock %}
+

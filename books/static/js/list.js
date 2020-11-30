@@ -1,4 +1,4 @@
-function initDatatables(csrftoken) {
+function initDatatable(csrftoken) {
     $('#data').DataTable({
         responsive: true,
         autoWidth: false,
@@ -13,7 +13,7 @@ function initDatatables(csrftoken) {
         },
         columns: [
             {"data": "id"},
-            {"data": "title"},
+            {"data": "name"},
             {"data": "author"},
             {"data": "price"},
             {"data": "options"},
@@ -34,7 +34,7 @@ function initDatatables(csrftoken) {
                 class: 'text-center',
                 orderable: false,
                 render: function (data, type, row) {
-                    var enlace = '<a href="/books/book/details/' + row.id + '">' + row.title + '</a> ';
+                    var enlace = '<a href="/books/book/details/' + row.id + '">' + row.name + '</a> ';
                     return enlace;
                 }
             },

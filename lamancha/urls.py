@@ -15,13 +15,14 @@ urlpatterns = [
         name='index'
     ),
     path(
-        route='search_book',
+        route='search_book/',
         view=SearchView.as_view(),
         name='search_book'
     ),
     path('users/', include('users.urls'), name='users'),
     path('books/', include('books.urls'), name='books'),
-    path('order/', include('orders.urls'), name='order'),
+    path('cart/', include('cart.urls')),
+    path('orders/', include('orders.urls')),
 
     # reset password group
     path(

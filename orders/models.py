@@ -31,7 +31,7 @@ class Order(m.Model):
     shipping = m.ForeignKey(ShippingDetails, verbose_name='Envío', on_delete=m.CASCADE)
     subtotal = m.DecimalField(default=0.00, max_digits=9, decimal_places=2, blank=False, null=False)
     total = m.DecimalField(default=0.00, max_digits=9, decimal_places=2, blank=False, null=False)
-    status = m.BooleanField(default=True, verbose_name='Estado de la compra', blank=False, null=False)
+    complete = m.BooleanField(default=True, verbose_name='Estado de la compra', blank=False, null=False)
 
     def __str__(self):
         return str(self.creation_date)
@@ -46,3 +46,4 @@ class Order(m.Model):
         verbose_name = 'Pedido'
         verbose_name_plural = 'Pedidos'
         ordering = ['creation_date']
+

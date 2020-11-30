@@ -7,6 +7,7 @@ from django.utils.decorators import method_decorator
 
 # Models
 from books.forms import BookForm
+from books.mixins import IsStaff
 from books.models import Book
 
 
@@ -46,7 +47,7 @@ class BookListView(ListView):
         return context
 
 
-class BookCreateView(CreateView):
+class BookCreateView(IsStaff, CreateView):
     model = Book
     form_class = BookForm
     template_name = 'books/create.html'
@@ -77,7 +78,7 @@ class BookCreateView(CreateView):
         return context
 
 
-class BookUpdateView(UpdateView):
+class BookUpdateView(IsStaff, UpdateView):
     model = Book
     form_class = BookForm
     template_name = 'books/create.html'
@@ -109,7 +110,7 @@ class BookUpdateView(UpdateView):
         return context
 
 
-class BookDeleteView(DeleteView):
+class BookDeleteView(IsStaff, DeleteView):
     model = Book
     template_name = 'books/delete.html'
     success_url = reverse_lazy('list_books')
