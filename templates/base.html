@@ -47,6 +47,17 @@
 {% block content %}
 {% endblock %}
 <script>
+    var items = 0
+    {% if request.session.cart.items %}
+        {% for key, value in request.session.cart.items %}
+            items = items + {{ value.quantity }}
+        {% endfor %}
+    {% endif %}
+    console.log(items)
+    document.getElementById("cartItems").innerHTML = items;
+</script>
+
+<script>
     function formatRepo(repo) {
         if (repo.loading) {
             return repo.text;
@@ -102,7 +113,7 @@
         }).on('select2:select', function (e) {
             var data = e.params.data;
             console.log(data);// aquí va el código del que hacer
-            location.href ="/books/book/details/"+data.id;
+            location.href = "/books/book/details/" + data.id;
             //$(this).val('').trigger('change.select2'); // limpia el buscador
         });
     });
