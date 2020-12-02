@@ -60,17 +60,22 @@
                                 <div class="form-group col-md flex-grow-0">
                                     <div class="input-group mb-3 input-spinner">
                                         <div class="input-group-prepend">
-                                            <button class="btn btn-light bg-blue" type="button" id="button-plus"> +
-                                            </button>
+                                            <a href="#"
+                                               class="btn btn-outline-secondary" type="button"
+                                               id="button-minus"> -
+                                            </a>
                                         </div>
-                                        <input type="text" class="form-control" value="1">
+                                        <input type="text" class="form-control" readonly="readonly" value="1">
                                         <div class="input-group-append">
-                                            <button class="btn btn-light bg-blue" type="button" id="button-minus">
-                                                &minus;
-                                            </button>
+                                            <a href="#"
+                                               class="btn btn-outline-secondary" type="button"
+                                               id="button-plus">
+                                                +
+                                            </a>
                                         </div>
                                     </div>
-                                </div> <!-- col.// -->
+                                    <span class="text-muted"> Disponibles {{ book.quantity }}</span>
+                                </div>
                                 <div class="form-group col-md">
                                     <a href="{% url 'cart:add_product' book.id %}" class="btn btn-primary"><i
                                             class="fa fa-shopping-cart"></i>

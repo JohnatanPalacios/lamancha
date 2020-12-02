@@ -12,9 +12,7 @@
   <component name="ChangeListManager">
     <list default="true" id="d8b07057-b573-4e38-9492-f566354760d8" name="Default Changelist" comment="ShoppingCart">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/books/detail-product.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/books/detail-product.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/header.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -164,14 +162,7 @@
       <workItem from="1605547958411" duration="79937000" />
       <workItem from="1605781386169" duration="142618000" />
       <workItem from="1606432951709" duration="489000" />
-      <workItem from="1606433466433" duration="63357000" />
-    </task>
-    <task id="LOCAL-00025" summary="correciones">
-      <created>1604472038488</created>
-      <option name="number" value="00025" />
-      <option name="presentableId" value="LOCAL-00025" />
-      <option name="project" value="LOCAL" />
-      <updated>1604472038488</updated>
+      <workItem from="1606433466433" duration="66708000" />
     </task>
     <task id="LOCAL-00026" summary="paymentsMethods">
       <created>1604496062247</created>
@@ -509,7 +500,14 @@
       <option name="project" value="LOCAL" />
       <updated>1606696616852</updated>
     </task>
-    <option name="localTasksCounter" value="74" />
+    <task id="LOCAL-00074" summary="ShoppingCart">
+      <created>1606771969680</created>
+      <option name="number" value="00074" />
+      <option name="presentableId" value="LOCAL-00074" />
+      <option name="project" value="LOCAL" />
+      <updated>1606771969680</updated>
+    </task>
+    <option name="localTasksCounter" value="75" />
     <servers />
   </component>
   <component name="TerminalProjectNonSharedOptionsProvider">
@@ -644,11 +642,11 @@
     </state>
     <state x="1624" y="154" width="998" height="709" key="SettingsEditor/0.0.1366.728/1366.0.1920.1080@0.0.1366.728" timestamp="1606497062662" />
     <state x="1625" y="12" key="SettingsEditor/0.0.1366.728/1366.0.1920.1080@1366.0.1920.1080" timestamp="1604275968532" />
-    <state x="1753" y="144" key="Vcs.Push.Dialog.v2" timestamp="1606696629200">
+    <state x="1753" y="144" key="Vcs.Push.Dialog.v2" timestamp="1606771974999">
       <screen x="1366" y="0" width="1920" height="1080" />
     </state>
     <state x="275" y="97" key="Vcs.Push.Dialog.v2/0.0.1366.728/1366.0.1920.1080@0.0.1366.728" timestamp="1606176013233" />
-    <state x="1753" y="144" key="Vcs.Push.Dialog.v2/0.0.1366.728/1366.0.1920.1080@1366.0.1920.1080" timestamp="1606696629200" />
+    <state x="1753" y="144" key="Vcs.Push.Dialog.v2/0.0.1366.728/1366.0.1920.1080@1366.0.1920.1080" timestamp="1606771974999" />
     <state x="275" y="97" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1604729706436" />
     <state x="482" y="98" key="com.intellij.openapi.vcs.changes.SpecificFilesViewDialog" timestamp="1604031002364">
       <screen x="0" y="0" width="1366" height="728" />
