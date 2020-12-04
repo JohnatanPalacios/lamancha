@@ -22,7 +22,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'a0up!a@%+kw)$h(aizbqwqfqvc3av6pbx^74j)$12^=&7*$lad'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['127.0.0.1', 'lamanchautp.herokuapp.com']
 

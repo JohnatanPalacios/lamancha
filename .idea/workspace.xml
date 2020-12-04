@@ -161,14 +161,7 @@
       <workItem from="1605547958411" duration="79937000" />
       <workItem from="1605781386169" duration="142618000" />
       <workItem from="1606432951709" duration="489000" />
-      <workItem from="1606433466433" duration="91595000" />
-    </task>
-    <task id="LOCAL-00029" summary="actualizacion">
-      <created>1604507625496</created>
-      <option name="number" value="00029" />
-      <option name="presentableId" value="LOCAL-00029" />
-      <option name="project" value="LOCAL" />
-      <updated>1604507625496</updated>
+      <workItem from="1606433466433" duration="91760000" />
     </task>
     <task id="LOCAL-00030" summary="actualizacion">
       <created>1604509199973</created>
@@ -506,7 +499,14 @@
       <option name="project" value="LOCAL" />
       <updated>1607080736219</updated>
     </task>
-    <option name="localTasksCounter" value="78" />
+    <task id="LOCAL-00078" summary="deploy">
+      <created>1607080856937</created>
+      <option name="number" value="00078" />
+      <option name="presentableId" value="LOCAL-00078" />
+      <option name="project" value="LOCAL" />
+      <updated>1607080856937</updated>
+    </task>
+    <option name="localTasksCounter" value="79" />
     <servers />
   </component>
   <component name="TerminalProjectNonSharedOptionsProvider">
@@ -641,11 +641,11 @@
     </state>
     <state x="1624" y="154" width="998" height="709" key="SettingsEditor/0.0.1366.728/1366.0.1920.1080@0.0.1366.728" timestamp="1606497062662" />
     <state x="1625" y="12" key="SettingsEditor/0.0.1366.728/1366.0.1920.1080@1366.0.1920.1080" timestamp="1604275968532" />
-    <state x="1753" y="144" key="Vcs.Push.Dialog.v2" timestamp="1607080746796">
+    <state x="1753" y="144" key="Vcs.Push.Dialog.v2" timestamp="1607080862000">
       <screen x="1366" y="0" width="1920" height="1080" />
     </state>
     <state x="275" y="97" key="Vcs.Push.Dialog.v2/0.0.1366.728/1366.0.1920.1080@0.0.1366.728" timestamp="1607080306711" />
-    <state x="1753" y="144" key="Vcs.Push.Dialog.v2/0.0.1366.728/1366.0.1920.1080@1366.0.1920.1080" timestamp="1607080746796" />
+    <state x="1753" y="144" key="Vcs.Push.Dialog.v2/0.0.1366.728/1366.0.1920.1080@1366.0.1920.1080" timestamp="1607080862000" />
     <state x="275" y="97" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1604729706436" />
     <state x="482" y="98" key="com.intellij.openapi.vcs.changes.SpecificFilesViewDialog" timestamp="1604031002364">
       <screen x="0" y="0" width="1366" height="728" />
