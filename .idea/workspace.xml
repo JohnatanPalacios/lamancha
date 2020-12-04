@@ -10,9 +10,8 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d8b07057-b573-4e38-9492-f566354760d8" name="Default Changelist" comment="actualización">
+    <list default="true" id="d8b07057-b573-4e38-9492-f566354760d8" name="Default Changelist" comment="deploy">
       <change beforePath="$PROJECT_DIR$/lamancha/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/lamancha/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -162,14 +161,7 @@
       <workItem from="1605547958411" duration="79937000" />
       <workItem from="1605781386169" duration="142618000" />
       <workItem from="1606432951709" duration="489000" />
-      <workItem from="1606433466433" duration="91295000" />
-    </task>
-    <task id="LOCAL-00028" summary="actualizaciones y libros">
-      <created>1604506111425</created>
-      <option name="number" value="00028" />
-      <option name="presentableId" value="LOCAL-00028" />
-      <option name="project" value="LOCAL" />
-      <updated>1604506111425</updated>
+      <workItem from="1606433466433" duration="91595000" />
     </task>
     <task id="LOCAL-00029" summary="actualizacion">
       <created>1604507625496</created>
@@ -507,7 +499,14 @@
       <option name="project" value="LOCAL" />
       <updated>1607080290247</updated>
     </task>
-    <option name="localTasksCounter" value="77" />
+    <task id="LOCAL-00077" summary="deploy">
+      <created>1607080736219</created>
+      <option name="number" value="00077" />
+      <option name="presentableId" value="LOCAL-00077" />
+      <option name="project" value="LOCAL" />
+      <updated>1607080736219</updated>
+    </task>
+    <option name="localTasksCounter" value="78" />
     <servers />
   </component>
   <component name="TerminalProjectNonSharedOptionsProvider">
@@ -538,7 +537,6 @@
     <MESSAGE value="userUpdate" />
     <MESSAGE value="listoElUser" />
     <MESSAGE value="vamos a deply" />
-    <MESSAGE value="deploy" />
     <MESSAGE value="DEPLOY_FULL_YEAH" />
     <MESSAGE value="HEROKU" />
     <MESSAGE value="ahi se va" />
@@ -558,7 +556,8 @@
     <MESSAGE value="Orders" />
     <MESSAGE value="ShoppingCart" />
     <MESSAGE value="actualización" />
-    <option name="LAST_COMMIT_MESSAGE" value="actualización" />
+    <MESSAGE value="deploy" />
+    <option name="LAST_COMMIT_MESSAGE" value="deploy" />
   </component>
   <component name="WindowStateProjectService">
     <state x="1952" y="218" key="#Inspections" timestamp="1606715138834">
@@ -642,11 +641,11 @@
     </state>
     <state x="1624" y="154" width="998" height="709" key="SettingsEditor/0.0.1366.728/1366.0.1920.1080@0.0.1366.728" timestamp="1606497062662" />
     <state x="1625" y="12" key="SettingsEditor/0.0.1366.728/1366.0.1920.1080@1366.0.1920.1080" timestamp="1604275968532" />
-    <state x="275" y="97" key="Vcs.Push.Dialog.v2" timestamp="1607080306711">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state x="1753" y="144" key="Vcs.Push.Dialog.v2" timestamp="1607080746796">
+      <screen x="1366" y="0" width="1920" height="1080" />
     </state>
     <state x="275" y="97" key="Vcs.Push.Dialog.v2/0.0.1366.728/1366.0.1920.1080@0.0.1366.728" timestamp="1607080306711" />
-    <state x="1753" y="144" key="Vcs.Push.Dialog.v2/0.0.1366.728/1366.0.1920.1080@1366.0.1920.1080" timestamp="1606771974999" />
+    <state x="1753" y="144" key="Vcs.Push.Dialog.v2/0.0.1366.728/1366.0.1920.1080@1366.0.1920.1080" timestamp="1607080746796" />
     <state x="275" y="97" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1604729706436" />
     <state x="482" y="98" key="com.intellij.openapi.vcs.changes.SpecificFilesViewDialog" timestamp="1604031002364">
       <screen x="0" y="0" width="1366" height="728" />
