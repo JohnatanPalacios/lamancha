@@ -10,17 +10,9 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d8b07057-b573-4e38-9492-f566354760d8" name="Default Changelist" comment="ShoppingCart">
-      <change afterPath="$PROJECT_DIR$/users/mixins.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/users/static/js/modalpass.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/books/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/books/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/users/profile/profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/users/profile/profile.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/users/profile/update.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/users/profile/update.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users/static/js/modals.js" beforeDir="false" afterPath="$PROJECT_DIR$/users/static/js/modals.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/views.py" afterDir="false" />
+    <list default="true" id="d8b07057-b573-4e38-9492-f566354760d8" name="Default Changelist" comment="actualización">
+      <change beforePath="$PROJECT_DIR$/lamancha/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/lamancha/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -170,14 +162,7 @@
       <workItem from="1605547958411" duration="79937000" />
       <workItem from="1605781386169" duration="142618000" />
       <workItem from="1606432951709" duration="489000" />
-      <workItem from="1606433466433" duration="91008000" />
-    </task>
-    <task id="LOCAL-00027" summary="retoques">
-      <created>1604496374821</created>
-      <option name="number" value="00027" />
-      <option name="presentableId" value="LOCAL-00027" />
-      <option name="project" value="LOCAL" />
-      <updated>1604496374822</updated>
+      <workItem from="1606433466433" duration="91295000" />
     </task>
     <task id="LOCAL-00028" summary="actualizaciones y libros">
       <created>1604506111425</created>
@@ -515,7 +500,14 @@
       <option name="project" value="LOCAL" />
       <updated>1606913989178</updated>
     </task>
-    <option name="localTasksCounter" value="76" />
+    <task id="LOCAL-00076" summary="actualización">
+      <created>1607080290246</created>
+      <option name="number" value="00076" />
+      <option name="presentableId" value="LOCAL-00076" />
+      <option name="project" value="LOCAL" />
+      <updated>1607080290247</updated>
+    </task>
+    <option name="localTasksCounter" value="77" />
     <servers />
   </component>
   <component name="TerminalProjectNonSharedOptionsProvider">
@@ -541,7 +533,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="estable, con librerias nuevas" />
     <MESSAGE value="actualizacion" />
     <MESSAGE value="update2" />
     <MESSAGE value="userUpdate" />
@@ -566,7 +557,8 @@
     <MESSAGE value="PymentMethods" />
     <MESSAGE value="Orders" />
     <MESSAGE value="ShoppingCart" />
-    <option name="LAST_COMMIT_MESSAGE" value="ShoppingCart" />
+    <MESSAGE value="actualización" />
+    <option name="LAST_COMMIT_MESSAGE" value="actualización" />
   </component>
   <component name="WindowStateProjectService">
     <state x="1952" y="218" key="#Inspections" timestamp="1606715138834">
@@ -650,10 +642,10 @@
     </state>
     <state x="1624" y="154" width="998" height="709" key="SettingsEditor/0.0.1366.728/1366.0.1920.1080@0.0.1366.728" timestamp="1606497062662" />
     <state x="1625" y="12" key="SettingsEditor/0.0.1366.728/1366.0.1920.1080@1366.0.1920.1080" timestamp="1604275968532" />
-    <state x="1753" y="144" key="Vcs.Push.Dialog.v2" timestamp="1606771974999">
-      <screen x="1366" y="0" width="1920" height="1080" />
+    <state x="275" y="97" key="Vcs.Push.Dialog.v2" timestamp="1607080306711">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="275" y="97" key="Vcs.Push.Dialog.v2/0.0.1366.728/1366.0.1920.1080@0.0.1366.728" timestamp="1606176013233" />
+    <state x="275" y="97" key="Vcs.Push.Dialog.v2/0.0.1366.728/1366.0.1920.1080@0.0.1366.728" timestamp="1607080306711" />
     <state x="1753" y="144" key="Vcs.Push.Dialog.v2/0.0.1366.728/1366.0.1920.1080@1366.0.1920.1080" timestamp="1606771974999" />
     <state x="275" y="97" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1604729706436" />
     <state x="482" y="98" key="com.intellij.openapi.vcs.changes.SpecificFilesViewDialog" timestamp="1604031002364">
