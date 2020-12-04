@@ -1,19 +1,21 @@
 # Django
 import json
 
+from django.contrib.auth.forms import PasswordChangeForm
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.views import LoginView
 from django.http import JsonResponse, request
 from django.shortcuts import render, redirect
-from django.contrib.auth import logout
+from django.contrib.auth import logout, update_session_auth_hash
 from django.contrib.auth.decorators import login_required
 
 # Models
 from django.urls import reverse_lazy
-from django.views.generic import CreateView, UpdateView, RedirectView, DetailView, View, TemplateView
+from django.views.generic import CreateView, UpdateView, RedirectView, DetailView, View, TemplateView, FormView
 
 from lamancha import settings
 from .forms import UserRegistrationForm, DebitCardForm
+from .mixins import IsStaff
 from .models import User, DebitCard
 
 
@@ -31,7 +33,7 @@ class LoginFormView(LoginView):
         return context
 
 
-class LogoutView(LoginRequiredMixin, RedirectView):
+class LogoutView(RedirectView):
     pattern_name = 'index'
 
     def dispatch(self, request, *args, **kwargs):
@@ -76,11 +78,15 @@ class UserUpdateView(LoginRequiredMixin, UpdateView):
     template_name = 'users/profile/update.html'
     success_url = reverse_lazy('index') # si voy a hacer un modal, retornar a la vista setting
     permission_required = 'user.add_user'
+    # permission_required = 'user.change_user'
     url_redirect = success_url
 
     def dispatch(self, request, *args, **kwargs):
         self.object = self.get_object()
         return super().dispatch(request, *args, **kwargs)
+
+    def get_object(self, queryset=None):
+        return self.request.user
 
     def post(self, request, *args, **kwargs):
         data = {}
@@ -89,6 +95,13 @@ class UserUpdateView(LoginRequiredMixin, UpdateView):
             if action == 'edit':
                 form = self.get_form()
                 data = form.save()
+            if action == 'change_pass':
+                form = PasswordChangeForm(user=request.user, data=request.POST)
+                if form.is_valid():
+                    form.save()
+                    update_session_auth_hash(request, form.user)
+                else:
+                    data['error'] = form.errors
             else:
                 data['error'] = 'No ha ingresado ninguna opción'
         except Exception as e:
@@ -100,6 +113,7 @@ class UserUpdateView(LoginRequiredMixin, UpdateView):
         context['title'] = 'Actualizar perfil'
         context['list_url'] = self.success_url
         context['action'] = 'edit'
+        context['changeForm'] = PasswordChangeForm(user=self.request.user)
         return context
 
 
@@ -120,7 +134,7 @@ class UsernameValidationView(View):
         return JsonResponse({'username_valid': True})
 
 
-class UserCardsView(LoginRequiredMixin, TemplateView):
+class UserCardsView(IsStaff, LoginRequiredMixin, TemplateView):
     template_name = 'users/profile/paymentMethods.html'
 
     def dispatch(self, request, *args, **kwargs):

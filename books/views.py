@@ -17,7 +17,7 @@ class BookDetailView(DetailView):
     slug_field = 'title'
 
 
-class BookListView(ListView):
+class BookListView(IsStaff, ListView):
     model = Book
     template_name = 'books/list.html'
 

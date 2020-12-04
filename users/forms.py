@@ -157,3 +157,88 @@ class DebitCardForm(ModelForm):
         elif not cleaned['nameInCard'].replace(' ', '').isalpha():
             self.add_error('nameInCard', 'EL campo solo debe contener letras')
         return cleaned
+
+
+class UserUpdateForm(UserCreationForm):
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.fields['username'].widget.attrs['autofocus'] = True
+
+    class Meta:
+        model = User
+        fields = [
+            'photo',
+            'username',
+            'first_name',
+            'last_name',
+            'dni',
+            'email',
+            'birthday',
+            'gender',
+            'address',
+            'favoriteGenres',
+            'news'
+        ]
+        labels = {
+            'username': 'Nombre de usuario',
+            'first_name': 'Nombres',
+            'last_name': 'Apellidos',
+            'birthday': 'Fecha de nacimiento',
+            'gender': 'Género',
+            'news': 'Recibir Noticias',
+            'email': 'Correo electrónico',
+            'address': 'Dirección de correspondencia',
+            'dni': 'Documento de identificación',
+            'favoriteGenres': 'Géneros literarios de preferencia',
+        }
+        widgets = {
+            'photo': FileInput(),
+            'username': TextInput(attrs={
+                'placeholder': 'manchita',
+            }),
+            'dni': TextInput(attrs={
+                'placeholder': '123456789',
+            }),
+            'first_name': TextInput(attrs={
+                'placeholder': 'La mancha'
+            }),
+            'email': EmailInput(attrs={
+                'placeholder': 'user@lamancha.com',
+            }),
+            'news': CheckboxInput(),
+            'birthday': DateInput(),
+            'gender': Select(attrs={
+                'class': 'select2 js-example-responsive',
+                'style': 'width: 65%',
+                'language': 'es',
+                'theme': 'bootstrap4',
+            }),
+            'favoriteGenres': SelectMultiple(attrs={
+                'class': 'select2 js-example-responsive',
+                'style': 'width: 100%',
+                # 'multiple': 'multiple',
+                'multiple': True,
+                'language': 'es',
+                'theme': 'bootstrap4',
+                'placeholder': 'Seleccione sus preferencias literarias..'
+            }),
+            'address': TextInput(attrs={
+                'placeholder': 'Mirador de Pinares T2 Ap1109',
+            })
+        }
+        exclude = ['groups', 'user_permissions', 'last_login', 'date_joined', 'is_staff', 'is_superuser', 'is_active']
+
+    def save(self, commit=True):
+        data = {}
+        form = super()
+        try:
+            if form.is_valid():
+                user = form.save(commit=False)
+                form.save()
+                for favoriteGenre in self.cleaned_data['favoriteGenres']:
+                    user.favoriteGenres.add(favoriteGenre)
+            else:
+                data['error'] = form.errors
+        except Exception as e:
+            data['error'] = str(e)
+        return data
