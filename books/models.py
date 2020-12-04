@@ -45,7 +45,7 @@ class Book(m.Model):
         return str(self.name)
 
     def toJSON(self):
-        item = model_to_dict(self, exclude=['cover'])
+        item = model_to_dict(self, exclude=['image'])
         item['name'] = self.name
         item['author'] = self.author
         item['image'] = self.get_image()

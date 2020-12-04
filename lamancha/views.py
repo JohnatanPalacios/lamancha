@@ -21,7 +21,7 @@ class IndexView(TemplateView):
 
         if request.GET.get('search'):
             action = request.GET.get('search')
-            results = Book.objects.filter(Q(title__icontains=action) |
+            results = Book.objects.filter(Q(name__icontains=action) |
                                           Q(editorial__icontains=action) |
                                           Q(author__icontains=action) |
                                           Q(ISBN__icontains=action)
@@ -49,14 +49,14 @@ class SearchView(ListView):
             action = request.GET.get('action')
             if action == 'autocomplete':
                 data = []
-                books = Book.objects.filter(Q(title__icontains=request.GET.get('term')) |
+                books = Book.objects.filter(Q(name__icontains=request.GET.get('term')) |
                                             Q(editorial__icontains=request.GET.get('term')) |
                                             Q(author__icontains=request.GET.get('term')) |
                                             Q(ISBN__icontains=request.GET.get('term'))
                                             )
                 for book in books:
                     item = book.toJSON()
-                    item['text'] = book.title
+                    item['text'] = book.name
                     data.append(item)
             else:
                 data['error'] = 'Libro no encontrado'
