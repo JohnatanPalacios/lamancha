@@ -4,8 +4,10 @@ from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib.auth import views as auth_views
 from django.urls import path, include
+from django.views.generic import TemplateView
 
 from lamancha.views import *
+from users.views import *
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -19,10 +21,17 @@ urlpatterns = [
         view=SearchView.as_view(),
         name='search_book'
     ),
+    path(
+        route='social/',
+        view=Mensajeria,
+        name='red_social'
+    ),
+
     path('users/', include('users.urls'), name='users'),
     path('books/', include('books.urls'), name='books'),
     path('cart/', include('cart.urls')),
     path('orders/', include('orders.urls')),
+
 
     # reset password group
     path(

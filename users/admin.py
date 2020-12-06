@@ -27,5 +27,19 @@ class UserAdmin(BaseUserAdmin):
     ordering = 'first_name'
 
 
+class MensajesAdmin(admin.ModelAdmin):
+    """docstring for MensajesAdmin"""
+    list_display = (
+        'id_chat',
+        'contenido',
+        'hora_fecha',
+        'id_emisor',
+        'id_receptor',
+        'estado'
+    )
+    
+        
+
 admin.site.register(User, BaseUserAdmin)
 admin.site.register(LiteraryGenders)
+admin.site.register(Mensaje, MensajesAdmin)

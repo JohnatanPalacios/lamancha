@@ -3,7 +3,6 @@ from django.db import models
 from django.contrib.auth.models import AbstractUser
 from django.utils.translation import gettext_lazy as _
 from django.forms import model_to_dict
-
 from lamancha.settings import MEDIA_URL, STATIC_URL
 
 GENDERS = [
@@ -11,6 +10,7 @@ GENDERS = [
     ('Masculino', 'Masculino'),
     ('Otro', 'Otro')
 ]
+
 
 
 class LiteraryGenders(models.Model):
@@ -68,6 +68,7 @@ class DebitCard(models.Model):
         ordering = ['id']
 
 
+
 class User(AbstractUser):
     dni = models.CharField(max_length=50, verbose_name='DNI', unique=True, null=True, blank=True)
     photo = models.ImageField(upload_to='customer/photos', default='static/images/default-profile.png', null=True,
@@ -83,7 +84,7 @@ class User(AbstractUser):
     USERNAME_FIELD = 'username'
     REQUIRED_FIELDS = ['email', 'first_name', 'last_name']
 
-    def _str_(self):
+    def __str__(self):
         return str(self.username)
 
     def get_photo(self):
@@ -109,3 +110,20 @@ class User(AbstractUser):
             if user.password != self.password:
                 user.password = self.password
         super().save(*args, **kwargs)
+
+class Mensaje(models.Model):
+    """docstring for mensaje"""
+    id_chat = models.CharField(max_length=50, verbose_name='id_chat', unique=True, null=True, blank=True)
+    contenido = models.CharField(max_length=100, verbose_name='contenido_mensaje')
+    hora_fecha = models.DateField(verbose_name='Fecha de envio', null=True, blank=True)
+    id_emisor = models.ForeignKey(User, on_delete=models.CASCADE)
+    id_receptor = models.CharField(max_length=50, verbose_name='id_receptor', unique=True, null=True, blank=True)
+    estado = models.BooleanField(default=False)
+    def __str__(self):
+        return str(self.id_chat + self.contenido)
+
+    class Meta:
+        verbose_name = "Mensaje"
+        verbose_name_plural = "Mensajes"
+        ordering = ["hora_fecha"]
+

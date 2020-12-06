@@ -167,3 +167,11 @@ class UserCardsView(LoginRequiredMixin, TemplateView):
         context['entity'] = 'User'
         context['form'] = DebitCardForm()
         return context
+
+
+def Mensajeria(request):
+    model = User
+    template_name = 'redSocial/ListaAmigos.html'
+
+    action = request.GET.get('action')
+    return render(request, template_name, {})
