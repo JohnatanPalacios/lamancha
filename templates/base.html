@@ -39,11 +39,6 @@
 {% include 'header.html' %}
 {% block content %}
 {% endblock %}
-<script type="text/javascript">
-    import $ from 'jquery'
-import 'select2'
-import 'lib/select2-4.0.13/css/select2.css'
-</script>
 <script>
     var items = 0
     {% if request.session.cart.items %}
