@@ -25,7 +25,7 @@ urlpatterns = [
         name='profile'
     ),
     path(
-        route='profile/update/<pk>/',
+        route='profile/update/',
         view=UserUpdateView.as_view(),
         name='update'
     ),

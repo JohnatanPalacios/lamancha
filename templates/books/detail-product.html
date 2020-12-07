@@ -60,19 +60,25 @@
                                 <div class="form-group col-md flex-grow-0">
                                     <div class="input-group mb-3 input-spinner">
                                         <div class="input-group-prepend">
-                                            <button class="btn btn-light bg-blue" type="button" id="button-plus"> +
-                                            </button>
+                                            <a href="#"
+                                               class="btn btn-outline-secondary" type="button"
+                                               id="button-minus"> -
+                                            </a>
                                         </div>
-                                        <input type="text" class="form-control" value="1">
+                                        <input type="text" class="form-control" readonly="readonly" value="1">
                                         <div class="input-group-append">
-                                            <button class="btn btn-light bg-blue" type="button" id="button-minus">
-                                                &minus;
-                                            </button>
+                                            <a href="#"
+                                               class="btn btn-outline-secondary" type="button"
+                                               id="button-plus">
+                                                +
+                                            </a>
                                         </div>
                                     </div>
-                                </div> <!-- col.// -->
+                                    <span class="text-muted"> Disponibles {{ book.quantity }}</span>
+                                </div>
                                 <div class="form-group col-md">
-                                    <a href="{% url 'cart:add_product' book.id %}" class="btn btn-primary"><i class="fa fa-shopping-cart"></i>
+                                    <a href="{% url 'cart:add_product' book.id %}" class="btn btn-primary"><i
+                                            class="fa fa-shopping-cart"></i>
                                         <span class="text-center"> Añadir al carrito </span>
                                     </a>
                                     <a href="#" class="btn btn-outline-primary">
@@ -90,24 +96,30 @@
     <!-- ========================= SECTION CONTENT END// ========================= -->
 
     <!-- ========================= SECTION  ========================= -->
+
     <section class="section-name padding-y bg">
         <div class="container">
-
-            <div class="row">
-                <div class="col-md-11">
-                    <div class="bg-blue text-white text-center col-md-3">
-                        <h5 class="title-description"> Descripción </h5>
+            <div class="bs-example">
+                <ul class="nav nav-tabs">
+                    <li class="nav-item">
+                        <a href="#description" class="nav-link active" data-toggle="tab">Descripción</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#TechData" class="nav-link" data-toggle="tab">Datos técnicos</a>
+                    </li>
+                </ul>
+                <div class="tab-content">
+                    <div class="tab-pane fade show active" id="description">
+                        <h4 class="mt-2">Breve reseña, informe etc {{ book.name }}</h4>
+                        <p class="text-justify">{{ book.description }}</p>
                     </div>
-
-                    <p class="text-center">
-                        {{ book.description }}
-                    </p>
-                </div> <!-- col.// -->
-            </div> <!-- box.// -->
-            </aside> <!-- col.// -->
+                    <div class="tab-pane fade" id="TechData">
+                        <h4 class="mt-2">Profile tab content</h4>
+                        <p>.................. porfa<br>que alguien ponga esto ....................</p>
+                    </div>
+                </div>
+            </div>
         </div> <!-- row.// -->
-
-        </div> <!-- container .//  -->
     </section>
     <!-- ========================= SECTION CONTENT END// ========================= -->
     </body>

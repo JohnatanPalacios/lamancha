@@ -10,49 +10,11 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d8b07057-b573-4e38-9492-f566354760d8" name="Default Changelist" comment="Orders">
-      <change afterPath="$PROJECT_DIR$/books/migrations/0002_auto_20201127_2154.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/books/migrations/0003_auto_20201127_2201.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cart/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cart/admin.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cart/apps.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cart/cart.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cart/context_processor.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cart/forms.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cart/migrations/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cart/mixins.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cart/models.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cart/templatetags/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cart/templatetags/cart_tags.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cart/tests.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cart/urls.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cart/views.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/orders/migrations/0002_order_user.py" afterDir="false" />
+    <list default="true" id="d8b07057-b573-4e38-9492-f566354760d8" name="Default Changelist" comment="correciones">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/books/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/books/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/books/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/books/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/books/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/books/migrations/0001_initial.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/books/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/books/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/books/static/js/list.js" beforeDir="false" afterPath="$PROJECT_DIR$/books/static/js/list.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/books/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/books/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lamancha/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/lamancha/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lamancha/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/lamancha/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lamancha/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/lamancha/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orders/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/books/mixins.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orders/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/orders/migrations/0001_initial.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orders/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/orders/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orders/templates/order.html" beforeDir="false" afterPath="$PROJECT_DIR$/cart/templates/shopping-cart.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orders/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/orders/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orders/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/orders/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/bootstrap.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/bootstrap.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/functions.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/functions.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/books/detail-product.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/books/detail-product.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/books/list.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/books/list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/header.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/migrations/0001_initial.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users/migrations/0002_debitcard_icon.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/users/migrations/0003_remove_debitcard_icon.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/users/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,9 +32,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JavaScript File" />
         <option value="Python Script" />
         <option value="HTML File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -101,7 +63,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/books/static/js" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/users" />
     <property name="settings.editor.selected.configurable" value="configurable.group.tools" />
   </component>
   <component name="RecentsManager">
@@ -113,11 +75,11 @@
       <recent name="D:\UTP\Laboratorio de Software\lamancha\templates\core" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\UTP\Laboratorio de Software\lamancha\users" />
       <recent name="D:\UTP\Laboratorio de Software\lamancha\books\static\js" />
       <recent name="D:\UTP\Laboratorio de Software\lamancha\static\lib" />
       <recent name="D:\UTP\Laboratorio de Software\lamancha\static\js" />
       <recent name="D:\UTP\Laboratorio de Software\lamancha\users\static\js" />
-      <recent name="D:\UTP\Laboratorio de Software\lamancha\static" />
     </key>
   </component>
   <component name="RunManager" selected="Python.tests">
@@ -202,70 +164,7 @@
       <workItem from="1605547958411" duration="79937000" />
       <workItem from="1605781386169" duration="142618000" />
       <workItem from="1606432951709" duration="489000" />
-      <workItem from="1606433466433" duration="53666000" />
-    </task>
-    <task id="LOCAL-00024" summary="perfil y otras cosas">
-      <created>1604463220070</created>
-      <option name="number" value="00024" />
-      <option name="presentableId" value="LOCAL-00024" />
-      <option name="project" value="LOCAL" />
-      <updated>1604463220071</updated>
-    </task>
-    <task id="LOCAL-00025" summary="correciones">
-      <created>1604472038488</created>
-      <option name="number" value="00025" />
-      <option name="presentableId" value="LOCAL-00025" />
-      <option name="project" value="LOCAL" />
-      <updated>1604472038488</updated>
-    </task>
-    <task id="LOCAL-00026" summary="paymentsMethods">
-      <created>1604496062247</created>
-      <option name="number" value="00026" />
-      <option name="presentableId" value="LOCAL-00026" />
-      <option name="project" value="LOCAL" />
-      <updated>1604496062247</updated>
-    </task>
-    <task id="LOCAL-00027" summary="retoques">
-      <created>1604496374821</created>
-      <option name="number" value="00027" />
-      <option name="presentableId" value="LOCAL-00027" />
-      <option name="project" value="LOCAL" />
-      <updated>1604496374822</updated>
-    </task>
-    <task id="LOCAL-00028" summary="actualizaciones y libros">
-      <created>1604506111425</created>
-      <option name="number" value="00028" />
-      <option name="presentableId" value="LOCAL-00028" />
-      <option name="project" value="LOCAL" />
-      <updated>1604506111425</updated>
-    </task>
-    <task id="LOCAL-00029" summary="actualizacion">
-      <created>1604507625496</created>
-      <option name="number" value="00029" />
-      <option name="presentableId" value="LOCAL-00029" />
-      <option name="project" value="LOCAL" />
-      <updated>1604507625496</updated>
-    </task>
-    <task id="LOCAL-00030" summary="actualizacion">
-      <created>1604509199973</created>
-      <option name="number" value="00030" />
-      <option name="presentableId" value="LOCAL-00030" />
-      <option name="project" value="LOCAL" />
-      <updated>1604509199973</updated>
-    </task>
-    <task id="LOCAL-00031" summary="reducir lineas con extends">
-      <created>1604547217434</created>
-      <option name="number" value="00031" />
-      <option name="presentableId" value="LOCAL-00031" />
-      <option name="project" value="LOCAL" />
-      <updated>1604547217434</updated>
-    </task>
-    <task id="LOCAL-00032" summary="recuperar contraseña">
-      <created>1604566776238</created>
-      <option name="number" value="00032" />
-      <option name="presentableId" value="LOCAL-00032" />
-      <option name="project" value="LOCAL" />
-      <updated>1604566776238</updated>
+      <workItem from="1606433466433" duration="97715000" />
     </task>
     <task id="LOCAL-00033" summary="settings">
       <created>1604607169943</created>
@@ -547,7 +446,70 @@
       <option name="project" value="LOCAL" />
       <updated>1606403980546</updated>
     </task>
-    <option name="localTasksCounter" value="73" />
+    <task id="LOCAL-00073" summary="ShoppingCart">
+      <created>1606696616846</created>
+      <option name="number" value="00073" />
+      <option name="presentableId" value="LOCAL-00073" />
+      <option name="project" value="LOCAL" />
+      <updated>1606696616852</updated>
+    </task>
+    <task id="LOCAL-00074" summary="ShoppingCart">
+      <created>1606771969680</created>
+      <option name="number" value="00074" />
+      <option name="presentableId" value="LOCAL-00074" />
+      <option name="project" value="LOCAL" />
+      <updated>1606771969680</updated>
+    </task>
+    <task id="LOCAL-00075" summary="ShoppingCart">
+      <created>1606913989177</created>
+      <option name="number" value="00075" />
+      <option name="presentableId" value="LOCAL-00075" />
+      <option name="project" value="LOCAL" />
+      <updated>1606913989178</updated>
+    </task>
+    <task id="LOCAL-00076" summary="actualización">
+      <created>1607080290246</created>
+      <option name="number" value="00076" />
+      <option name="presentableId" value="LOCAL-00076" />
+      <option name="project" value="LOCAL" />
+      <updated>1607080290247</updated>
+    </task>
+    <task id="LOCAL-00077" summary="deploy">
+      <created>1607080736219</created>
+      <option name="number" value="00077" />
+      <option name="presentableId" value="LOCAL-00077" />
+      <option name="project" value="LOCAL" />
+      <updated>1607080736219</updated>
+    </task>
+    <task id="LOCAL-00078" summary="deploy">
+      <created>1607080856937</created>
+      <option name="number" value="00078" />
+      <option name="presentableId" value="LOCAL-00078" />
+      <option name="project" value="LOCAL" />
+      <updated>1607080856937</updated>
+    </task>
+    <task id="LOCAL-00079" summary="deploy">
+      <created>1607081041353</created>
+      <option name="number" value="00079" />
+      <option name="presentableId" value="LOCAL-00079" />
+      <option name="project" value="LOCAL" />
+      <updated>1607081041353</updated>
+    </task>
+    <task id="LOCAL-00080" summary="deploy">
+      <created>1607081115585</created>
+      <option name="number" value="00080" />
+      <option name="presentableId" value="LOCAL-00080" />
+      <option name="project" value="LOCAL" />
+      <updated>1607081115585</updated>
+    </task>
+    <task id="LOCAL-00081" summary="correciones">
+      <created>1607096037462</created>
+      <option name="number" value="00081" />
+      <option name="presentableId" value="LOCAL-00081" />
+      <option name="project" value="LOCAL" />
+      <updated>1607096037463</updated>
+    </task>
+    <option name="localTasksCounter" value="82" />
     <servers />
   </component>
   <component name="TerminalProjectNonSharedOptionsProvider">
@@ -573,14 +535,10 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="trabajando con objetos" />
-    <MESSAGE value="estable, con librerias nuevas" />
-    <MESSAGE value="actualizacion" />
     <MESSAGE value="update2" />
     <MESSAGE value="userUpdate" />
     <MESSAGE value="listoElUser" />
     <MESSAGE value="vamos a deply" />
-    <MESSAGE value="deploy" />
     <MESSAGE value="DEPLOY_FULL_YEAH" />
     <MESSAGE value="HEROKU" />
     <MESSAGE value="ahi se va" />
@@ -598,9 +556,17 @@
     <MESSAGE value="busqueda" />
     <MESSAGE value="PymentMethods" />
     <MESSAGE value="Orders" />
-    <option name="LAST_COMMIT_MESSAGE" value="Orders" />
+    <MESSAGE value="ShoppingCart" />
+    <MESSAGE value="actualización" />
+    <MESSAGE value="deploy" />
+    <MESSAGE value="correciones" />
+    <option name="LAST_COMMIT_MESSAGE" value="correciones" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="1952" y="218" key="#Inspections" timestamp="1606715138834">
+      <screen x="1366" y="0" width="1920" height="1080" />
+    </state>
+    <state x="1952" y="218" key="#Inspections/0.0.1366.728/1366.0.1920.1080@1366.0.1920.1080" timestamp="1606715138834" />
     <state x="1918" y="198" width="816" height="734" key="#Intentions" timestamp="1604629512792">
       <screen x="1366" y="0" width="1920" height="1080" />
     </state>
@@ -678,21 +644,21 @@
     </state>
     <state x="1624" y="154" width="998" height="709" key="SettingsEditor/0.0.1366.728/1366.0.1920.1080@0.0.1366.728" timestamp="1606497062662" />
     <state x="1625" y="12" key="SettingsEditor/0.0.1366.728/1366.0.1920.1080@1366.0.1920.1080" timestamp="1604275968532" />
-    <state x="1753" y="144" key="Vcs.Push.Dialog.v2" timestamp="1606403995544">
+    <state x="1753" y="144" key="Vcs.Push.Dialog.v2" timestamp="1607096043175">
       <screen x="1366" y="0" width="1920" height="1080" />
     </state>
-    <state x="275" y="97" key="Vcs.Push.Dialog.v2/0.0.1366.728/1366.0.1920.1080@0.0.1366.728" timestamp="1606176013233" />
-    <state x="1753" y="144" key="Vcs.Push.Dialog.v2/0.0.1366.728/1366.0.1920.1080@1366.0.1920.1080" timestamp="1606403995544" />
+    <state x="275" y="97" key="Vcs.Push.Dialog.v2/0.0.1366.728/1366.0.1920.1080@0.0.1366.728" timestamp="1607080306711" />
+    <state x="1753" y="144" key="Vcs.Push.Dialog.v2/0.0.1366.728/1366.0.1920.1080@1366.0.1920.1080" timestamp="1607096043175" />
     <state x="275" y="97" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1604729706436" />
     <state x="482" y="98" key="com.intellij.openapi.vcs.changes.SpecificFilesViewDialog" timestamp="1604031002364">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="482" y="98" key="com.intellij.openapi.vcs.changes.SpecificFilesViewDialog/0.0.1366.728/1366.0.1920.1080@0.0.1366.728" timestamp="1604031002364" />
-    <state x="2129" y="452" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1605807459123">
+    <state x="2129" y="452" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1607060894552">
       <screen x="1366" y="0" width="1920" height="1080" />
     </state>
     <state x="543" y="305" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1366.728/1366.0.1920.1080@0.0.1366.728" timestamp="1605689267682" />
-    <state x="2129" y="452" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1366.728/1366.0.1920.1080@1366.0.1920.1080" timestamp="1605807459123" />
+    <state x="2129" y="452" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1366.728/1366.0.1920.1080@1366.0.1920.1080" timestamp="1607060894552" />
     <state x="388" y="0" width="590" height="728" key="find.popup" timestamp="1604917243070">
       <screen x="0" y="0" width="1366" height="728" />
     </state>

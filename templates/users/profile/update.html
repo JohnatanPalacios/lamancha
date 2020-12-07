@@ -1,6 +1,11 @@
 {% extends 'base.html' %}
 {% load widget_tweaks %}
 {% load static %}
+{% block head %}
+<script src="{% static 'js/modalpass.js' %}"></script>
+    <link rel="stylesheet" href="{% static 'lib/jquery-confirm.min.css' %}">
+    <script src="{% static 'lib/jquery-confirm.min.js' %}"></script>
+{% endblock %}
 {% block content %}
     <body>
     <b class="screen-overlay"></b>
@@ -102,14 +107,9 @@
 
                             <div class="form-row">
                                 <div class="form-group col-md-6">
-                                    <label>Nueva contraseña</label>
-                                    {{ form.password1|add_class:'form-control' }}
-                                    <small id="passwordHelpInline" class="text-muted">Debe tener entre 8-20
-                                        caracteres.</small>
-                                </div> <!-- form-group end.// -->
-                                <div class="form-group col-md-6">
-                                    <label>Repite la contraseña</label>
-                                    {{ form.password2|add_class:'form-control' }}
+                                    <a  class="btn btn-primary btn-flat bg-green text-white btnChangePass">
+                                        <i class="fas fa-user-lock text-white"></i> Cambiar contraseña
+                                    </a>
                                 </div>
                             </div>
 
@@ -199,4 +199,37 @@
     </section>
     <!-- ========================= SECTION CONTENT END// ========================= -->
     </body>
+{% endblock %}
+{% block javascript %}
+    <!-- Modal -->
+    <div class="modal fade" id="ModalChangePass" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+         aria-hidden="true">
+        <form method="post" action="." enctype="multipart/form-data">{% csrf_token %}
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">
+                            <i class="fas fa-plus-circle"></i> <span></span><b></h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="container-fluid">
+                            <input name="action" type="hidden" value="change_pass">
+                            {% for field in changeForm.visible_fields %}
+                                <div class="form-group">
+                                    <label for="email">{{ field.label }}</label>
+                                    {{ field|attr:'autocomplete:off'|add_class:'form-control' }}
+                                </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-primary"><i class="fas fa-save"></i> Guardar</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
 {% endblock %}
