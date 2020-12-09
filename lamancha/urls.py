@@ -4,12 +4,18 @@ from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib.auth import views as auth_views
 from django.urls import path, include
+<<<<<<< HEAD
 #<<<<<<< HEAD
 from django.views.generic import TemplateView
 
 #=======
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 #>>>>>>> e6e87b8146e5ce9a8545a0b4a75f7ecaf9a7ded9
+=======
+
+
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
+>>>>>>> edc248909ecce69899ad1ce2ef4fb3622d4f5eb0
 from lamancha.views import *
 from users.views import *
 
