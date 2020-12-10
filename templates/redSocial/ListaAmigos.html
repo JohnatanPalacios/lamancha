@@ -7,16 +7,34 @@
  
 <div id="wrapper">
   <div id="menu">
-        <p class="welcome">Chat con {{"USUARIO"}} <b></b></p>
+        <p class="welcome">Chat con {{usuario.username}} <b></b></p>
         <p class="logout"><a id="exit" href="#">Salir del Chat</a></p>
         <div style="clear:both"></div>
     </div>
      
-    <div id="chatbox"></div>
+    <div id="chatbox">
+        {% for mensaje in mensajes %}
+                <div class="container">
+                  <img src="{% static logo.png %}" alt="Avatar">
+                  <p>{{mensaje.contenido}}</p>
+                  <span class="time-right">11:00</span>
+                </div>
+
+                <div class="container darker">
+                  <img src="{{ usuario.photo }}" alt="Avatar" class="right">
+                  <p>{{mensaje.contenido}}</p>
+                  <span class="time-left">11:01</span>
+                </div>
+            
+        {% endfor %}
+            
+        
+        
+    </div>
      
-    <form name="message" action="GET">
-        <input name="usermsg" type="text" id="usermsg" size="63" />
-        <input name="submitmsg" type="submit"  id="submitmsg" value="Enviar" />
+    <form name="message" method="GET">
+        <input name="a" type="text" id="usermsg" size="63" />
+        <input type="submit"  id="submitmsg" value="Enviar" />
     </form>
 </div>
 </body>

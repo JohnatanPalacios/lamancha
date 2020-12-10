@@ -83,7 +83,6 @@ class User(AbstractUser):
     creditCards = models.ManyToManyField(CreditCard, verbose_name='Tarjetas de crédito')
     USERNAME_FIELD = 'username'
     REQUIRED_FIELDS = ['email', 'first_name', 'last_name']
-
     def __str__(self):
         return str(self.username)
 

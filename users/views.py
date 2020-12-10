@@ -16,8 +16,8 @@ from django.views.generic import CreateView, UpdateView, RedirectView, DetailVie
 from lamancha import settings
 from .forms import UserRegistrationForm, DebitCardForm
 from .mixins import IsStaff
-from .models import User, DebitCard
-
+from .models import User, DebitCard, Mensaje
+from django.db.models import Q
 
 class LoginFormView(LoginView):
     template_name = 'users/auth/login.html'
@@ -182,10 +182,17 @@ class UserCardsView(IsStaff, LoginRequiredMixin, TemplateView):
         context['form'] = DebitCardForm()
         return context
 
+class Mensajeria(TemplateView):
+        
+    def get(self, request):
+        usuario = request.user
+        mensaje = Mensaje
 
-def Mensajeria(request):
-    model = User
-    template_name = 'redSocial/ListaAmigos.html'
+        listMensajes = mensaje.objects.filter(id_chat = "2")
+        
+        if request.GET:
+            #Recibimos el contenido del mensaje a enviar
+            print(request.GET.getlist('a')[0])
 
-    action = request.GET.get('action')
-    return render(request, template_name, {})
+        template_name = 'redSocial/ListaAmigos.html'
+        return render(request, template_name, {"usuario":usuario,"mensajes":listMensajes})
