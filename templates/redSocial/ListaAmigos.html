@@ -7,14 +7,15 @@
  
 <div id="wrapper">
   <div id="menu">
-        <p class="welcome">Chat con {{usuario.username}} <b></b></p>
+        <p class="welcome">Chat con {{us_emi.username}} <b></b></p>
         <p class="logout"><a id="exit" href="#">Salir del Chat</a></p>
         <div style="clear:both"></div>
     </div>
      
     <div id="chatbox">
         {% for mensaje in mensajes %}
-                <div class="container">
+        {% if usuario.dni == mensaje.id_emisor %}
+            <div class="container">
                   <img src="{% static logo.png %}" alt="Avatar">
                   <p>{{mensaje.contenido}}</p>
                   <div class="time-left">
@@ -32,7 +33,7 @@
                   </div>
                   
                 </div>
-
+                {% else %}
                 <div class="container darker">
                   <img src="{{ usuario.photo }}" alt="Avatar" class="right">
                   <p>{{mensaje.contenido}}</p>
@@ -51,6 +52,10 @@
                       </svg></span>  
                   </div>
                 </div>
+        {% endif %}
+                
+
+                
             
         {% endfor %}
             

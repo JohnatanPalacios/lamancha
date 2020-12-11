@@ -187,15 +187,17 @@ class Mensajeria(TemplateView):
 	def get(self, request):
 		usuario = request.user
 		mensaje = Mensaje
-
-		listMensajes = mensaje.objects.all()
+		us_emi = User.objects.filter(dni="1225093110")
+		us_emi = us_emi[0]
+		listMensajes = mensaje.objects.filter(Q(id_emisor = usuario.dni) | Q(id_receptor = us_emi.dni))
+		print()
 		if request.GET:
 			if request.GET.getlist('a')[0] != '':
-				
-				if(len(listMensajes) == 0):
+				n_mensajes=mensaje.objects.count()
+				if(n_mensajes == 0):
 					id_mensaje = '0'
 				else:
-					id_mensaje = str(int(len(listMensajes))+1)
+					id_mensaje = str(int(n_mensajes)+1)
 				#Recibimos el contenido del mensaje a enviar
 				print(request.GET.getlist('a')[0])
 				contenido = request.GET.getlist('a')[0]
@@ -203,10 +205,10 @@ class Mensajeria(TemplateView):
 				mensaje_enviar = Mensaje(   id_chat=id_mensaje,
 											contenido= contenido,
 											hora_fecha = hora,
-											id_emisor= "0",
-											id_receptor  = "1",
+											id_emisor= usuario.dni,
+											id_receptor  = us_emi.dni,
 											estado = True
 										)
 				mensaje_enviar.save()
 		template_name = 'redSocial/ListaAmigos.html'
-		return render(request, template_name, {"usuario":usuario,"mensajes":listMensajes})
+		return render(request, template_name, {"usuario":usuario,"us_emi":us_emi,"mensajes":listMensajes})
