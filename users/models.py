@@ -112,11 +112,11 @@ class User(AbstractUser):
 
 class Mensaje(models.Model):
     """docstring for mensaje"""
-    id_chat = models.CharField(max_length=50, verbose_name='id_chat', unique=True, null=True, blank=True)
-    contenido = models.CharField(max_length=100, verbose_name='contenido_mensaje')
-    hora_fecha = models.DateField(verbose_name='Fecha de envio', null=True, blank=True)
-    id_emisor = models.ForeignKey(User, on_delete=models.CASCADE)
-    id_receptor = models.CharField(max_length=50, verbose_name='id_receptor', unique=True, null=True, blank=True)
+    id_chat = models.CharField(max_length=500, verbose_name='id_chat', unique=True, null=True, blank=True)
+    contenido = models.CharField(max_length=500, verbose_name='contenido_mensaje')
+    hora_fecha = models.CharField(max_length=500, verbose_name='hora_fecha')
+    id_emisor = models.CharField(max_length=500, verbose_name='id_emisor')
+    id_receptor = models.CharField(max_length=500, verbose_name='id_receptor')
     estado = models.BooleanField(default=False)
     def __str__(self):
         return str(self.id_chat + self.contenido)

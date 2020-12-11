@@ -11,6 +11,7 @@ class UserAdmin(BaseUserAdmin):
 
     # muestra lo que quiere ver el administrador
     list_display = (
+        'dni',
         'username',
         'email',
         'first_name',
